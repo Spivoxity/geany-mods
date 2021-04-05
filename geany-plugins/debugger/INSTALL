@@ -1,0 +1,30 @@
+Please note that this plugin just should work with Geany 0.16 or higher. There
+is no guarantee that it works with versions below 0.16.
+
+There are different possibilities to install this plugin:
+
+First
+--------------------------------------------------------------------------------
+./configure
+make
+make install
+
+
+Second
+--------------------------------------------------------------------------------
+./configure
+make
+cp src/.libs/debugger.so ~/.config/geany/plugins
+
+
+Third
+--------------------------------------------------------------------------------
+Building much of the available plugins from git by doing this:
+
+git clone https://github.com/geany/geany-plugins.git
+cd geany-plugins
+./autogen.sh
+./configure
+make
+sudo make install
+

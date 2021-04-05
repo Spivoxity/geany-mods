@@ -1,0 +1,60 @@
+Debugger
+==================
+
+.. image:: http://img804.imageshack.us/img804/1429/debuggersmall.png
+   :width: 400
+   :alt: debugger plugin
+   :align: right
+   :target: http://img685.imageshack.us/img685/9610/debugger.png
+
+.. contents::
+
+About
+-----
+
+Plugin enables debugging in Geany.
+Currently supports GDB only, but was developed with multiple debuggers support in mind,
+so the other backends support is planned as well.
+
+Features
+--------
+
+* Debugger panel
+* Setting target, environment variables and command line arguments
+* Breakpoints
+* Watches, autos
+* Debug terminal
+* Debugger messages window
+* Threads and stack info
+* Switching frames in the stack trace window
+* Variables calltips while debugging
+* Saving debug session data in a Geany project (can be switched through settings)
+* Double or single panel modes
+* Hotkeys
+
+Usage
+-----
+
+Debugger panel behaves in a way similar to other IDE, so an experienced user won't have problems using it.
+
+Panel space can be divided into two notebooks by pressing a button on the right of a panel.
+
+Debug control buttons also reside on the right end of a panel as well as plugin settings dialog button.
+A user can also control debug process using hotkeys that are configurable through Geany hotkeys dialog.
+
+When exploring children of a watch or an auto variable user can double click any of them to create a distinct
+watch item containing the corresponding expression.
+
+Requirements
+------------
+
+* Geany >= 0.21
+* libvte
+* GTK 3
+* POSIX API
+
+Contact developers
+------------------
+
+Alexander Petukhov <devel(at)apetukhov(dot)ru>
+

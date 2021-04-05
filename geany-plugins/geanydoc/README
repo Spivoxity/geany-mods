@@ -1,0 +1,83 @@
+.. |(version)| replace:: 0.5
+
+========
+geanydoc
+========
+
+.. contents::
+
+About
+=====
+
+Geanydoc is plugin for Geany IDE that allow execute specified commands on the
+current word at the cursor position. This word is passed as an argument to these commands.
+It allow either place output of these commands in geany buffer \*DOC\* or just
+execute external program. Geanydoc is intended to be used for searching documentation
+API in different sources.
+
+In order to use it you need Geany >= 0.16.
+
+Usage
+=====
+
+geanydoc define 2 keyboard shortcut "Document current word" and "Document interactive"
+First you need to assign key to them in "Edit->Preferences->Keybinding->Doc".
+
+"Document current word" search documentation on the current word near cursor position.
+"Document interactive" search documentation on word you enter in interactive dialog.
+
+Settings
+========
+
+geanydoc allow to execute different commands for different filetypes. Use combobox
+to select type you need.
+
+"Put output in buffer" if you check this checkbox geanydoc will execute command wait for
+it's  exit and place it's output in geany buffer. If you have this button unchecked
+geanydoc will simply spawn command and forgot about it.
+
+NOTE: if you have multiple command all commands but last are treated as "Put output in buffer"
+true. This checkbox is used only for last command.
+
+If you specify several commands, second command will be called only if first one didn't return
+something in output.
+
+License
+=======
+
+geanydoc is distributed under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 3 of the
+License, or (at your option) any later version. A copy of this license
+can be found in the file COPYING included with the source code of this
+program.
+
+Ideas, questions, patches and bug reports
+=========================================
+
+If you add something, or fix a bug, please send a patch (in 'diff -u'
+format) to the geany mailing list or to one of the authors listed bellow.
+
+Coding
+======
+
+Use static functions where possible.
+Try to use GLib types and functions - e.g. g_free instead of free and
+try to use only GLib 2.6 and GTK 2.6 functions.
+
+Style
+=====
+
+The file indent-all.sh contains information about
+the current code style. Run this script before commit.
+
+Download
+========
+
+geanydoc is part of the combined Geany Plugins release.
+For more information and downloads, please visit
+http://plugins.geany.org/
+
+
+Author
+======
+Yura Siamashka yurand2(at)gmail(dot)com

@@ -1,0 +1,77 @@
+.. |(version)| replace:: 0.20
+
+TreeBrowser plugin
+==================
+
+.. contents::
+
+
+About
+=====
+
+The TreeBrowser plugin for Geany provides an alternate way to browse through
+your files. It displays files and directories in a tree view and has more
+features than the file browser plugin delivered with Geany itself.
+
+
+Features
+========
+
+* Project following
+* Basic filesystem functionality
+* GTK bookmarks support
+* Keybindings
+* Filterable list
+* Show content-type icons
+
+
+Requirements
+============
+* GTK >= 2.8.0
+* GIO >= 2.0 (optional)
+* Geany >= 0.17
+
+
+Usage
+=====
+
+After compiling and/or installing TreeBrowser, start Geany and go to menu
+Tools->Plugin Manager and set checkbox at TreeBrowser plugin
+
+
+FAQ
+===
+
+* My base directory is not remembered
+	Yes it isn`t saved, and I don`t think that it have to be saved while We have in Geany "Startup path", and "Load from the last session"
+	These settings are useful and the plugin take care about them, use them and the problem with the last directory remembering will be solved.
+
+
+Download Source
+===============
+
+Development Source Tarball: https://github.com/geany/geany-plugins/archive/master.zip
+
+TreeBrowser is part of the combined Geany Plugins release. For more information and downloads, please visit http://plugins.geany.org/
+
+
+Installation
+============
+
+ The plugin is part from the geany-plugins projects, you can see the plugin`s install page at http://plugins.geany.org/install.html
+
+
+License
+=======
+
+TreeBrowser plugin is distributed under the same license as in geany.
+
+
+Ideas, questions, patches and bug reports
+=========================================
+
+Report them at https://github.com/geany/geany-plugins/issues
+
+--
+2010 Adrian Dimitrov
+dimitrov(dot)adrian(at)gmail(dot)com

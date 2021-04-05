@@ -1,0 +1,577 @@
+geany-plugins (1.37+dfsg-6) unstable; urgency=medium
+
+  * Source-only reupload to allow migration to testing
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 14 Feb 2021 05:01:58 +0800
+
+geany-plugins (1.37+dfsg-5) unstable; urgency=medium
+
+  [ Sandro Tosi ]
+  * Switch b-d from python-docutils to python3-docutils; Closes: #943092
+
+  [ Laurent Bigonville ]
+  * [60bb1ee] Reenable debugger, markdown and scope. They have been ported to
+    GTK3 and/or webkit2gtk-4.0 (Closes: #954791, LP: #1768412)
+
+ -- Chow Loong Jin <hyperair@debian.org>  Wed, 27 Jan 2021 13:37:22 +0800
+
+geany-plugins (1.37+dfsg-4) unstable; urgency=medium
+
+  * [c4830b6] Switch exuberant-ctags dependency to universal-ctags
+    universal-ctags is active development and is likely to be a better option.
+    Thanks to Lex Trotman <elextr@gmail.com>
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sat, 05 Dec 2020 03:54:27 +0800
+
+geany-plugins (1.37+dfsg-3) unstable; urgency=medium
+
+  * Reupload to include changes from 1.36+dfsg-1.1
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 15 Nov 2020 11:48:43 +0800
+
+geany-plugins (1.37+dfsg-2) unstable; urgency=medium
+
+  * Reupload to unstable
+
+ -- Chow Loong Jin <hyperair@debian.org>  Fri, 13 Nov 2020 22:56:58 +0800
+
+geany-plugins (1.37+dfsg-1) experimental; urgency=medium
+
+  * [91e7c9c] Add Frank's new key
+  * [e87b798] New upstream version 1.37+dfsg
+  * [72988f5] Reenable debugger plugin.
+    It now supports gtk3
+  * [7234a26] Update geany build-dep
+  * [6d1c470] Upgrade python-docutils build-dep to python3-docutils
+  * [3e8f293] Build-dep on libvte-2.91-dev.
+    The debugger and scope plugin require it via GP_CHECK_UTILSLIB_VTECOMPAT
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sat, 31 Oct 2020 00:45:58 +0800
+
+geany-plugins (1.36+dfsg-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  [ Sandro Tosi ]
+  * Switch b-d from python-docutils to python3-docutils; Closes: #943092
+
+  [ Laurent Bigonville ]
+  * Switch to enchant 2 (Closes: #951140)
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 15 Jun 2020 08:49:11 +0200
+
+geany-plugins (1.36+dfsg-1) unstable; urgency=medium
+
+  * [37ef461] New upstream version 1.36+dfsg
+
+ -- Chow Loong Jin <hyperair@debian.org>  Wed, 20 Nov 2019 15:22:21 +0800
+
+geany-plugins (1.35+dfsg-1) unstable; urgency=medium
+
+  * [d09dd62] Drop versioned dependency on geany.
+    This isn't needed, and causes issues with custom packages that wish to
+    provide geany.
+  * [a297676] New upstream version 1.35+dfsg
+
+ -- Chow Loong Jin <hyperair@debian.org>  Wed, 17 Jul 2019 22:10:34 +0800
+
+geany-plugins (1.34+dfsg-1) unstable; urgency=medium
+
+  * [9b0b10a] Add Frank's new GPG signing key
+  * [da7bcc9] New upstream version 1.34+dfsg
+  * [a4852e8] Add geany-plugin-vimode
+  * [0ba36d0] Update copyright file for vimode
+  * [df64366] Bump geany version dependency
+    geanylua requires a new symbol
+
+ -- Chow Loong Jin <hyperair@debian.org>  Wed, 27 Feb 2019 17:49:45 +0800
+
+geany-plugins (1.33+dfsg-1) unstable; urgency=medium
+
+  * [de8362d] New upstream version 1.33+dfsg
+  * [24c5dc6] Update paths to geany-plugin-latex files
+  * [dae6249] Update Vcs-* to salsa
+
+ -- Chow Loong Jin <hyperair@debian.org>  Tue, 17 Apr 2018 02:51:08 +0800
+
+geany-plugins (1.32+dfsg-3) unstable; urgency=medium
+
+  * [67b34ed] Disable webkit-using plugins: markdown, webhelper
+    webkitgtk-3.0 is not to be used as it is deprecated, but the port to
+    webkit2gtk-4.0 isn't ready yet.
+
+ -- Chow Loong Jin <hyperair@debian.org>  Thu, 11 Jan 2018 03:17:55 +0800
+
+geany-plugins (1.32+dfsg-2) unstable; urgency=medium
+
+  * [45d3de7] Acknowledge NMU (1.31+dfsg-1.1)
+  * [95f1573] Bump build-deps for geany gtk3
+  * [97f4a28] Reenable markdown and webhelper plugins (with webkitgtk3)
+  * [d97c8ef] Update build-deps for gtk3
+  * [e18e901] Disable debugger, geanypy, multiterm and scope plugins (gtk2-only)
+    (Closes: #790169)
+  * [64d99ad] Move # in depends to the column 0
+    dpkg-gencontrol doesn't like it in depends.
+
+ -- Chow Loong Jin <hyperair@debian.org>  Tue, 09 Jan 2018 03:35:45 +0800
+
+geany-plugins (1.32+dfsg-1) unstable; urgency=medium
+
+  * [491aa75] New upstream version 1.32+dfsg
+  * [9d5d843] Enable workbench plugin
+  * [80384e2] Add workbench plugin package
+  * [6136a43] Update debian/copyright for workbench/*
+  * [1b924fd] Install libgeanypluginutils into geany-plugins-common
+  * [3527d47] Refresh patches
+  * [c257cbb] Patch libgeanypluginutils into pkglibdir
+  * [67d1b0c] Bump geany build-dep to 1.32.
+    Some plugins require GEANY_API_VERSION >= 235
+  * [7efe71a] Drop projectorganizer icons.
+    They seem to have been removed
+  * [8407e98] Call dh_makeshlibs for geany-plugins-common
+  * [a3f5df0] Bump Standards-Version to 4.1.2
+
+ -- Chow Loong Jin <hyperair@debian.org>  Mon, 01 Jan 2018 03:44:37 +0800
+
+geany-plugins (1.31+dfsg-2) unstable; urgency=medium
+
+  * [273f86c] Enable the keyrecord plugin
+  * [29fa35a] Sort configure flags
+  * [eec7fb3] Update lintian-overrides FIXME line number
+
+ -- Chow Loong Jin <hyperair@debian.org>  Tue, 25 Jul 2017 03:30:43 +0800
+
+geany-plugins (1.31+dfsg-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Disable the devhelp, markdown and webhelper plugins due to
+    their dependency on an obsolete WebKitGTK+ version.
+    (Closes: #790201)
+
+ -- Adrian Bunk <bunk@debian.org>  Sun, 30 Jul 2017 23:54:55 +0300
+
+geany-plugins (1.31+dfsg-1) unstable; urgency=medium
+
+  * [b9b8fe5] New upstream version 1.31+dfsg
+  * [b28dd25] Fix spelling error (miscellanous -> miscellaneous)
+  * [ab015b4] Add lintian override for FIXME in description.
+    It's part of the description, not a placeholder
+  * [764b33d] Add license paragraph for keyrecord/*
+
+ -- Chow Loong Jin <hyperair@debian.org>  Tue, 25 Jul 2017 00:55:40 +0800
+
+geany-plugins (1.30+dfsg-1) experimental; urgency=medium
+
+  * [c8335f2] Imported Upstream version 1.30+dfsg
+  * [a5b484a] Bump geany build-dep version
+
+ -- Chow Loong Jin <hyperair@debian.org>  Mon, 13 Mar 2017 14:19:23 +0800
+
+geany-plugins (1.29+dfsg-1) unstable; urgency=medium
+
+  * [2f7dee6] Imported Upstream version 1.29+dfsg
+  * [da4aa95] Update copyright file geanylipsum rename
+  * [c9ee1f6] Update packaging for geanylipsum rename
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sat, 19 Nov 2016 15:35:08 +0800
+
+geany-plugins (1.28+dfsg-1) unstable; urgency=medium
+
+  [ Chow Loong Jin ]
+  * [cea6197] Update geany-plugins dependencies (LP: #1572107)
+  * [276bc98] Imported Upstream version 1.28+dfsg
+  * [f91dfac] Update debian/copyright for sendmail dir rename
+  * [fc093f1] Update packaging for geanysendmail rename
+  * [2642703] No-change bump of Standards-Version to 3.9.8
+  * [a7c1a75] Override false spelling error in extrasel
+
+  [ Evgeni Golov ]
+  * [450d312] update vcs fields
+  * [e696136] drop waf from debian/copyright -- upstream stopped using waf
+
+ -- Evgeni Golov <evgeni@debian.org>  Mon, 22 Aug 2016 20:54:29 +0200
+
+geany-plugins (1.27+dfsg-2) unstable; urgency=medium
+
+  * [75ebffc] Drop build/cache (it's causing autoreconf to fail)
+    (Closes: #819889)
+
+ -- Chow Loong Jin <hyperair@debian.org>  Mon, 11 Apr 2016 21:20:43 +0800
+
+geany-plugins (1.27+dfsg-1) unstable; urgency=medium
+
+  * [d6ab6d6] Exclude devhelp icon.
+    They're old upstream icons, licensed under CC-BY-2.0 and
+    not-dfsg-compatible.
+  * [93a7827] Imported Upstream version 1.27+dfsg
+  * [682d513] Patch devhelp to tell it where DHPLUG_DATA_DIR is
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 20 Mar 2016 20:09:51 +0800
+
+geany-plugins (1.27-1) unstable; urgency=medium
+
+  * [3d08475] Update list of plugins in geany-plugins deps
+  * [48499dd] Imported Upstream version 1.27
+  * [4c05277] d/copyright: Add lineoperations/* paragraph
+  * [1e5324d] Add line operations plugin
+  * [951e573] Refresh patch
+  * [0234e0f] Update install files
+  * [90fe8e4] Ignore /usr/share/doc/geany-plugins/
+  * [185955f] Ignore .la files
+  * [68057bc] Update geany-plugin-py.install.
+    Upstream has relocated the python plugins to /usr/lib/$arch/geany with
+    the rest of the plugins.
+  * [f0897f8] Fix spelling error in package description
+  * [798a693] Drop geany-plugin-gproject from main metapackage
+    gproject is the transitional package for projectorganizer
+  * [83bdfd0] No-change bump of Standards-Version to 3.9.7
+
+ -- Chow Loong Jin <hyperair@debian.org>  Mon, 14 Mar 2016 02:55:34 +0800
+
+geany-plugins (1.26+dfsg-1) unstable; urgency=medium
+
+  [ Evgeni Golov ]
+  * [a5bf5ac] Imported Upstream version 1.26~git20151108+dfsg
+  * [5db055a] drop libgit_023.patch
+  * [0abda4b] bump geany B-D
+
+  [ Chow Loong Jin ]
+  * [787ebdb] Add Frank's key to upstream/signing-key.asc
+  * [76e4391] Use Files-Excluded and uscan instead of get-orig-source
+  * [ee1e4a2] Imported Upstream version 1.26+dfsg
+
+ -- Chow Loong Jin <hyperair@debian.org>  Wed, 25 Nov 2015 11:04:56 +0800
+
+geany-plugins (1.25+dfsg-2) unstable; urgency=medium
+
+  * add upstream patch to fix FTBFS with libgit2 0.23 (Closes: #798870)
+  * add temporary dep on libpython2.7-dev for GeanyPy (Closes: #778552)
+
+ -- Evgeni Golov <evgeni@debian.org>  Sun, 11 Oct 2015 13:46:35 +0200
+
+geany-plugins (1.25+dfsg-1) unstable; urgency=medium
+
+  * [bc2321a] Imported Upstream version 1.25+dfsg
+
+ -- Evgeni Golov <evgeni@debian.org>  Sun, 12 Jul 2015 20:19:46 +0200
+
+geany-plugins (1.25~20150705gitabc9808+dfsg-1) experimental; urgency=medium
+
+  * [64bec0d] Imported Upstream version 1.25~20150705gitabc9808+dfsg
+  * [952275d] make generation of dfsg tarballs more robust
+  * [f9351d1] sort enable/disable plugins
+  * [e1bf05d] update enable/disable for 1.25
+  * [520af33] drop patches that were applied in 1.25
+  * [a394e6a] bump build-depends on geany
+  * [5b2b16d] add build-depends on libgit2-dev
+  * [ac34b99] rename geany-plugin-gproject to geany-plugin-projectorganizer
+  * [68aaa9b] add binary packages for automark, ctags, git-changebar and
+    overview
+  * [3104f37] update debian/copyright
+  * [54026a8] Standards-Version: 3.9.6
+  * [5f352a6] add new packages to geany-plugins metapackage
+
+ -- Evgeni Golov <evgeni@debian.org>  Sun, 05 Jul 2015 19:51:07 +0200
+
+geany-plugins (1.24+dfsg-5) unstable; urgency=medium
+
+  * [a032a70] debugger: Fix crash with GDB 7.7.
+    Thanks to Colomban Wendling <ban@herbesfolles.org>
+
+ -- Evgeni Golov <evgeni@debian.org>  Wed, 22 Oct 2014 22:22:55 +0200
+
+geany-plugins (1.24+dfsg-4) unstable; urgency=medium
+
+  * [fd534c9] debugger: Fix internal EnvTree state after plugin reload.
+    Thanks to Colomban Wendling <ban@herbesfolles.org>
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 21 Oct 2014 21:47:42 +0200
+
+geany-plugins (1.24+dfsg-3) unstable; urgency=medium
+
+  * [e23c57c] fix typo in geany-plugin-tableconvert description
+    (Closes: #698167)
+  * [9877b5e] debugger: fix "Attempt to unlock mutex that was not locked"
+    (Closes: #763050)
+  * [c58a5f1] addons: fix typos in the package description.
+    Thanks to Pascal De Vuyst <pascal.devuyst@gmail.com> (Closes: #757471)
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 21 Oct 2014 21:20:53 +0200
+
+geany-plugins (1.24+dfsg-2) unstable; urgency=medium
+
+  [ Chow Loong Jin ]
+  * [6e4e828] Add --enable flags for new plugins
+
+  [ Evgeni Golov ]
+  * [431a28d] add python-gtk2-dev B-D, needed for geanypy
+  * [f2dc92e] add package definitions for the new plugins
+  * [10567a7] properly link geanypy against gmodule, patch by upstream
+  * [de7dfab] add the new plugins to debian/copyright
+  * [988f71a] use canonical git urls
+  * [c1e261c] Standards-Version: 3.9.5
+  * [6fa8471] it's Perl and Python, not perl and python
+  * [a0558cb] remove unused lintian overrides
+  * [88ee768] fix compilation on GNU/Hurd
+
+ -- Chow Loong Jin <hyperair@debian.org>  Tue, 22 Apr 2014 18:55:08 +0200
+
+geany-plugins (1.24+dfsg-1) unstable; urgency=medium
+
+  [ Evgeni Golov ]
+  * [0aa0db1] add signature check for downloads
+  * [f152c29] Imported Upstream version 1.24+dfsg
+  * [4e0e7f4] we need gean 1.24 to build geany-plugins 1.24
+
+  [ Chow Loong Jin ]
+  * [ccfcba3] Use small compiled program to dump GEANY_ABI and GEANY_API.
+    Geany 1.24.1 contains a GEANY_ABI that isn't just a simple integer -- it's an
+    expression that needs to be resolved now.
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 20 Apr 2014 01:34:06 +0800
+
+geany-plugins (1.23+dfsg-3) unstable; urgency=low
+
+  * No-change upload to unstable now that freeze is over
+
+ -- Chow Loong Jin <hyperair@debian.org>  Fri, 10 May 2013 15:45:38 +0800
+
+geany-plugins (1.23+dfsg-2) experimental; urgency=low
+
+  * [c25de03] Add reference to /usr/share/common-licenses/GPL-1
+  * [f1273ba] Include buildflags.mk.
+    This fixes hardening-no-relro, which was caused by us overriding LDFLAGS.
+  * [db37f6b] Drop hardening-no-relro from lintian overrides
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 31 Mar 2013 18:02:38 +0800
+
+geany-plugins (1.23+dfsg-1) experimental; urgency=low
+
+  [ Chow Loong Jin ]
+  * [d617de5] Imported Upstream version 1.23
+  * [fa625d4] Update configure flags
+
+  [ Evgeni Golov ]
+  * [ea13bdb] drop patch against geanylatex, applied upstream
+  * [e1d875e] drop geany-plugin-gdb, it's not shipped upstream anymore
+  * [4c980c5] enable the markdown plugin
+  * [c8f6e33] create packages for the new plugins and install them there
+  * [aac1b14] load help files from Debian's locations
+  * [64e1be8] use libmarkdown instead of peg markdown
+  * [762e8e0] update d/copyright for the added and removed plugins
+
+  [ Chow Loong Jin ]
+  * [c127275] Bump geany build-dep
+  * [e1a066a] Override hardening-no-relro
+  * [22845f0] Bump Standards-Version to 3.9.4
+  * [8f028e0] Add MIT and GPL-1+ paragraphs
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 31 Mar 2013 01:43:01 +0800
+
+geany-plugins (1.22+dfsg-2) experimental; urgency=low
+
+  * [84061f4] Update copyright file
+  * [418a783] Enable parallel builds
+
+ -- Chow Loong Jin <hyperair@debian.org>  Thu, 12 Jul 2012 18:26:52 +0800
+
+geany-plugins (1.22+dfsg-1) experimental; urgency=low
+
+  * [8cc36bf] Add missing epoch to libvte-dev build-dep
+  * [62e2e05] Imported Upstream version 1.22
+  * [f266578] Create packages for new plugins
+    - geany-plugin-devhelp
+    - geany-plugin-geniuspaste
+    - geany-plugin-miniscript
+    - geany-plugin-multiterm
+  * [2d89ff4] Update geany version in build-deps
+  * [372a69e] Drop all patches (applied upstream)
+  * [cbc8c50] Add build-deps for devhelp and multiterm plugins
+    - libwnck-dev
+    - libgconf2-dev
+    - valac
+  * [62b114a] Update g-p-prettyprinter.install
+    pretty-print.so was renamed to pretty-printer.so
+  * [aaf46de] Patch geanylatex to install its docs correctly
+  * [ec6b40a] Use +dfsg instead of .dfsg
+
+ -- Chow Loong Jin <hyperair@debian.org>  Thu, 12 Jul 2012 17:07:42 +0800
+
+geany-plugins (0.21.1.dfsg-4) unstable; urgency=low
+
+  * [f53b3da] Use new project preference open/close signals in the
+    gproject plugin.
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 26 Jun 2012 21:02:26 +0200
+
+geany-plugins (0.21.1.dfsg-3) unstable; urgency=low
+
+  [ Chow Loong Jin ]
+  * [d75948f] Fix dversionmangle in debian/watch
+
+  [ Evgeni Golov ]
+  * [4fd29dc] Build-Depend on dh-autoreconf >= 4 as this introduced
+    --as-needed
+  * [e7ec0a4] move geany-abi Depends from geany-plugins-common to the
+    individual plugins
+  * [36bbc4f] Standards-Version: 3.9.3
+  * [c0e3469] Build-Depends: debhelper (>= 9)
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 19 Jun 2012 20:47:33 +0200
+
+geany-plugins (0.21.1.dfsg-2) unstable; urgency=low
+
+  * [9e2298b] Add gmodule-2.0 to geanylua deps.
+    This fixes an FTBFS while linking geanylua due to missing symbols in Ubuntu
+    Precise. (LP: #935110)
+  * [becc080] Use dh-autoreconf.
+    Also drop 99_ltmain_as-needed.patch as dh-autoreconf handles the patching.
+
+ -- Chow Loong Jin <hyperair@debian.org>  Sun, 19 Feb 2012 02:03:04 +0800
+
+geany-plugins (0.21.1.dfsg-1) unstable; urgency=low
+
+  * [1439d18] Add Enhances: geany to all plugins and metapackage
+  * [aefccbd] Fix typo in specifying geany:API substvar
+  * [c86590d] Add version to libvte-dev build-dep
+  * [dff6cc0] Implement repacking of tarball to remove waf
+  * [ba9f6b4] Imported Upstream version 0.21.1.dfsg (Closes: #654467)
+  * [1568b1f] Change my email address
+
+ -- Chow Loong Jin <hyperair@debian.org>  Fri, 06 Jan 2012 02:11:03 +0800
+
+geany-plugins (0.21.1-3) unstable; urgency=low
+
+  * [ddaf0ad] add new packages to Depends of the geany-plugins metapackage
+  * [abe38e1] Fix FTBFS due to hardcoded amd64 path (Closes: #649502)
+
+ -- Evgeni Golov <evgeni@debian.org>  Mon, 21 Nov 2011 19:16:08 +0100
+
+geany-plugins (0.21.1-2) unstable; urgency=low
+
+  * [304083c] call dh_install with --list-missing
+  * [b89b54d] fix linking of debugger and geanypg with --as-needed
+  * [412c733] add libgpgme11-dev and libvte-dev to build-depends
+  * [5d3bb00] enable new plugins
+  * [9e7f591] create packages for new plugins
+  * [ab1e03c] install more docs into the packages
+  * [b57a5ea] update copyright
+
+ -- Evgeni Golov <evgeni@debian.org>  Sun, 20 Nov 2011 17:26:23 +0100
+
+geany-plugins (0.21.1-1) unstable; urgency=low
+
+  [ Evgeni Golov ]
+  * [f4007f2] Imported Upstream version 0.21.1
+  * [5ff622d] install plugins from/to /usr/lib/<arch-triplet>/geany
+  * [75411d7] bump build-dep to geany 0.21
+  * [db92155] depend on the virtual geany-abi-XX package
+  * [dd84769] switch to 3.0 (quilt)
+  * [3ab76d7] drop readme.source
+  * [233d44c] refresh patch against 0.21.1
+  * [030bec1] add lintian override for
+              documentation-package-not-architecture-independent
+  * [aba43d7] use debhelper compat level 9
+
+ -- Evgeni Golov <evgeni@debian.org>  Thu, 17 Nov 2011 20:03:24 +0100
+
+geany-plugins (0.20-3) unstable; urgency=low
+
+  [ Chow Loong Jin ]
+  * [7207010] Don't install .la files (Closes: #621163)
+
+  [ Evgeni Golov ]
+  * [fd8d00d] Swap libwebkit-dev and libwebkitgtk-dev (Closes: #635408)
+  * [b274e54] Don't ship /usr/lib/geany-plugins/geanylua/libgeanylua.la either
+  * [8044cb8] fix lintian's debian-watch-contains-dh_make-template
+  * [b8f62a6] Standards-Version: 3.9.2
+  * [93c2d9f] fix lintian's description-synopsis-starts-with-article
+
+ -- Evgeni Golov <evgeni@debian.org>  Tue, 26 Jul 2011 12:06:28 +0200
+
+geany-plugins (0.20-2) unstable; urgency=low
+
+  * [2a4fca9] Add updatechecker and webhelper plugin packages
+  * [8cdf50c] Update build-depends
+  * [e4de909] Add enable flags for all plugins during configure
+  * [bdfaa13] No change Standards-Version bump from 3.9.0 to 3.9.1
+  * [4c528b3] Update copyright file
+  * [88ad6ef] Revert "Disable gendoc for Squeeze."
+  * [a7dac51] Revert "Disable *all* the new plugins for now."
+  * [c096ce6] Depend on libwebkit-dev or libwebkitgtk-dev
+  * [efac459] Disable dh_makeshlibs
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Wed, 30 Mar 2011 23:01:45 +0800
+
+geany-plugins (0.20-1) unstable; urgency=low
+
+  * [71f0af3] New upstream release
+    + Fixes build failuers with Geany 0.20 (Closes: #618078)
+  * [8b2a095] Update copyright file
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Wed, 30 Mar 2011 01:17:20 +0800
+
+geany-plugins (0.19-1) unstable; urgency=low
+
+  [ Chow Loong Jin ]
+  * New upstream release
+    + Builds against geany 0.19 (Closes: #590346, #587141)
+  * debian/control, debian/rules:
+    + Shift geany dependency to geany-plugins-common instead, since it's a
+      common dependency for all plugins
+  * debian/control:
+    + Add new packages for codenav, extrasel, gendoc, insertnum,
+      prettyprinter and treebrowser plugins
+    + Update build-deps:
+      - Bump geany dependency to 0.19. (Closes: #573318)
+      - Add libctpl-dev and python-docutils for geanygendoc
+      - Add libxml2-dev for prettyprinter
+    + No-change bump of Standards-Version from 3.8.3 to 3.9.0
+    + Tighten dependency on geany-plugins-common (= instead of >=)
+    + Add a Breaks on all geany-plugin-* packages prior to this version to
+      ensure geany-plugins-common and geany-plugin-* versions match
+  * debian/geany-plugin-codenav.{docs,install},
+    debian/geany-plugin-extrasel.{docs,install},
+    geany-plugin-gendoc.{docs,install},
+    geany-plugin-insertnum.{docs,install},
+    geany-plugin-prettyprinter.install
+    geany-plugin-treebrowser.{docs,install}:
+    + Install plugin files into individual packages
+
+  [ Evgeni Golov ]
+  * debian/control:
+    + Disable the new plugins for now.
+      If you want to build them localy, just uncomment them.
+    + Don't D-B on libctpl-dev (it's not in Debian yet).
+    + Add myself to Uploaders.
+    + Standards-Version: 3.9.1
+  * debian/copyright:
+    + Update to include latest plugins.
+
+ -- Evgeni Golov <evgeni@debian.org>  Sat, 04 Sep 2010 23:05:00 +0200
+
+geany-plugins (0.18-2) unstable; urgency=low
+
+  * debian/control:
+    + Corrected spelling error in geany-plugin-addons' description
+  * debian/control,
+    debian/geany-plugin-doc.*,
+    debian/geany-plugin-prj.*:
+    + Added geany-plugin-doc and geany-plugin-prj packages
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Wed, 11 Nov 2009 07:35:44 +0800
+
+geany-plugins (0.18-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: Bump Standards-Version to 3.8.3 (no changes)
+  * debian/(control, rules):
+    + Automatically get Geany version for binary depends during build time.
+  * debian/README.source: Copied from /usr/share/doc/quilt
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Sat, 07 Nov 2009 16:18:37 +0800
+
+geany-plugins (0.17.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #536499)
+
+ -- Chow Loong Jin <hyperair@ubuntu.com>  Fri, 10 Jul 2009 22:56:41 +0800

@@ -1,0 +1,11 @@
+Document: geanylatex-manual
+Title: Geany LaTeX manual
+Abstract: GeanyLaTeX is a plugin for the Geany IDE to improve work with LaTeX.
+Section: Typesetting
+
+Format: HTML
+Index: /usr/share/doc/geany-plugin-latex/latex.html
+Files: /usr/share/doc/geany-plugin-latex/*.html
+
+Format: PDF
+Files: /usr/share/doc/geany-plugin-latex/latex.pdf.gz

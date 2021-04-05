@@ -1,0 +1,458 @@
++---------------------------+
+| KNOWN BUGS                |
++---------------------------+
+
+	(FIXED) http://sourceforge.net/tracker/?func=detail&aid=3034450&group_id=222729&atid=1056532
+	(FIXED) CRYTICAL warning when unloading the plugin
+		"CRITICAL	: g_object_ref: assertion `object->ref_count > 0' failed"
+	(FIXED) Double click on bookmarks, do nothing
+	(FIXED) show/hide hidden files not working on Windows
+	(FIXED) "Go Up" not working if the current path ends with slash // thanks to <dmaphy> for the report
+	* It is impossible to rename file/directory in Windows, dunno why
+	* It is impossible to delete file/directory in Windows, dunno why
+
+
++---------------------------+
+| TODO                      |
++---------------------------+
+
+	(DONE) codestyle improve to be same as other parts as geany`s
+	(DONE) configuration dialog
+	(DONE) tracking path to current focused document (work only for refreshed directories)
+	* In windows can choice between devices (C:\, D:\,...)
+	(DONE) Saving state of Showbars in config file everytime where is changed
+	(DONE) oneclick document opening
+	(DONE) filter separating ex.: "*.c;*.cpp;*.h"
+	(DONE) Complete following path from current document view
+	(DONE) Hide object files as native filebroser (*.o;*.a;*.so;*.dll;*.lib..)
+	(DONE) Using font from geany settings for sidebar
+	(REJECTED) Migrating to stash
+	(DONE) Adding keybindings for renaming/deleting/refreshing
+	(DONE) Add option to change bars position // requested by <dmaphy>
+	(DONE) Add option to autorename point the newest created objects by the Treebrowser
+
+
++-------------------------------+
+| Development release ChangeLog |
++-------------------------------+
+
+
+08-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Added "Find in Files" option to right click context
+		(patch by oly, thanks)
+
+23-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fix an issue with tab switching with unsaved documents.
+		(patch from Frank Lanitz, thanks)
+
+
+14-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+
+
+14-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Try to prevent from potentially frees string literals (reported by kugel)
+
+
+14-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* One year release (from the idea to working plugin, thanks for all for the support)
+
+	* src/treebrowser.c
+		Completed file tracking functionality, now tracking and files that are not in the cached directories
+			This is the last TODO point from the started idea. Today is it exactly one from the first release.
+		Make default terminal for Windows always be "cmd"
+		Fixed directory separator for when chrooting be G_DIR_SEPARATOR_S not always "/"
+
+
+12-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		When Windows detected, it is creating config file (if it needen) with Explorer for external viewer
+
+
+10-02-2011 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Added function to close directory childrens (patch by Oliver Marks (#3175562), thanks)
+		Replaced TreeBrowser`s hidden file check with the native filebrowser check (thanks to geany`s team),
+			this may be fixing the bug #3157070 (Treebrowser plugin crashes Geany with files ending in ~)
+
+
+14-12-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed nighty compilation error (reported by Enrico Tröger)
+
+
+10-12-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* ChangeLog
+		Update
+	* README
+		Update
+	* src/treebrowser.c
+		Fixed warning: ISO C90 forbids mixed declarations and code (in check_hidden())
+		Fixed warning: 'return' with no value, in function returning non-void (in treebrowser_checkdir())
+		Fixed compilation warning with strlen()
+		Description changed (taken from ubuntu`s repos)
+
+
+10-12-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	Bumped version 0.20
+		Now will following the version number of geany
+
+
+09-12-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed wrong colors in addressbar when last directory wasn`t existing,
+			but then chrooting.
+		"Right click" menu rearanged to looks more logically
+
+
+01-11-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Added dialog question when creating/removing file, to prevent from losing
+			target files if they exists.
+
+
+01-11-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* ChangeLog
+		Revision 1688, Modified Thu Oct 28 21:02:33 2010 UTC by colombanw
+
+		Build system: don't force building the Treebrowser plugin
+
+		If the dependencies of the Treebrowser plugin are not met, simply
+		disable the plugin rather than abort the whole build.
+
+		Also add checks for creat(), sys/types.h, sys/stat.h and fcntl.h, and
+		fix the check for GIO to correctly handle the case it's not available.
+
+
+25-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed wrong expaned status of the directories
+
+
+17-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed order of includes with gio.h
+			(Patch by Enrico Troger)
+
+
+17-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed memory leaks
+			(Patch by Colomban Wendling)
+		Fixed missing GIcon compilation error in gtk versions before 2.14
+		Fixed some compilation warnings on unused variables
+		Fixed translation string _("Empty") to be _("(Empty)")
+
+
+17-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Refactor a bit check_hidden() not to leak memory
+			(Patch by Colomban Wendling)
+
+
+16-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed gio troubles (BIG THANKS TO Colomban Wendling)
+
+
+16-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed unref data in utils_pixbuf_from_path()
+		Changed default icon for bookmarks to GTK_STOCK_HOME
+
+
+16-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Added new option to show mime-type icons (can be configured by the preferences)
+			(Idea from Colomban Wendling`s mail)
+
+
+09-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed possible segfault when deleting file which is in bookmarks tree
+		Fixed wrong Show toolbars state when it turned off from the plugin configuration
+		Fixed collapsing and preloading bookmarks list when renaming, and deleting objects
+	* README
+		Try to add screenshot for the website
+
+
+09-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixes possible segfaults with bookmarks in ubuntu 10.10
+	* README
+		Update and fixes website compitables
+
+
+09-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed translatable info
+			(thanks to Frank Lanitz  <frank(at)frank(dot)uvena(dot)de> for patch)
+		Fixed fixed bad code and compilation warning in unused vars
+			(thanks to Frank Lanitz  <frank(at)frank(dot)uvena(dot)de> for patch)
+		Fixed some compilation warnings
+		Try to prevent from "ISO C90 forbids mixed declarations and code" compile message
+
+
+08-10-2010 	Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+	*  src/treebrowser.c
+		Replace deprecated PLUGIN_KEY_GROUP macro.
+
+
+08-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Added keybindings for renaming/deleting/refreshing
+			(from the todo list)
+		Added: now when option for show hidden files is disabled, it don`t show
+			files that ends with '~'
+		Fixed possible segfault when option "Hidding object files" is enabled
+			(idea from native filebrowser plugin)
+
+
+05-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed wrong english message for not existing directory
+			(thanks to Dimitar Zhekov (dimitar.zhekov@gmail.com))
+		Added option to autorename point the newest created objects by the Treebrowser
+			Improved autorename focus while renamed is successful then close old and
+			  open new file;
+		Improved dialog for nonexisting folder
+			(now apear only when toolbars is hidden)
+		Fixed some warnings when compiling
+		Fixed gtk_tree_store_iter_is_valid() warning when loading the plugin
+
+
+03-10-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed bugs in Bookmarks
+			(directory expander, renaming and deleting files/directories)
+		Fixed bug with empty path to chroot
+		Fixed showing wrong tooltips in settings dialog
+		Merged show_bars and show_bars_at_top in one combobox
+			(I think that this is more suitable)
+		Fixed bug in show/hide toolbar
+		Removed option for change how deep directories will be scanned
+			(I think that this is unusable and in some cases make geany to freezy)
+		Removed option "ON_EXPAND_REFRESH" - This is unnessecary already
+
+
+19-08-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Applied patch from Colomban Wendling
+		to fix issue with creat() declaration
+		THANKS
+
+
+16-05-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Fixed Bookmarks state when refreshing the tree
+
+
+25-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Added option to change bars position (Top or Bottom)
+
+
+25-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		Menu elements are inactive instands of hidden
+		Added experimental bookmarks view
+		Added option to show/hide tree lines
+		Added option to copy the uri into clipboard
+		Added option to search into the view by the name // thanks to native filebrowser
+		Added tooltips with uri // thanks to native filebrowser
+		Added option to open terminal
+		Applied patch from Enrico to fix gtk+-2.8 compitable for tree lines
+		Fixed "Go Up" not working if the current path ends with slash
+
+
+19-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		added clear icon in filter // thanks to native filebrowser plugin
+		using font from geany settings for sidebar  // thanks to native filebrowser plugin
+
+
+17-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		added option to hide object files *.so;*.obj;*.so;*.dll;*.a;*.lib
+		fixed a few warnings
+
+
+14-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		strings cleanup
+		(This is version 0.2, because the plugin become 2 months old :)
+
+
+11-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed bug when turned off "On expand refresh"
+		fixed runtime crytical warnings reported in http://nopaste.geany.org/p/m3f018a3e
+			and thanks to Enrico for help with gdb :)
+		added empty element when directory not filled, and changed default option values
+			for "On expand refresh"
+
+
+10-04-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed wrong root refresh on delete and create when objects are in toplevel
+		some string changed in prefs dialog
+		added option to close document if it is deleted from treebrowser
+		highlighing addressbar if typed directory not exists
+		make right click menu dynamic
+
+
+31-03-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed saving state of Show the toolbars when starting Geany
+		moving settings saving in separated function - save_settings()
+		now changing root directory when change current project
+		fixed bug when 'Right click->Refresh'
+
+
+30-03-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed expaned state when create/delete/remove files or directories
+
+
+26-03-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed bug with 'On expand, refresh.'
+		now right click not select item from list
+
+
+23-03-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		added option when expanding to refresh directory tree
+		fixed complier warning with glib
+
+
+22-03-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed some bugs
+		fixed few old compiler warnings
+		applied few patches from Enrico Troger (code improvement)
+
+
+21-03-2010 	Adrian Dimitrov 		<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fixed few compile warnings with glib and unused vars
+		fixed expanding, now directory is open when it click filling for first time
+		fixed possible segfault on start
+		added menu option to go up
+		fixed duplicated vbox varname now is 'sidebar_vbox'
+		added configuration dialog
+		fixed externally open menu
+		added option to close bars in bars
+		added options to expand/collapse all from menu
+		fixed compile error with glib < 2.12.0
+		added option to go current doc path in menu
+
+
+20-03-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		clear comments
+		changelog update
+		if filter start with '!;' then filters are temporary reversed
+			ex.: '!;*.c;*.h' will show all expect .c and .h files
+
+
+19-03-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		clear up the syntax and function names
+		fixed many bugs with renaming/creating/deleting objects
+		added multiple filtering criterias (separated by ';')
+		added oneclick document opening
+
+
+18-03-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		add option to reverse filematch filter
+
+
+17-03-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		migrated to dialogs_show_msgbox and dialogs_show_question
+		fix problem with path initialization
+
+
+16-03-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fix compilation warning messages
+		fix some crytical errors
+
+
+21-02-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		fix patch applyed from Enrico about initial directories
+
+
+20-02-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		made strings suitable for localization
+		fixed problem with default chroot
+		added option to disable chrooting on double click on directory
+
+
+17-02-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		added options to add/remove/rename directories and files
+		code cleanup
+
+
+14-02-2010 	Adrian Dimitrov 	<dimitrov.adrian@gmail.com>
+
+	* src/treebrowser.c
+		initial, with base options

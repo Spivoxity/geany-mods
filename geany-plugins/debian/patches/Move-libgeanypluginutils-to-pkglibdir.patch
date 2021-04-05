@@ -1,0 +1,21 @@
+From: Chow Loong Jin <hyperair@debian.org>
+Date: Sat, 30 Dec 2017 23:19:28 +0800
+Subject: Move libgeanypluginutils to pkglibdir
+
+---
+ utils/src/Makefile.am | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/utils/src/Makefile.am b/utils/src/Makefile.am
+index 250ec8f..786c169 100644
+--- a/utils/src/Makefile.am
++++ b/utils/src/Makefile.am
+@@ -1,6 +1,7 @@
+ include $(top_srcdir)/build/vars.build.mk
+ 
+-lib_LTLIBRARIES = libgeanypluginutils.la
++gp_pkglibdir = $(GP_PKGLIBDIR)
++gp_pkglib_LTLIBRARIES = libgeanypluginutils.la
+ 
+ libgeanypluginutils_la_SOURCES = \
+ 	filelist.h \

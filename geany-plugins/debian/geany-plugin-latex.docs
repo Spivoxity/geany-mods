@@ -1,0 +1,5 @@
+latex/README
+latex/doc/*.html
+latex/doc/latex.css
+latex/doc/latex.pdf
+latex/doc/img/

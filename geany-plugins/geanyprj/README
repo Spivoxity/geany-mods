@@ -1,0 +1,138 @@
+.. |(version)| replace:: 0.6
+
+========
+geanyprj
+========
+
+.. contents::
+
+About
+=====
+
+geanyprj is alternative project manager for Geany fast light IDE.
+
+Why it was created?
+-------------------
+
+Open source is great, there are a lot of nice sources that you can use for your projects
+in Internet. But there are also a lot of crappy sources and when you want steal something
+you need to check if it is good or not. Ability to jump to definition/declaration and back is
+great help for such task. But no other text editor or IDE I know allow this without a lot of setuping.
+You have to create/import project add files. When you finish with one project
+you need to close it and repeat procedure for all other. Great time wasting. If you are checking
+about 10 potential places you want steal code from, you won't create any project and don't
+get "jump to definition/declaration" just because it is too much bother.
+
+geanyprj aims to provide "jump to definition/declaration" functions with as little setup as possible.
+
+Why different project manager, why don't improve existing code in Geany?
+------------------------------------------------------------------------
+
+That's because current project manager in Genny more about sessions. It is not something real
+project manager should do (IMHO). It allow/require user manually open/close project and allow
+to store project files in different locations from project sources.
+
+geanyprj takes different approach:
+
+1) Never save session information (this way project files can be stored in version control without
+constant noise from changes of opened files or cursor position)
+
+2) Never open/close project manually. If .geanyprj file is found somewhere up in path it will be
+opened automatically.
+
+Usage
+=====
+
+geanyprj add "Tools->Project" menu and sidebar "Project" tab.
+
+Project properties
+------------------
+
+Name - This is just project name you will see it in status window on open/close project.
+
+Location - This is directory where .geanyprj file will be saved.
+
+Base Path - If defined Geany will use this directory as current directory for make and run commands
+
+Generate file list on load - This option tell Geany to recreate project file list on project load using
+selected type. If it is unchecked you should manually select files you want to be parsed by tagmanager.
+
+Type - This is type of files that needed to be parsed by tagmanager.
+
+* All - All files that is known to Geany
+* C/C++ - This match any C or C++ files (.c, .cpp, .cxx, .h etc.)
+* C - This match only C files  (.c, .h)
+* Python - This match python files (.py)
+* None - This doesn't match any files
+
+
+Example of usage
+----------------
+
+Lets see plugin work at Geany source code example:
+
+1) Download geany-0.15.tar.gz (http://prdownloads.sourceforge.net/geany/geany-0.15.tar.gz?download)
+
+2) Unpack it somewhere, for example in ~/src/geany-0.15
+
+3) Open ~/src/geany-0.15/configure.in
+
+4) Click "Tools->Project->New Project", and click "Create" button
+
+ This will create and save .geanyprj file in ~/src/geany-0.15. From now, every time you
+ open file from ~/src/geany-0.15 dirrectory or it's subdirrectory .geanyprj will be opened.
+ So next time you don't have to create or open project manually.
+
+5) Open any geany source code code file
+
+ "go to tag declaration/definition" should work for any geany function. (Not limited to opened files).
+
+6) Now you open file that doesn't belong to Geany. For example ~/src/myprj/a.c Geany project will be closed. If ~/src/myprj/.geanyprj exists it will be opened as current project.
+
+7) Switching back to any Geany file will open Geany project again.
+
+
+License
+=======
+
+geanyprj is distributed under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 3 of the
+License, or (at your option) any later version. A copy of this license
+can be found in the file COPYING included with the source code of this
+program.
+
+Ideas, questions, patches and bug reports
+=========================================
+
+If you add something, or fix a bug, please send a patch (in 'diff -u'
+format) to the geany mailing list or to one of the authors listed bellow.
+
+Coding
+======
+
+Use static functions where possible.
+Try to use GLib types and functions - e.g. g_free instead of free and
+try to use only GLib 2.6 and GTK 2.6 functions.
+
+Style
+=====
+
+The file indent-all.sh contains information about
+the current code style. Run this script before commit.
+
+Download
+========
+
+geanyprj is part of the combined Geany Plugins release.
+For more information and downloads, please visit
+http://plugins.geany.org/geany-plugins/
+
+Development Code
+================
+
+Get the code from::
+
+	https://github.com/geany/geany-plugins
+
+2007-2008 by Yura Siamashka
+yurand2(at)gmail(dot)com

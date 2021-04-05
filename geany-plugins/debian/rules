@@ -1,0 +1,105 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/buildflags.mk
+
+export LDFLAGS += -Wl,--as-needed -Wl,-z,defs
+
+GEANY_VERSION = $(shell pkg-config --modversion geany)
+
+override_dh_autoreconf:
+	rm -rf build/cache
+	dh_autoreconf --as-needed
+
+# specify libexecdir to avoid cascading geany-plugins directories in /usr/lib
+override_dh_auto_configure:
+	dh_auto_configure --				\
+		--libexecdir='$${exec_prefix}/lib'	\
+		--disable-peg-markdown			\
+		--enable-addons				\
+		--enable-autoclose			\
+		--enable-automark			\
+		--enable-codenav			\
+		--enable-commander			\
+		--enable-debugger			\
+		--enable-defineformat			\
+		--disable-devhelp			\
+		--enable-geanyctags			\
+		--enable-geanydoc			\
+		--enable-geanyextrasel			\
+		--enable-geanygendoc			\
+		--enable-geanyinsertnum			\
+		--enable-geanylatex			\
+		--enable-geanylua			\
+		--enable-geanymacro			\
+		--enable-geanyminiscript		\
+		--enable-geanynumberedbookmarks		\
+		--enable-geanypg			\
+		--enable-geanyprj			\
+		--disable-geanypy			\
+		--enable-geanyvc			\
+		--enable-geniuspaste			\
+		--enable-gitchangebar			\
+		--enable-gtkspell			\
+		--enable-keyrecord			\
+		--enable-largefile			\
+		--enable-lineoperations			\
+		--enable-lipsum				\
+		--enable-markdown			\
+		--disable-multiterm			\
+		--enable-overview			\
+		--enable-pairtaghighlighter		\
+		--enable-pohelper			\
+		--enable-pretty_printer			\
+		--enable-projectorganizer		\
+		--enable-scope				\
+		--enable-sendmail			\
+		--enable-shiftcolumn			\
+		--enable-spellcheck			\
+		--enable-tableconvert			\
+		--enable-treebrowser			\
+		--enable-updatechecker			\
+		--disable-webhelper			\
+		--enable-vimode				\
+		--enable-workbench			\
+		--enable-xmlsnippets
+
+
+# install separate ChangeLogs for each different plugin
+override_dh_installchangelogs:
+	for changelog in */ChangeLog; do \
+		[ ! -s $$changelog ] && continue; \
+		if [ $$changelog = po/ChangeLog ]; then \
+			pkg=geany-plugins-common; \
+		else \
+			pkg=geany-plugin-$$(dirname $$changelog | sed -e's/^geany//'); \
+		fi; \
+		dh_installchangelogs \
+			-p$$pkg \
+			$$changelog; \
+	done
+	dh_installchangelogs
+
+# add geany:Version substvar to debian/*.substvars
+debian/dumpabiver: debian/dumpabiver.c
+	$(CC) -o $@ $< $(shell pkg-config --cflags geany)
+
+debian/abiversion.sh: debian/dumpabiver
+	$< > $@
+
+override_dh_gencontrol: debian/abiversion.sh
+	. debian/abiversion.sh && \
+	dh_gencontrol -- \
+		"-Vgeany:Version=$(GEANY_VERSION)" \
+		"-Vgeany:API=$${GEANY_ABI}" \
+		"-Vgeany:ABI=$${GEANY_ABI}"
+
+# Don't make shlibs (false positive on pretty-printer.so
+override_dh_makeshlibs:
+	dh_makeshlibs -n -p geany-plugins-common -V
+
+override_dh_install:
+	find debian/tmp/ -name '*.pyc' -delete
+	dh_install --list-missing -Xusr/share/doc/geany-plugins/ -X.la
+
+%:
+	dh $@ --with=autoreconf --parallel

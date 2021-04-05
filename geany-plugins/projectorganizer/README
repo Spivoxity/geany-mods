@@ -1,0 +1,236 @@
+=================
+Project Organizer
+=================
+
+.. contents::
+
+About
+=====
+
+Project Organizer is an extension of Geany's project management displaying a tree of 
+files belonging to the project in the sidebar. In addition, it enables complete indexing
+of the project files (and having code completion, syntax highlighting and symbol
+definition/declaration jumps for the whole project) quick swapping between header 
+and source files, improved opening of includes, searching project files by name 
+and more. External directories can be attached to the project to extend the plugin's
+functionality to related directories outside the project tree. The plugin was created
+with big projects in mind so everything works fast enough even with projects consisting
+of tens of thousands of files.
+
+Why was it created?
+-------------------
+
+A project in Geany is completely file-agnostic when it comes to the question of
+what files are stored in the project. In principle the information that Geany stores
+for every project is:
+
+* project's base directory
+* build settings
+* list of open files
+
+This approach is fine for smaller projects where most of the project files
+are stored in a single directory but doesn't work very well with projects consisting
+of many deeply nested directories containing thousands of files. For such projects
+an expandable tree showing all the project files is a better alternative making it much
+easier to to navigate among various project directories. Knowing which files
+belong to the project makes it possible to add other useful features like project file
+indexing, header/source swapping or file searching.
+
+Why are files belonging to a project defined by patterns?
+---------------------------------------------------------
+
+Maintaining a list of project files is rather painful with larger projects consisting
+of thousands files and many developers working on them. Files are created, deleted
+and moved quite frequently and after each change the project has to be updated manually.
+Instead, Project Organizer defines a list of files belonging to the project implicitly
+using:
+
+* project's base directory
+* a list of glob-like patterns (e.g. \*.c, \*.h, or just simply \* if you want to 
+  see everything)
+
+Every file under the base directory matching the patterns is included into the project
+and updating the file list is as simple as pressing the refresh button in the sidebar.
+
+What are the differences between Project Organizer and GeanyPrj?
+----------------------------------------------------------------
+
+There is another project-management Geany plugin - GeanyPrj. Project Organizer and GeanyPrj 
+differ in several aspects:
+
+* Project Organizer is an extension of Geany's project so every Geany project is a 
+  Project Organizer project at the same time and vice versa. On the other hand, GeanyPrj 
+  project is a separate project so if you want to set build properties for a GeanyPrj 
+  project, you have to set up a second Geany project in parallel.
+* GeanyPrj can display several projects in the sidebar; even though only a single project
+  can be opened with Project Organizer at one time, similar effect can be achieved with the 
+  "external directories" feature.
+* Project Organizer displays full tree in the sidebar while GeanyPrj displays only two-level
+  tree (full directory name as a parent and a list of files under the directory).
+* Project Organizer has configurable file patterns while patterns in GeanyPrj are hard-coded
+* Project Organizer offers header/source swapping
+* Project Organizer offers finding project files by name and improved include file opening
+
+Usage
+=====
+
+Project configuration
+---------------------
+
+Upon project creation, you should define the list of file patterns under the
+Project->Properties Project tab. For instance, for a typical open source C project,
+use patterns "\*.c \*h \*.am \*.ac" to see the source files together with
+automake and autoconf files. If no patterns are defined (default), Project Organizer 
+treats this as the "\*" pattern in which case all files under the project directory 
+are displayed. After closing the dialog, the files matching the patterns
+should appear in the sidebar under the Project tab. 
+
+Additional settings are available from the Project Organizer tab under the Project 
+properties dialog. You can define patterns to distinguish between header and source 
+files for C-like languages. This information is used for header/source swapping.
+
+In addition, you can define patterns for files and directories that should be ignored when
+searching for files belonging to the project. These will typically be various binary
+files and VCS or hidden directories.
+
+Finally, you can specify whether all the project files should be indexed or not.
+The default settings is Auto which means that if the total number
+of project (and external directory) files is less than 300, indexing is performed.
+This is a rather conservative number, at least for an SSD disk - Project Organizer 
+was tested with tens of thousands project files and even though the initial scanning 
+may take some time (for the linux kernel with 35000 files and 2300000 symbols it takes
+about 20s with an SSD disk), the work with the project is completely normal afterwards.
+However, with ordinary HDD expect only around 100 scanned files per second because
+of slow random access time.
+
+Sidebar
+-------
+
+The sidebar contains a tree of files belonging to the project and external directory
+trees (drawn with gray background to distinguish them from ordinary project files). 
+Directories can be expanded by double-clicking them; the same action is used to open 
+files. When a sidebar item is right-clicked, a context menu appears:
+
+* Expand all - recursively expands all the subdirectories of the given directory
+* Find in files - opens the Find in files dialog and sets the search directory
+  to the clicked directory
+* Find file - opens the Find file dialog and sets the search directory to the
+  clicked directory
+* Find symbol - opens the Find symbol dialog and sets the search directory to the
+  clicked directory
+* Remove external directory - removes a previously added external directory from
+  the project
+
+The following actions can be invoked from the sidebar's toolbar:
+
+* Reload all - reloads the project file tree and reindexes the files (if symbol generation
+  enabled). This is useful when files were added, modified externally or removed from 
+  the project.
+* Add external directory - adds an additional directory related to the project (e.g.
+  it is useful to have the geany project as an external directory for the geany-plugins 
+  project). External directories are indexed, and basically 
+  all Project Organizer features work with external directories too (find file or 
+  find in files from the context menu, swap header/source, open selected file, symbol
+  definition/declaration jumps, and active editor following). Apart from adding related 
+  projects, one of the possible uses is the addition of system header directories, 
+  e.g. /usr/include/gtk-2.0, and having them indexed for code completion and syntax 
+  highlighting.
+* Expand all - recursively expands all the directories
+* Collapse to project root - collapses all the directories except for the project root
+* Follow active editor - automatically selects the current file in the sidebar
+  when the user switches to another file. It auto-expands the tree to reveal the selected
+  file. On by default.
+
+Project menu entries
+--------------------
+
+Project Organizer adds some extra entries under the Project menu:
+
+* Find in Project Files - opens the Find in files dialog and sets the search directory
+  to the base directory of the project
+* Find Project File - opens the Find file dialog which can be used to find files
+  within the project or external directories
+* Find Project Symbol - opens the Find symbol dialog which can be used to find symbols
+  within the project or external directories
+* Swap Header/Source - if the current file matches one of the source patterns from
+  the properties, it opens a project file with the same base name (without extension)
+  matching header patterns (and vice versa). If the files are already open, it
+  just switches the document tabs. Nothing happens if no matching file is found.
+
+Each of these entries can be assigned a key binding under Edit->Preferences->Keybindings.
+
+Find file dialog
+----------------
+
+The Find file dialog can be invoked either from the Project menu or from the
+sidebar's context menu. Searches are performed recursively, starting from the
+"Search inside" directory. All files having the searched string as a substring of their
+name are displayed in the Messages window. Clicking the file name opens the file.
+The following search properties are configurable:
+
+* Case sensitive - specifies whether the searches should be case-sensitive
+* Search in full path - when not checked, the search is performed in the file
+  name only (excluding path); when checked, the search is performed in the full path
+
+Find symbol dialog
+------------------
+
+The Find symbol dialog can be invoked either from the Project menu or from the
+sidebar's context menu. Searches are performed within the "Search inside" directory.
+There are several search types:
+
+* prefix (default) - finds all symbols with the specified prefix
+* exact - finds all symbols matching the name exactly
+* pattern - finds all symbols matching the provided glob pattern
+
+By default, symbol definitions are searched; to search symbol declarations, select the
+Declaration option.
+
+Editor context menu
+-------------------
+
+Project Organizer adds an extra entry into the context menu of the editor:
+
+* Open Selected File (Project Organizer) - contrary to the Open Selected File entry 
+  present in Geany it also searches for the file in project files and external 
+  directories.
+
+Known issues
+============
+
+* In general it is not a good idea to use both the Project Organizer and GeanyPrj
+  at the same time because both of the plugins access the tag manager in Geany
+  to keep all the project files indexed and might cause conflicts to each other.
+
+License
+=======
+
+Project Organizer is distributed under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.  A copy of this license
+can be found in the file COPYING included with the source code of this
+program.
+
+Downloads
+=========
+
+Project Organizer is part of the combined Geany Plugins release.
+For more information and downloads, please visit
+http://plugins.geany.org/geany-plugins/
+
+Development Code
+================
+
+Get the code from::
+
+    git clone https://github.com/geany/geany-plugins.git
+
+Ideas, questions, patches and bug reports
+=========================================
+
+Please direct all questions, bug reports and patches to the plugin author using the
+email address listed below or to the Geany mailing list to get some help from other
+Geany users.
+
+2010-2014 by Jiří Techet
+techet(at)gmail(dot)com

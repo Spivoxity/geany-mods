@@ -1,0 +1,3 @@
+# This is a plugin to search for documentation, not containing documentation
+geany-plugin-doc binary: wrong-section-according-to-package-name
+geany-plugin-doc binary: documentation-package-not-architecture-independent

@@ -1,0 +1,10 @@
+Document: geanylua-manual
+Title: GeanyLua manual
+Abstract: This manual includes a manual and a scripting reference for the
+ GeanyLua scripting interface
+Section: Programming/Lua
+
+Format: HTML
+Index: /usr/share/doc/geany-plugin-lua/geanylua-index.html
+Files: /usr/share/doc/geany-plugin-lua/*.html
+

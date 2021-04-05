@@ -1,0 +1,280 @@
+=========
+Workbench
+=========
+
+.. contents::
+
+About
+=====
+
+The Workbench plugin is an extension that makes it possible to manage
+multiple projects in geany. You can add geany projects to a workbench.
+From there you can add directories to the project to manage the files
+belonging to the project.
+
+Usage
+=====
+
+Enabling the plugin
+-------------------
+The plugin can be enabled in the plugin manager. After enabling the plugin
+a new tab will be displayed in the Sidebar. There will also be a new entry
+in the "Tools" menu. Both are labeled "Workbench".
+
+The Workbench menu
+------------------
+The Workbench menu is the starting point for creating your first workbench.
+Choose "New" from the menu to create your workbench file. Workbench files
+use the prefix ".geanywb". Just like Geany project files they are also
+simple text files containing key-value pairs.
+
+The complete managment of the Workbench file is done using the Workbench
+menu:
+
+**Item "New"**
+  As explained above, creates a new Workbench.
+**Item "Open"**
+  Open a Workbench.
+**Item "Settings"**
+  Open the Workbench settings dialog. After the settings have been
+  confirmed with "OK" they will be written back to the workbench file
+  (if any value was changed).
+**Item "Search projects"**
+  Search for projects to add them to the Workbench. This lets the user
+  select a directory to search through. The directory and it's sub-directories
+  are scanned for project files (".geany"). All found files are listed and
+  after scanning is done the user can select the projects which shall be
+  added to the Workbench.
+**Item "Close"**
+  Closes the opened Workbench.
+
+The new Workbench
+-----------------
+A newly created Workbench is completely empty. In the Workbench tab of
+the sidebar you should see the hint "Add a project using the context
+menu". Anything which is dealing with projects and their Workbench
+related settings is done using the context menu on the sidebar. Some
+items in the context menu will only be active if you right click inside
+a project, directory or bookmark.
+
+The Workbench context menu
+--------------------------
+
+These are the available items:
+
+**Add project**
+  Add an existing Geany project to the Workbench. Create your projects
+  with Geany. The Workbench plugin does not help you with that. After
+  adding a project you need to save the workbench settings by selecting
+  "Workbench / Save" in the menubar.
+
+**Remove project**
+  Remove the project from the Workbench. It is only available if you
+  right clicked inside of a project.  After removing a project you need
+  to save the workbench settings by selecting "Workbench / Save" in the
+  menubar.
+
+**Fold/unfold project**
+  Fold or unfold the items belonging to the project. It is only available
+  if you right clicked inside of a project.
+
+**Add directory**
+  Add a directory to the project. It is only available
+  if you right clicked inside of a project. After selecting it a dialog
+  will be opened. Choose the directory which shall be added. After that
+  the directory will be shown inside the project folder. After adding a
+  new directory, all files and sub-directories beneath the directory will be
+  displayed. See "Directory settings" for more information.
+
+**Remove directory**
+  Remove the directory from the project. It is only available if you
+  right clicked inside of a project directory.
+
+**Rescan directory**
+  Rescan the directory for files and update the sidebar accordingly.
+  It is only available if you right clicked inside of a project directory.
+  If the content of a directory changes, e.g. a new file is added, then
+  the new file will only be visible in the sidebar after a rescan.
+
+**Directory settings**
+  Select this item to change the directory settings. It is only available
+  if you right clicked inside of a project directory. In the directory
+  settings you can set filters which control the files and sub-directories
+  that will be displayed or not. You can choose between a filter mechanism
+  controlled by the workbench plugin or controlled by git. In the later case
+  the .gitignore settings decide which files are displayed and which not.
+  This option is only available if the directory is/contains a git
+  repository.
+
+**Fold/unfold directory**
+  Fold or unfold the items belonging to the directory. It is only available
+  if you right clicked inside of a directory.
+
+**Unfold All**
+  Select this item to unfold all projects, directories and sub-directories.
+
+**Collapse All**
+  Select this item to collpase/fold all projects, directories and sub-directories.
+
+**Add to Workbench Bookmarks**
+  Add the file to the Workbench Bookmarks. It is only available
+  if you right clicked on a file. After adding a file to the Workbench
+  bookmarks a ribbon will be shown for the file in the Workbench sidebar
+  tab in front of the first project. Clicking on it will open the file.
+  Workbench bookmarks give you quick access to files which you often need.
+
+**Add to Project Bookmarks**
+  Add the file to the Project Bookmarks. It is only available
+  if you right clicked on a file. After adding a file to the Project
+  bookmarks a ribbon will be shown for the file in the Workbench sidebar
+  tab in front of the first directory of the project. Clicking on it will
+  open the file. Project bookmarks give you quick access to files which
+  you often need in that project.
+
+**Remove from Bookmarks**
+  Remove file from the Workbench or project bookmarks. It is only available
+  if you right clicked on a bookmark.
+
+**Create file here...**
+  Select this item to create a new file at the current selected position
+  in the file tree. Available since version 1.02 of the workbench plugin.
+
+**Create directory here...**
+  Select this item to create a new directory at the current selected position
+  in the file tree. Available since version 1.02 of the workbench plugin.
+
+The Workbench settings
+----------------------
+The following settings exist for a workbench:
+
+**Rescan all projects on open**
+  If the option is activated (default), then all projects will be re-scanned
+  on opening of a workbench.
+
+**Enable live update**
+  If the option is activated (default), then the list of files and the sidebar
+  will be updated automatically if a file or directory is created, removed or renamed.
+  A manual re-scan is not required if the option is enabled. This feature is available
+  since version 1.03 of the workbench plugin. If you open a workbench file
+  which has been created with an older version of the workbench plugin
+  then the option will be added with value "activated".
+
+**Expand on hover**
+  If the option is activated, then a tree node in the sidebar
+  will be expanded or collapsed by hovering over it with the mouse cursor.
+
+**Enable tree lines**
+  If the option is activated, lines will be drawn between the nodes in
+  the sidebar tree.
+
+Live update
+-----------
+From version 1.03 on the workbench plugin supports an automatic live update
+of the file list and the sidebar.
+
+This feature will only work if your system supports directory file monitoring.
+If the workbench plugin cannot setup file monitoring for a directory then it
+will output a message in the message window. The message has the following form::
+
+    Could not setup file monitoring for directory: "exampledir". Error: <some error message>
+
+Styling the sidebar
+-------------------
+
+On linux based systems using GTK3 the workbench sidebar can be styled using CSS.
+For general information on how to setup CSS with Geany please see the manual under
+https://www.geany.org/manual/current/index.html#customizing-geany-s-appearance-using-gtk-3-css.
+
+To style the workbench sidebar use the CSS ID *"workbench"*. Here is a small
+example::
+
+    /* Style the label over the treeview. */
+    #workbench label {
+        color: black;
+        background-color: silver;
+        border-bottom: 2px solid red;
+        font-size: 20pt;
+    }
+
+    /* Style the treeview: the border-color specifies the color of the
+       treeview lines (if enabled in the workbench settings). */
+    #workbench treeview {
+        color: black;
+        background-color: linen;
+        border-color: darkviolet;
+        font-size: 12pt;
+    }
+
+    /* The following changes the text and background color for the selected
+       row in the workbench treeview. */
+    #workbench treeview:selected {
+        color: white;
+        background-color: red;
+    }
+
+    /* The following changes the text and background color for a row in the
+       workbench treeview if the user hovers over it with the mouse pointer. */
+    #workbench treeview:hover {
+        color: white;
+        background-color: orange;
+    }
+
+Known issues
+============
+
+None.
+
+License
+=======
+
+The Workbench plugin is distributed under the terms of the GNU General
+Public License as published by the Free Software Foundation; either
+version 2 of the License, or (at your option) any later version.  A copy
+of this license can be found in the file COPYING included with the source
+code of this program.
+
+Downloads
+=========
+
+The Workbench plugin is part of the combined Geany Plugins release.
+For more information and downloads, please visit
+http://plugins.geany.org/geany-plugins/
+
+Development Code
+================
+
+Get the code from::
+
+    git clone https://github.com/geany/geany-plugins.git
+
+Ideas, questions, patches and bug reports
+=========================================
+
+Please post any ideas, feature requests, questions and bugs in the
+github issue tracker.
+
+History
+=======
+
+This is a short release history showing the major changes:
+
+**1.09:**
+  Added option to let git decide which files to display
+**1.08:**
+  Auto-save project on change
+**1.07:**
+  Added option to enable or disable tree lines
+**1.06:**
+  Save workbench settings immediately
+**1.05:**
+  Added option "Expand on hover"
+**1.04:**
+  Use simple/old file monitor events only (remove dependency of GLib version 2.46)
+**1.03:**
+  Support live update
+**1.02:**
+  Added "Create file here..."/"Create directory here..."
+**1.01:**
+  Fixed not closed file handles on directory scanning (thanks to techee). Fixes #607.
+**1.00:**
+  Created plugin

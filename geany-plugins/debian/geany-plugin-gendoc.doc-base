@@ -1,0 +1,12 @@
+Document: geanygendoc-manual
+Title: Geany GenDoc manual
+Abstract: GeanyGenDoc is a plugin for Geany which provides support for
+ automatically generating documentation based on comments in the source code.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/geany-plugin-gendoc/manual.html
+Files: /usr/share/doc/geany-plugin-gendoc/*.html
+
+Format: Text
+Files: /usr/share/doc/geany-plugin-gendoc/manual.rst.gz

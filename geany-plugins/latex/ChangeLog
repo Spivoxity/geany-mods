@@ -1,0 +1,418 @@
+2011-08-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Merging last stand alone version into geany-pluins release.
+
+
+2011-08-05  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Fixing an bug when using keybindings to insert typewriter format
+
+
+2011-07-28  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Resorting LaTeX menu.
+ * Adding a couple of characters which are used inside LaTeX to special
+   characters menu.
+
+
+2011-04-26  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Add a tooltip to toolbar item.
+
+
+2011-04-12  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Don't add a {} after a command in case of [ has been typed before or []
+   is there. Closes #3285393.
+
+
+2011-03-17  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Attempt to fix a couple of compiling warnings came up with updates
+   build flags.
+
+
+2011-01-02  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Correction of some typos (Thanks to André Glória for reporting)
+
+
+2010-10-30  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Try to fetch BibTeX entries from files inside working dir of file.
+
+
+2010-10-29  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a first version of a dialog supporting inserting a bibtex entry.
+
+
+2010-10-24  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Ensure LaTeX menu is added to menubar on loading plugin when there is
+   already an LaTeX-document open.
+
+
+2010-09-26  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Try to backport automatic generation of LINGUAS files into waf script
+   as a backport from Geany-plugins build script.
+ * Add a feature to put a icon for the wizard into Geany's main toolbar.
+
+
+2010-09-20  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a feature that inserts capital letters on first letter of a
+   sentence. This is not working with multibyte characters as German
+   Umlauts.
+
+
+2010-09-14  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Place LaTeX menu in front of help menu entry.
+
+
+2010-09-12  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Moved LaTeX menu out of Tool menu and put it into generic menubar item.
+   Make this menubar item be triggered by filetype.
+ * Fix a bug that keeps font size choser from tools menu active even
+   there is no document open.
+
+
+2010-05-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Add a feature which is inserting {} automaticlly once a new line is
+   entered and an command seems to don't have some.
+
+
+2010-05-10  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Fix indention on inserting list environments.
+
+
+2010-04-24  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Add a simple insert dommand dialog, which shall support inserting
+   commands more in future
+
+
+2010-04-21  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Automatic insert {} after typing ^ or _
+
+
+2010-04-16  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Fix indention on insert environment features.
+ * Make wizard run on hitting enter when inserting some of the values.
+
+
+2010-04-14  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Ensure basic indent is getting applied on closing command of
+   autocompletion of \begin{} and \begingroup{} feature.
+
+
+2010-04-11  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Enabling inserting label on pushing return after typing in label name.
+ * Enabling inserting \usepackage{} on pushing return after typing in dialog.
+ * Enabling inserting environment on pushing return after typing inside
+   the insert environment dialog.
+ * Enabling inserting reference on pushing return after typing inside the
+   insert reference dialog.
+
+
+2010-03-27  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Add a menu entry for inserting font sizes to document
+
+
+2010-03-20  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Insert a keybinding and a dialog to insert a \usepackage{} line to header.
+   Still experimental.
+
+
+2010-03-12  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Add a very first attempt to support landscape on wizard. Output is
+   far away from being good.
+
+
+2010-01-27  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Add an example spec file for creating rpm files.
+   Thanks to Krzysztof Goliński and Dominic Hopf for efforts here.
+
+
+2010-01-16  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Took over functionality to automatic close \begin{} and \begingroup{}
+   from Geany core
+
+
+2009-01-03  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Don't deactivate wizard icon if no document is open
+
+
+2009-01-01  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Make text used for inserting references configurable.
+   Please check documentation for details on how to do it.
+
+
+2009-12-26  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Deactivate icons of toolbar, if no LaTeX document is open. Behavior
+   can be deactivated via hidden pref.
+
+
+2009-12-23  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Do only special character replacement in case of we really have
+   an LaTeX file here.
+
+
+2009-12-13  Frank Lanitz  <frank@frank.uvena.de>
+
+ * Show geanyLaTeX inside plugin manager.
+
+
+2009-10-11  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Replace also capital German umlauts.
+
+
+2009-10-10 Frank Lanitz  <frank@frank(dot)uvena(dot)de>
+
+ * Add a function to insert \ref{} and \pageref{} together when
+   inserting a reference.
+
+
+2009-09-13  Frank Lanitz  <frank@frank(dot)uvena(dot)de>
+
+ * Adding custom templates to wizard.
+
+
+2009-08-14  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Make reference dialog catch suggestions from all *.aux files inside
+   the current directory.
+
+
+2009-08-13  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Switch to waf and remove autotools build environment. Still experimental.
+
+
+2009-07-13  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Correct a tooltip by removing unneeded \t from it.
+
+
+2009-07-09  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a function to level up and level down structure element.
+
+
+2009-07-08  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Migrated bibTeX inserting entry framework to make usage of a GPtrArray.
+
+
+2009-06-27  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added Portuguese translation. Thanks to André Glória for providing.
+
+
+2009-05-25  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Some more clean up of code.
+ * Update of documentation for 0.4 release.
+
+
+2009-05-21  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added configuration dialog.
+
+
+2009-05-19  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Make toolbar document sensitive.
+
+
+2009-05-17  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Adding some more items to toolbar for centerin, left and right formatted
+   text. Created LaTeX code based on needs still some improvement. Please
+   use with care.
+
+
+2009-05-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Adding a toolbar for common LaTeX format topics.
+
+
+2009-04-17  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Set undo points for better redo/undo on inserting formatings.
+ * Make reference type inside insert reference dialog accessible by
+   keyboard.
+
+
+2009-04-12  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added some new lines into latex beamer template.
+
+
+2009-04-10  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Sort entries on insert reference dialog by alphabet.
+
+
+2009-03-30  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Moved replacement functions into their own submenu.
+ * Added key bindings for formatting text with bold, italic and typewriter
+   font face.
+
+
+2009-03-28  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Use a text field with pull down instead of a normal combo box for
+   font size at LaTeX wizard.
+
+
+2009-03-27  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * doc/geanylatex.tex: Added documentation written in LaTeX.
+
+
+2009-03-20  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Replace \u-UTF-8 letters by octal coded chars. Huge thanks to
+   Dominic Hopf for providing patch and fighting that fight.
+ * Added a menu entry for bulk replace function and fixed a segfault at
+   replacing
+
+
+2009-03-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a function to bulk replace special characters
+   inside marked text by keybinding
+
+
+2009-03-13  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Don't offer insert environment dialog in case of no document is open.
+
+
+2009-03-06  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Insert environment now supports selections by position \begin{} and
+   \end{} around
+
+
+2009-02-28  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Don't react on some keybindings in case of no document is open.
+ * Added a feature for easy inserting environments to document.
+ * Added keybinding to insert \item into document. Very useful at
+   e.g. writing lists
+
+
+2009-02-18  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Formating of selected text
+ * Added feature to replace special characters at input with LaTeX
+   replacment
+
+
+2009-02-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a menu entry for easy formating of text
+
+
+2009-02-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Release of GeanyLaTeX 0.3
+
+
+2009-02-14  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a keyboard shortcut for inserting a new line ( \\ ).
+ * Make cursor placed behind inserted text for most cases.
+   (Inserting BibTeX entries will not reset the cursor)
+
+
+2009-01-19  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Improved reference dialog to offer labels based on aux file
+
+
+2008-11-17  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Added a submenu supporting inserting bibtex entries
+
+
+2008-11-14  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Applied a patch by Enrico which corrects some spelling
+   mistakes and cleans up code a bit.
+
+
+2008-11-02  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Make usage of Geany API v104 by using of Geany's plugin init
+   locale function.
+
+
+2008-10-29  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * GeanyLaTeX 0.2 release
+
+
+2008-10-14  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Updated to Geany Plugin API v100 (add_document_sensitive())
+
+
+2008-09-01  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * src/geanylatex.c: Added support for l10n.
+
+
+2008-09-01  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Ported build system of spellcheck plugin.
+
+
+2008-07-15  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Make plugin work together with Geany plugin API v78.
+
+
+2008-07-11  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Make plugin compile with Geany svn r2767.
+
+
+2008-06-26  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Update of used plugin API to v71.
+
+
+2008-06-17  Enrico Tröger  <enrico(dot)troeger(at)uvena(dot)de>
+
+ * configure.in:
+   Fix build using autogen.sh (Makefile.in was not created).
+ * latexencodings.h:
+   Fix multiple definition of latex_encodings array.
+
+
+2008-06-17  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * Moved plugin to geany-plugin svn.

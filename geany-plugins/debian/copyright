@@ -1,0 +1,379 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: geany-plugins
+Source: http://plugins.geany.org/geany-plugins/
+Files-Excluded: devhelp/data/*devhelp-plugin*.png
+                devhelp/data/devhelp-plugin.svg
+
+Files: *
+Copyright: 2009-2015 Chow Loong Jin <hyperair@ubuntu.com>
+           2009-2015 Colomban Wendling <ban@herbesfolles.org>
+           2009-2015 Enrico Tröger <enrico.troeger@uvena.de>
+           2009-2015 Frank Lanitz <frank@frank.uvena.de>
+           2009-2015 Matthew Brush <mbrush@codebrainz.ca>
+License: GPL-2+
+
+Files: addons/*
+Copyright: 2009, Bert Vermeulen <bert@biot.com>
+           2009-2011, Enrico Tröger <enrico.troeger@uvena.de>
+           2010 Frank Lanitz <frank@frank.uvena.de>
+           2009 Eugene Arshinov <earshinov@gmail.com>
+License: GPL-2+
+
+Files: autoclose/* automark/* defineformat/*
+Copyright: 2013-2015 Pavel Roschin <rpg89(at)post(dot)ru>
+License: GPL-2+
+
+Files: build/*
+       configure.ac
+       */Makefile.am
+Copyright: 2009-2012, Chow Loong Jin <hyperair@ubuntu.com>
+License: GPL-2+
+
+Files: codenav/*
+Copyright: 2009, Lionel Fuentes <funto66@gmail.com>
+License: GPL-2+
+
+Files: commander/* geanygendoc/* git-changebar/* pohelper/* webhelper/*
+Copyright: 2009-2015 Colomban Wendling <ban@herbesfolles.org>
+License: GPL-3+
+
+Files: debugger/*
+Copyright: 2010-2012 Alexander Petukhov <devel@apetukhov.ru>
+License: GPL-2+
+
+Files: devhelp/*
+Copyright: 2010-2011 Matthew Brush <mbrush@leftclick.ca>
+License: GPL-3+
+
+Files: devhelp/devhelp/*
+Copyright: 1998-1999, Alex Roberts
+           1998-1999, Evan Lawrence
+           2000-2001, Chema Celorio
+           2000-2005, Paolo Maggi
+           2001-2003, Mikael Hallendal <micke@imendio.com>
+           2001-2003, CodeFactory AB
+           2001-2008, Imendio AB
+           2004, Red Hat, Inc
+           2008, Sven Herzberg
+           2010, Lanedo GmbH
+License: GPL-2+
+X-Comment: Bundled copy of Devhelp prior to Gtk+3 port
+
+Files: geanyctags/* projectorganizer/*
+Copyright: 2010-2015 Jiri Techet <techet@gmail.com>
+License: GPL-2+
+
+Files: geanydoc/*
+Copyright: 2008, Yura Siamashka <yurand2@gmail.com>
+License: GPL-3+
+
+Files: geanyextrasel/*
+       geanyinsertnum/*
+Copyright: 2010, Dimitar Toshkov Zhekov <dimitar.zhekov@gmail.com>
+License: GPL-2+
+
+Files: geanylatex/*
+       lipsum/*
+Copyright: 2007-2011, Frank Lanitz <frank@frank.uvena.de>
+License: GPL-2+
+
+Files: geanylatex/src/geanylatex.c
+Copyright: 2006-2009 Nick Treleaven <nick.treleaven@btinternet.com>
+           2007-2011 Frank Lanitz <frank@frank.uvena.de>
+           2005-2009 Enrico Tröger <enrico.troeger@uvena.de>
+License: GPL-2+
+
+Files: geanylua/*
+Copyright: Nick Treleaven <nick.treleaven@btinternet.com>
+           2007-2008, Jeff Pohlmeyer <yetanothergeek@gmail.com>
+           Enrico Tröger <enrico.troeger@uvena.de>
+License: GPL-2+
+
+Files: geanymacro/*
+       geanynumberedbookmarks/*
+Copyright: 2010 William Fraser <william.fraser@virgin.net>
+License: GPL-2
+
+Files: geanyminiscript/*
+Copyright: 2008, Pascal BURLOT <prublot@users.sourcefore.net>
+License: GPL-2+
+
+Files: geanypg/*
+Copyright: 2011 Hans Alves <alves.h88@gmail.com>
+License: GPL-2+
+
+Files: geanyprj/*
+Copyright: 2008, Yura Siamashka <yurand2@gmail.com>
+License: GPL-3+
+
+Files: geanyprj/src/geanyprj.c
+       geanyprj/src/project.c
+       geanyprj/src/xproject.c
+Copyright: 2007-2008, Yura Siamashka <yurand2@gmail.com>
+           2007, Nick Treleaven <nick.treleaven@btinternet.com>
+           2007, Enrico Tröger <enrico.troeger@uvena.de>
+           2007, Frank Lanitz <frank@frank.uvena.de>
+License: GPL-3+
+
+Files: geanypy/*
+Copyright: 2011-2014 Matthew Brush <mbrush@codebrainz.ca>
+           2014 Lex Trotman <elextr@gmail.com>
+License: GPL-2+
+
+Files: geanypy/geany/console.py
+Copyright: 2004-2010 by Yevgen Muntyan <emuntyan@users.sourceforge.net>
+License: LGPL-2.1+
+
+Files: sendmail/*
+Copyright: 2007-2011, Frank Lanitz <frank@frank.uvena.de>
+           2008-2009, Timothy Boronczyk <tboronczyk@gmail.com>
+           2007, Enrico Tröger <enrico.troeger@uvena.de>
+           2007-2008, Nick Treleaven <nick.treleaven@btinternet.com>
+License: GPL-2+
+
+Files: geanyvc/*
+Copyright: 2007-2009, Yura Siamashka <yurand2@gmail.com>
+           2007, Nick Treleaven <nick.treleaven@btinternet.com>
+           2007-2009, Enrico Tröger <enrico.troeger@uvena.de
+           2007-2011, Frank Lanitz <frank@frank.uvena.de>
+License: GPL-2+
+
+Files: geanyvc/src/externdiff.c
+       geanyvc/src/utils.c
+Copyright: 2008, Yura Siamashka <yurand2@gmail.com>
+License: GPL-2+
+
+Files: geanyvc/src/vc_cvs.c
+Copyright: 2007-2009 Enrico Tröger <enrico.troeger@uvena.de>
+           2007-2011 Frank Lanitz <frank@frank.uvena.de>
+           2010 Jean-Paul Iribarren <jeanpaul.Iribarren@free.fr>
+           2007 Nick Treleaven <nick.treleaven@btinternet.com>
+           2007-2009 Yura Siamashka <yurand2@gmail.com>
+License: GPL-2+
+
+Files: geniuspaste/*
+Copyright: 2012, Enrico "Enrix835" Trotta <enrico.trt@gmail.com>
+License: GPL-2+
+
+Files: keyrecord/src/keyrecord.c
+Copyright: 2007-2012, Enrico Tröger <enrico.troeger@uvena.de>
+           2007-2012, Nick Treleaven <nick.treleaven@btinternet.com>
+License: GPL-2+
+
+Files: lineoperations/*
+Copyright: 2015, Sylvan Mostert <smostert.dev@gmail.com>
+License: GPL-2+
+
+Files: markdown/* overview/*
+Copyright: 2012-2015 Matthew Brush <mbrush@codebrainz.ca>
+License: GPL-2+
+
+Files: markdown/peg-markdown/*
+Copyright: 2008 John MacFarlane (jgm at berkeley dot edu)
+License: GPL-1+ or MIT
+
+Files: markdown/peg-markdown/odf.*
+Copyright: 2011 Fletcher T. Penney (http://fletcherpenney.net/)
+License: GPL-1+ or MIT
+
+Files: markdown/peg-markdown/peg-0.1.9/*
+Copyright: 2007 Ian Piumarta
+License: PEG-shorted-Expat
+
+Files: multiterm/*
+Copyright: 2011 Matthew Brush <matt@geany.org>
+License: GPL-2+
+
+Files: pairtaghighlighter/*
+Copyright: Volodymyr Kononenko <vm@kononenko.ws>
+License: BSD-2-clause
+
+Files: pretty-printer/*
+Copyright: 2009, Cedric Tabin
+License: GPL-2+
+
+Files: scope/*
+Copyright: 2012-2013 Dimitar Toshkov Zhekov <dimitar.zhekov@gmail.com>
+License: GPL-2+
+
+Files: shiftcolumn/*
+Copyright: 2009 Andrew L Janke <a.janke@gmail.com>
+License: GPL-2+
+
+Files: spellcheck/*
+Copyright: 2008-2010, Nick Treleaven <nick.treleaven@btinternet.com>
+           2008-2011, Enrico Tröger <enrico.troeger@uvena.de>
+License: GPL-2+
+
+Files: tableconvert/*
+Copyright: 2011-2012 Frank Lanitz <frank@frank.uvena.de>
+License: GPL-2+
+
+Files: treebrowser/*
+Copyright: 2010, Adrian Dimitrov <dimitrov.adrian@gmail.com>
+License: GPL-3+
+
+Files: updatechecker/*
+Copyright: 2011, Frank Lanitz <frank@frank.uvena.de>
+License: GPL-2+
+
+Files: vimode/*
+Copyright: 2018, Jiri Techet <techet@gmail.com>
+License: GPL-2+
+
+Files: workbench/*
+Copyright: 2017, Lars Paulsen <lars_paulsen@web.de>
+License: GPL-2+
+
+Files: xmlsnippets/*
+Copyright: 2010 Eugene Arshinov <earshinov@gmail.com>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2009-2011, Chow Loong Jin <hyperair@ubuntu.com>
+           2010-2011, Evgeni Golov <evgeni@debian.org>
+License: GPL-2+
+
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA  02110-1301 USA
+ .
+ On Debian systems, the full copy of the GPL-1 license can be found in
+ /usr/share/common-licenses/GPL-1
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On Debian systems, the full copy of the GPL-2 license can be found in
+ /usr/share/common-licenses/GPL-2
+
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ .
+ On Debian systems, the full copy of the GPL-2 license can be found in
+ /usr/share/common-licenses/GPL-2
+
+License: GPL-3+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full copy of the GPL-2 license can be found in
+ /usr/share/common-licenses/GPL-3
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+ On Debian systems, the full copy of the LGPL-2.1 license can be found in
+ /usr/share/common-licenses/LGPL-2.1
+
+License: MIT
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: PEG-shorted-Expat
+ Permission is hereby granted, free of charge, to any person obtaining a
+ copy of this software and associated documentation files (the 'Software'),
+ to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, provided that the above copyright notice(s) and this
+ permission notice appear in all copies of the Software.  Acknowledgement
+ of the use of this Software in supporting documentation would be
+ appreciated but is not required.
+ .
+ THE SOFTWARE IS PROVIDED 'AS IS'.  USE ENTIRELY AT YOUR OWN RISK.
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ .
+     - Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+     - Redistributions in binary form must reproduce the above copyright
+       notice, this list of conditions and the following disclaimer in
+       the documentation and/or other materials provided with the
+       distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

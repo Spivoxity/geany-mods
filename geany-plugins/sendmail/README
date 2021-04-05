@@ -1,0 +1,138 @@
+SendMail
+========
+
+.. contents::
+
+About
+------
+
+SendMail is a little plugin to send a document as attachment
+using the preferred mail client from inside Geany. It is similar to
+the envelope symbol of most office tools and requires a mail client
+that is supporting remote calls.
+
+This is not a direct binding to sendmail, even if it could be used for.
+
+
+Requirements
+------------
+
+For compiling the plugin yourself, you will need the GTK (>= 2.8.0)
+libraries and header files. You will also need its dependency
+libraries and header files, such as Pango, Glib and ATK. All these
+files are available at http://www.gtk.org.
+
+And obviously, you will need to have Geany installed. If you have Geany
+installed from the sources, you should be ready to go. If you used a
+prepared package e.g. from your distribution you probably need to
+install an additional package, this might be called geany-dev or
+geany-devel. Please note that in order to compile and use this plugin,
+you need Geany 1.26 or later (Geany Plugin API v224 or higher).
+
+Furthermore you need, of course, a C compiler and the Make tool. The
+GNU versions of these tools are recommended.
+
+
+Installation
+------------
+
+This version of the plugin is installed with the combined
+geany-plugins release. Please check README of this package or download
+stand alone version of plugin from
+http://frank.uvena.de/en/Geany/SendMail/
+
+
+Usage
+-----
+
+After installed successfully, load the plugin in Geany's plugin
+manager and a new menu item in the Tools menu will appear. Before you
+can start you need to configure your mail client. This can be done in
+the configuration dialog (details on it later). You can also assign a
+keyboard shortcut in Geany's preferences dialog to send your document.
+
+
+Configuration
+-------------
+
+In the configuration dialog you can set up a command that is called by
+the plugin to communicate with your mail client. Depending on what's
+your favorite mailer, the command will differ. A number of
+placeholders are available for doing this:
+
+* %s: Will be replaced by the complete path of the file that should be send.
+* %r: Will be replaced by one or more recipient's email address that can be
+      entered inside a separate dialog. (Please remember during input, what your
+      mail client is expecting here)
+* %b: Will be replace by the file name. For a file /tmp/foo.baa it will be
+      replaced by foo.baa.
+
+Depending on how you like to use, you can combine all of the
+placeholders to build up your command. It is possible to use one
+placeholder several times. When using keep care, as the placeholders
+are replace step by step, so a filename containing %b might have some
+funny outcome. However, examples could be:
+
+Sylpheed:
+	sylpheed --attach "%f" --compose "%r"
+mutt:
+	mutt -s "Sending '%b'" -a "%f" "%r"
+Mozilla Thunderbird at Windows:
+	"C:\Program Files\Mozilla Thunderbird\thunderbird.exe" \
+		-compose to="%r",subject="%b",attachment="%f"
+Evolution:
+	evolution "mailto:?to=%r&attachment=%f"
+	evolution "mailto:?attachment=%f"
+
+In theory it should also work together with tools like Microsoft
+Outlook - Unfortunately the author wasn't able to bring it up
+running. Input for the correct commandline is highly welcome.
+
+
+Development
+-----------
+
+You can checkout the current source code from the git repository at
+github.com. Get the code by:
+
+git clone https://github.com/geany/geany-plugins.git
+
+If you want to create a patch, please respect the license of
+SendMail (GPLv2 or above) as well as intellectual property of
+third. Patches that should be included to the default distribution
+must be licensed under the same conditions as SendMail by the
+copyright owner.
+
+
+Known issues
+------------
+
+In case you are working with white spaces either in your path names,
+file names or at mail addresses (e.g. for separating two addresses)
+you should keep care of proper quoting since %s, %b and %r will be
+replaced without any quotes.
+
+For more recent information, issues will be tracked at
+https://github.com/geany/geany-plugins/issues
+
+
+License
+-------
+
+SendMail and all its parts is distributed under the terms of the
+GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any
+later version. A copy of this license can be found in the file COPYING
+included with the source code of this program. If not, you will be
+able to get a copy by contacting the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+
+Bugs, questions, bugs, homepage
+---------------------------------
+
+If you found any bugs or want to provide a patch, please contact Frank
+Lanitz (frank(at)geany(dot)org). Please also do so, if you got any
+questions and visiting http://frank.uvena.de/en/Geany/SendMail
+didn't help you to figure out the answer. Visiting the website is also
+a good start if you want to check for any update on this plugin.

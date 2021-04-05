@@ -1,0 +1,1220 @@
+Geany Plugins 1.37 (2020-10-25)
+
+    General:
+    * Improve cppcheck environment for better testing (PR #947)
+
+    Addons:
+    * Improve sizes of color calltip (PR #987)
+
+    Autoclose:
+    * Remove all pairing quotes (PR #896)
+
+    GeanyVC:
+    * Add support for Fossil SCM (PR #1004, PR #969, PR #977)
+    * Support multiple instances of current File menu (PR #971)
+    * Allow to toggle single files with Space and Return keys
+      in commit dialog (PR #996)
+    * Improve libraries included to unittests (PR #977)
+
+    GeanyPrj:
+    * Fix cut-off sidebar tab under GTK3 (PR #917)
+
+    GitChangebar:
+    * Add compatibility with libgit2 0.99 (PR #956)
+
+    LaTeX:
+    * Indent line in new environment (Issue #950, PR #951)
+
+    Markdown:
+    * Fix colors in GTK3 (PR #965)
+
+    Overview:
+    * Initialize color variables
+
+    PairTagHighligher:
+    * Allow to select a matching tag (PR #926)
+
+    ProjectOrganizer:
+    * Make showing empty directories in the sidebar configurable (PR #929)
+    * Improve used icon -- don't use stock icons (PR #932)
+    * Add a keybinding for focusing the sidebar (PR #920)
+    * Re-read base path when updating project (PR #921)
+
+    Vimmode:
+    * Correctly ignore unwanted modifiers (PR #975)
+    * Don't use word navigation from Scintilla (PR #919)
+    * Make o/O respect auto indentation (PR #918)
+
+    Windows:
+    * Update dependencies for installer
+
+    Internationalization:
+    * Updated translations: de, es, nl, pt, tr
+
+
+Geany Plugins 1.36 (2019-09-28)
+
+    General:
+    * Windows: Update dependencies
+    * Various fixes of usage of '#include "geanyplugin.h" (PR #882)
+
+    Addons:
+    * Add additional color format (PR #884)
+    * Fix document list menu position (PR #895)
+
+    Autoclose:
+    * Fix deprecated GTK call for GTK+3 (PR #857)
+
+    Automark:
+    * Fix compiler warning (PR #863, Issue #574)
+
+    Debugger:
+    * Add GTK+3 compatibility (PR #791)
+
+    DevHelp:
+    * Fix embedded library's use of glib-genmarshal (PR #878)
+
+    Extraselection:
+    * Fix deprecated GTK call for GTK+3 (PR #858)
+
+    GeanyNumberedBookmarks:
+    * Fix deprecated GTK call for GTK+3 (PR #862)
+
+    GeanyVC:
+    * Silence check errors during build time (PR #861)
+    * Update of documentation
+
+    Lineoperations:
+    * Fix various compiler warnings/errors (PR #517)
+    * Remove every n-th line (Issue #772, PR #860)
+    * Add keybindings (Issue #832, PR #889)
+    * Add support for locale-aware sorting (PR #897)
+
+    Lipsum:
+    * Fix deprecated GTK call for GTK+3 (PR #856)
+
+    ProjectOrganizer:
+    * Update of README
+
+    Scope:
+    * Improve evaluation on-hover (PR #823)
+    * Fix a crash on refreshing "Locals" (Issue #824, PR #827)
+
+    Tableconvert:
+    * Fix deprecated GTK call for GTK+3 (PR #859)
+
+    Treebrowser:
+    * Fix deprecated GTK call for GTK+3 (PR #864)
+
+    UpdateChecker:
+    * Update URL for getting current version of Geany (PR #880)
+    * Remove duplicate config_file definition in source code (PR #903)
+
+    VimMode:
+    * Allow browsing command history using arrows (PR #847, PR #848)
+    * Check modifiers in command mode (PR #848)
+    * Let ctrl-c leave the command mode (PR #848)
+    * Add going to beginning/end of command line (PR #848)
+    * Separate command and search history (PR #848)
+
+    Workbench:
+    * Fix deprecated GTK call for GTK+3 (PR #853)
+    * Save settings immediately (PR #868)
+    * Give sidebar a name to enable dedicated CSS styling (PR #870)
+    * Add an option to enable or disable tree lines (PR #869)
+    * Reworking of tag-manager control/usage (PR #867)
+    * Auto-save project on changes (PR #877)
+    * Add new feature "Search projects" (PR #875)
+    * Prevent usage of invalid iters (GtkTreeeIter) (PR #827)
+    * Add option to let git decide which files to display (PR #879)
+
+    Internationalization:
+    * Updated translations: de, es, pt
+
+
+Geany Plugins 1.35 (2019-04-28)
+
+    General:
+    * Windows: Install dependency translations only if selected
+    * Build: Don't rely on a pkg-config output formatting detail
+      (Fix for Geany GTK version check on OpenBSD 6.4)
+
+    Addons:
+    * Update to use new plugin API (PR #699)
+
+    Autoclose:
+    * Update to use new plugin API (PR #700)
+
+    Automark:
+    * Update to use new plugin API (PR #701)
+
+    Codenav:
+    * Update to use new plugin API (PR #702)
+
+    Debugger:
+    * Update to use new plugin API (PR #704)
+    * Fix a compiler warning (PR #816)
+
+    Defineformat:
+    * Update to use new plugin API (PR #705)
+
+    DevHelp:
+    * Update to use new plugin API (PR #707)
+
+    GeanyCTags
+    * Update to use new plugin API (PR #708)
+
+    GeanyExtraSel
+    * Undo workaround for rectange selection cancel bug
+      (Fixed with 1.34+ Geany core release)(PR #806)
+
+    GeanyLua:
+    * Fix build warnings (PR #778)
+    * Update to match latest Geany's Scintilla API (PR #814)
+
+    GeanyNumberedBookmarks:
+    * Fix crash on re-unload (PR #804)
+
+    GeanyVC:
+    * Add a commit message history (PR #836)
+
+    GitChangebar:
+    * Fix compatibility with libgit2 0.28 API (PR #821)
+
+    Project Organizer:
+    * Add file operations to Project Organizer (PR #783)
+
+    Scope:
+    * Correct height of "Environment" GtkTextView (PR #830)
+    * Show error message if no executable is set (PR #831)
+    * Fix "Modify" menu item being active without selection (PR #826)
+
+    Spellcheck:
+    * Improve documentation where to put translation
+      dictionaries (Issue #1627)
+
+    Treebrowser:
+    * Use xdg-open for external open command (PR #813)
+
+    Vimmode:
+    * Fix repeated commands like 10dd not working (PR #820)
+
+    Webhelper:
+    * Update README (PR #812)
+
+    Internationalization:
+    * Updated translations: de, es, pt
+
+
+Geany Plugins 1.34 (2018-12-16)
+
+    General:
+    * New plugin: vimode: A Vim Mode for Geany (PR #735)
+    * Improve Travis testsuite to run also "make distcheck"
+
+    Geanyctags:
+    * Use base path as relative to the project file path (#698, PR #755)
+    * Add apostrophes around generated tags file (PR #739)
+
+    GeanyLua:
+    * Update Scintilla symbols for Geany 1.34 (PR #776)
+    * Update glspi_keycmd.h from geany-master (PR #759)
+
+    Markdown:
+    * Port plugin to Webkit2GTK (PR #746)
+
+    PoHelper:
+    * Consider dash a separator when rewrapping messages (PR #696)
+    * Do not leave spaces at the start of a line when rewrapping (PR #696)
+    * Make sure to only replace header fields in the actual header (PR #696)
+    * Update X-Generator header if present (PR #696)
+    * Use Geany-Plugins version for the plugin (PR #696)
+    * Fix: for locating line breaks (PR #696)
+    * Fix: Properly break all multiline strings on multiple lines (PR #696)
+    * Fix: regular expression replacement when no matches are found
+
+    Scope:
+    * Add GTK3 support (#PR #750)
+
+    Updatechecker:
+    * On Windows, the common ca-certificates bundle is included in
+      the installer for proper SSL certificate verification (PR #768)
+
+    Workbench:
+    * Add option "Expand on hover" (PR #727)
+    * Import base path on "Add project..."
+    * Allow to remove files or directories
+    * Support live update (PR #695, #659)
+
+    Internationalization:
+    * Updated translations: de, es, pt
+
+
+Geany Plugins 1.33 (2018-02-25)
+
+    General:
+    * Rename plugin geanylatex to latex
+    * utils lib: added new function 'gp_filelist_scan_directory_full() (PR #681)
+
+    Addons:
+    * Show color tip and start Color Chooser with double click (PR #664)
+
+    GeanyLua:
+    * Add filetype to set in geany.newfile() (PR #652)
+    * Add function geany.reloadconf() (PR #653)
+    * Fix right-trim.lua (PR #670)
+    * Update glspi_keycmd.h to match latest Geany version (PR #662)
+    * Update to match latest Geany's Scintilla API (PR #685)
+
+    PrettyPrinter:
+    * Allow to pretty print a selection only (PR #683)
+
+    Spellcheck:
+    * Remember 'Check while typing' setting between sessions (#667, PR #680)
+    * Support Enchant 2.0 and later (PR #674)
+
+    Treebrowser:
+    * Fallback to "text-x-generic" icon if info lookup fails (PR #682)
+
+    VC:
+    * Remember the commit dialog size (#679)
+
+    Workbench:
+    * Add "Create file here..."/"Create directory here..." (PR #681)
+    * Renamed "folder" to "sub-directory" (PR #678)
+
+    Internationalization:
+    * Updated translations: de, es, fr
+
+
+Geany Plugins 1.32 (2017-11-19)
+
+    General:
+    * New plugin: Workbench (PR #601)
+    * Travis: Update travis to system with c++11 compiler (#597)
+    * Add a common utils library (PR #622)
+
+    Addons:
+    * Mark Word: Deselect when the selection changes (PR #614)
+
+    GeanyLua:
+    * Increase required geany API version to 235 for usage of
+      'utils_get_real_path' to replace 'tm_get_real_path()'
+
+    GeniusPaste:
+    * Enable HTTPS for pastebin.geany.org (PR #635)
+
+    GitChangebar:
+    * Add the possibility to undo hunk at cursor position (PR #531)
+
+    PrettyPrinter:
+    * Add saving and loading of preferences in/from a file (#494, PR #581)
+
+    ProjectOrganizer:
+    * Increase required geany API version to 235 for usage of
+      'utils_get_real_path' to replace 'tm_get_real_path()'
+    * Close dir created with g_dir_open() in some special cases as well
+      as don't keep directories open when enumerating their children (PR #605)
+    * Use stock icons instead of the ones provided by the plugin (PR #625)
+
+    Scope:
+    * Only allow selection of folders for "working dir" (PR #623)
+    * Add tooltips to toolbar buttons (PR #617)
+
+    Treebrowser:
+    * Previous maintainer has returned
+    * Fix some typos inside documentation (PR #595)
+
+    XmlSnippets:
+    * Activate unit tests for the plugin
+
+    Internationalization:
+    * Updated translations: de, es, fr, pt
+
+
+Geany Plugins 1.31 (2017-07-16)
+
+    General:
+    * New plugin: keyrecord (PR #460)
+    * OS X: Use path relative to bundle (PR #569). Affected plugins:
+      * GeanyGenDoc
+      * GeniusPaste
+      * GitChangebar
+      * Overview
+      * PoHelper
+      * Scope
+    * Add a note to plugins which are currently orphaned and might not
+      receive further fixes (PR #540). Affected plugins:
+      * Geanydoc
+      * GeanyExtrasel
+      * GeanyInsertNum
+      * GeanyLua
+      * GeanyPG
+      * GeanyPrj
+      * GeanyVC
+      * PrettyPrinter
+      * Scope
+      * Shiftcolumn
+      * Treebrowser
+
+    Addons:
+    * Enable Mark Word also for newly opened documents (PR #563)
+
+    Automark:
+    * Extend documentation (PR #582)
+
+    GeanyDoc:
+    * Make OK the default button in interactive mode (PR #566)
+
+    GeanyExtrasel:
+    * Fix issues related to Scintilla Rectancle select (PR #568)
+
+    GeanyLua:
+    * Pass a GdkKeymap to gdk_keymap_* functions to prevent crashes on
+      Windows and critical warnings on other platforms (PR #586)
+
+    GeanyMacro:
+    * Pass a GdkKeymap to gdk_keymap_* functions to prevent crashes on
+      Windows and critical warnings on other platforms (PR #586)
+
+    GeanyNumbersBookmarks:
+    * Pass a GdkKeymap to gdk_keymap_* functions to prevent crashes on
+      Windows and critical warnings on other platforms (PR #586)
+
+    GeniusPaste:
+    * Update configuration for shipped pastebins (PR #551)
+
+    GitChangebar:
+    * Fix spurious line wrapping (PR #564)
+
+    LineOperations:
+    * Add a feature to keep unique lines (PR #560)
+
+    PrettyPrinter:
+    * Add missing README, COPYING, NEWS and AUTHORS files (PR #580)
+
+    ProjectOrganizer:
+    * Fix a crash by ensuring project is open before
+      trying to expand the tree (PR #555, PR #557, PR #559)
+
+    Scope:
+    * Correct a misleading error message (PR #561)
+
+    Spellcheck:
+    * Stop processing if the document gets invalid to prevent crashes
+      while file gets closed during long check runs (Issue #547)
+    * Add style mappings for Rust and PHPSCRIPT
+
+    Updatechecker:
+    * Remove deprecated soup call (PR #541)
+
+    Internationalization:
+    * Updated translations: de, es, pt
+
+
+Geany Plugins 1.30 (2017-03-05)
+
+    Automark:
+    * Fix a possible crash if nothing is selected for automarking
+    * Replace internal usage of deprecated functions
+
+    Commander:
+    * Fix a possible crash on startup with latest GTK3
+
+    Debugger:
+    * Fix a possible crash if debug-modus is enabled (PR #511)
+
+    Geanyctags:
+    * Show online help via help button (PR #521)
+
+    GeanyDoc:
+    * Improve compatibility with Gtk3
+    * Allow to use current word as initial text in interactive mode (PR #457
+
+    GeanyLua:
+    * Remove deprecated GeanyFunctions from interface provided by this
+      plugin (PR #439)
+    * Fix build with latest Scintilla (PR #510)
+
+    GeanyPy:
+    * Sync with upstream GeanyPy version (PR #527)
+
+    LineOperations:
+    * Add support for selections (PR #378)
+
+    Lipsum:
+    * Add a space before restarting Lorem Ipsum text (#513)
+
+    Markdown:
+    * Allow exporting Markdown as HTML (PR #502)
+    * Fix relative paths (PR #501)
+
+    PairTagHighlighter:
+    * Add keybinding for jumping to matching tag (PR #466)
+    * Improve compatibility with Gtk3 (PR #466)
+
+    ProjectOrganizer:
+    * Show online help via help button (PR #521)
+    * Remember expanded directories in the sidebar when reloading (PR #528)
+
+    Spellcheck:
+    * Treat underscore as word separator (PR #512)
+
+    Tableconvert:
+    * Fix markup of documentation
+
+    Treebrowser:
+    * Fix a possible memory leak (PR #478)
+    * Add a keybinding to follow current file (PR #524)
+    * Allow to show menu also with Shift+F10 (PR #523)
+    * Fix a bug addding files to file list again and again when using
+      refresh-function and no file is selected (PR #525)
+    * Don't change directory on project save (PR #536)
+
+    Internationalization:
+    * Updated translations: de, es, fr, pt
+
+
+Geany Plugins 1.29 (2016-11-13)
+
+    General:
+    * Rename plugin GeanyLipsum to Lipsum (PR#472)
+
+    Addons:
+    * Add a function to deselect marked words with one click (PR#481)
+
+    Commander:
+    * Add keybindings for triggering a particular filter type (PR#468)
+
+    GeanyGenDoc:
+    * Fix typos in README (PR#476)
+
+    Git-Changebar:
+    * Fix an issue access the git repository in combination with
+      libgit2 0.24.2
+    * Fix an off-by-one issue in tooltip hunk width calculation cropping
+      1px on the right.
+    * Fix handling of documents starting with a BOM (PR#483, Issue#482)
+
+    Spellcheck:
+    * Strip single quotes from words' beginning and end (Issue#484)
+    * Fix a memory leak on duplicate dictionaries (PR#480)
+
+    Treebrowser:
+    * Fix a typo in configuration parsing causing option for
+      "open new files" have not being save/restored correctly (Issue#469, PR#473)
+
+    Internationalization:
+    * Updated translations: de, es, fr, kk, pt
+
+
+Geany Plugins 1.28 (2016-07-10)
+
+    General:
+    * Rename plugin GeanySendMail to SendMail (PR#443)
+    * Fix some inconsistency in plugins' READMEs (PR#453)
+
+    Windows build:
+    * Update dependencies shipped with the package
+
+    Internationalization:
+    * Updated translations: de, fr, pt, tr
+
+    Addons:
+    * tasks: Strip comment-closing sequence from task text (PR#449)
+    * tasks: Do not extract tokens from non-comments (PR#449)
+
+    Debugger:
+    * Fix escaping target executable path if it contains non-ASCII (Issue#416,
+      PR#451)
+
+    GeanyGenDoc:
+    * Fix build with old rst2html (PR#414)
+
+    GeanyLaTeX:
+    * Fix a conditional end of undo action. Without an undo-action
+      might run forever (Issue#416)
+    * Improve support for GTK3 (PR#410)
+
+    GeanyLipsum:
+    * Add ellipsis to menu item requiring further user input (PR#452)
+
+    GeanyMacro:
+    * Fix GTK3 support (PR#410)
+
+    GeanyNumberedBookmarks:
+    * Fix GTK3 support (PR#410)
+
+    GeanyPrj:
+    * Fix GTK3 support (PR#410)
+
+    GeanyPy:
+    * Fix build with current Geany (PR#363)
+
+    PairTagHighlighter:
+    * Fix a crash when the tag name is missing (Issue#442, Issue#446,
+      PR#447)
+
+    PrettyPrinter:
+    * Fix several memory leaks (PR#364)
+
+    ProjectOrganizer:
+    * Fix duplicated tab in Project Properties
+
+    Scope:
+    * Fix dependency checks on Windows (PR#409)
+
+    Shiftcolumn:
+    * Fix handling of end-to-start selections (PR#366)
+
+
+Geany Plugins 1.27 (2016-03-13)
+
+    General:
+    * Remove Waf build support
+    * Improve building plugins on Windows with Mingw
+    * Harmonize logging domain of plugins so output to e.g. command line
+      can be better connected to a plugin
+    * New plugin LineOperations
+    * Depend on Geany 1.27 for Windows builds
+    * Increase needed API to 224 (Geany 1.26) for all plugins by
+      removing deprecated symbols
+    * Enable travis for some integration test
+
+    Debugger:
+    * Add support for switching threads
+    * Fix handling of non-ASCII characters in file names (#259)
+    * Speed up stack trace display on large traces (#347)
+    * Fix toggling breakpoints for unknown locations
+    * Fix handling of escape characters in file names (part of #83)
+    * Fix marker for the current frame
+    * Report the signal name when the process received one
+    * Fix crash when reloading the plugin (#229)
+    * Fix many memory leaks and potential crashes
+
+    GeanyCTags:
+    * Follow symbolic links
+    * Fix spawning ctags on Windows
+
+    GeanyNumberedBookmarks:
+    * Fix crash in some situations with no documents open (#301)
+
+    GeanyPy:
+    * Convert to a proxy plugin
+    * Add keybinding support for Python plugins
+
+    GeanyVC:
+    * Fix a regression where VC-plugin menu was not properly added at
+      the end of menu list
+    * Enable spell checking also for GTK3 build
+
+    GeniusPaste:
+    * Make pastebins configurable via configuration files, adding support
+      for user-defined pastebins
+    * Add support for using the redirected URI as paste URI
+    * Add new pastebins fpaste.org and paste.debian.net
+
+    MultiTerm:
+    * Fix an issue with extracting translatable strings from not shipped
+      C files (PR#392)
+
+    Projectorganizer:
+    * Use the term "symbol" instead of "tag"
+    * Improve symlink cycle detection
+
+    Spellcheck:
+    * Fix possible double checking when 'check while typing' is activated
+    * Improve detection of English contractions and other use of single quotes
+
+    Internationalization:
+    * Various fixes on plugins to ensure proper localization
+    * Updated translations: de, fr, pt, ru
+
+
+Geany Plugins 1.26 (2015-11-15)
+
+    General:
+    * Add a note about deprecating Waf build system -- will be removed
+      with 1.27
+
+    Addons:
+    * Add new feature to copy path of current file into clipboard (#291)
+    * Update bookmark list also on any line changes in the document (SF#129,
+      SF#39, #284)
+    * Add GTK3 support (#271)
+
+    GeanyPy:
+    * Fix Python library loading on Debian based systems
+
+    GeanyVC:
+    * Add GTK3 support (#300)
+    * Little improvements on commit dialog (#300)
+
+    GitChangeBar:
+    * Add support for libgit2 0.23 (#283)
+
+    Multiterm:
+    * Make a lot of strings translatable (#254)
+
+    PoHelper:
+    * Fix untranslated and fuzzy count in the stats dialog (#292)
+
+    ProjectOrganizer:
+    * Fix some features when the sidebar was never visible
+
+    Scope:
+    * Use Geany spawn: maximum GDB line length fixed to 1MB, no CPU
+      time wasted when IDLE under Windows, 3 preferences deleted.
+
+    Spellcheck:
+    * Add an option to show spelling suggestion on top of the context
+      menu instead of in a submenu (still default) (#287, #290)
+
+    Internationalization:
+    * Updated translations: de, fr, nl, pt
+    * New translations: kk
+
+
+Geany Plugins 1.25 (2015-07-12)
+
+    General:
+    * GProject is renamed to ProjectOrganizer
+    * New plugin Automark
+    * New plugin GeanyCtags
+    * New plugin GitChangeBar
+    * New plugin Overview
+    * Fix plugin deinstallation under Windows
+
+    Addons:
+    * Improve URI selection
+
+    Autoclose:
+    * Add Whitesmith style bracket formatting support
+
+    CodeNav:
+    * Implement Go to File feature
+
+    Commander:
+    * Improve sorting algorithm
+
+    Debugger:
+    * Fix crash with GDB 7.7
+
+    GeanyLaTeX:
+    * Fix automatic capitalization of multi-byte characters
+
+    GeanyVC:
+    * Add support for WinMerge external diff viewer
+
+    ProjectOrganizer:
+    * Add an "external directory" feature
+    * Add find tag by name
+    * Add ignored file patterns
+    * Performance improvements in tag generation using updated Geany API
+
+    MultiTerm:
+    * Fix build with recent Vala versions
+
+    PairTagHighlighter:
+    * Fix clearing previous indicators (PR #200)
+
+    PoHelper:
+    * Add a statistics dialog
+    * Fix handling of plural forms
+
+    Scope:
+    * Fix building on GNU/Hurd (PR #146)
+
+    Spellcheck:
+    * Don't check code of scripting languages embedded in HTML
+    * Add option to perform a spell check on document open (closes SF #137)
+
+    Tableconvert:
+    * Improve handling of non-LF line ends
+    * Add support for DokuWiki syntax
+
+    WebHelper:
+    * Add support for basic bookmarks
+
+    Internationalization:
+    * Update translations: de, fr, pt, ru
+
+
+Geany Plugins 1.24 (2014-04-13)
+
+    Known issues
+    * If the Geanypy plugin is closed when any Python plugins are still
+      running it may cause a crash.
+    * Closing Geany having GeanyLaTeX and Devhelp-plugin active, might
+      cause a not clean shutdown of Geany
+
+    General:
+    * Depend on Geany 1.24
+    * New plugin PoHelper
+    * New plugin PairTagHighlighter
+    * New plugin Autoclose
+    * New plugin Geanypy (Python bindings)
+    * New plugin Defineformat
+    * Build system improvements
+
+    Commander:
+    * Add Gtk3 support
+
+    Debugger:
+    * Fixing a crash when re-loading plugin
+
+    GeanyGenDoc:
+    * Add Gtk3 support
+    * Fix a memory leak
+
+    GeanyExtraSel:
+    * Add "Toggle Rectangular/Stream"
+
+    GeanyInsertNum:
+    * Add Gtk3 support
+    * Increase maxlines to 250000
+
+    GeanyLipsum:
+    * Add Gtk3 support
+    * Ensure whitespace between repetitions of Lorem Ipsum text
+
+    GeanyLua:
+    * Add Gtk3 support
+    * Re-enable build with C89
+
+    GeanyMiniScript:
+    * Add Gtk3 support
+
+    GeanyPG:
+    * Improve portability and check for system requirements
+
+    GeanyVC:
+    * Add support for Subversion 1.7
+    * Limit the display of diff output to 16 KB to not freeze the UI on
+      huge commit-diffs
+    * Show line and column of the cursor in the commit
+      message text window
+
+    GProject:
+    * Add Gtk3 support
+    * Display content-type-specific icons for files in the sidebar
+    * Make toolbar buttons insensitive when no files displayed
+    * Smaller fixes and improvements
+
+    Markdown:
+    * Add Gtk3 support
+    * Fix scroll jumping behavior
+
+    Multiterm:
+    * Implement the other config VTE properties
+
+    PrettyPrinter:
+    * Add Gtk3 support
+
+    Scope:
+    * Add Gtk3 support
+    * Add support for registers
+    * Various fixes and improvements
+
+    Shiftcolumn:
+    * Removed default keybindings
+
+    Spellcheck:
+    * Add Gtk3 support
+    * Fix check for default language if LANG contains UTF-8
+    * Remove check while typing idle callback when unloading the plugin
+      (closing #96)
+    * Improve stripping of whitespace and punctuation characters
+      (fixes #98)
+    * Fix crash when closing a document quickly after modifying it
+
+    Tableconvert:
+    * Add support for HTML tables in markdown files
+
+    TreeBrowser:
+    * Add Gtk3 support
+    * Don't collapse expanded child of node when node gets selected
+    * Add and improve some keybindings
+    * Add a way to open newly created files
+    * Focus editor on file open
+
+    Updatechecker:
+    * Fix comparing major versions
+
+    WebHelper:
+    * Add Gtk3 support
+
+    Internationalization:
+    * Update translations: de, es, fr, nl, ru, tr
+    * New translations: it
+
+
+Geany Plugins 1.23 (2013-03-10)
+
+    * Depend on Geany 1.23
+    * Add new plugin Commander
+    * Add new plugin markdown
+    * Add new plugin Scope
+    * Removing plugin geanyGDB
+    * Improvement of error handling in autogen.sh
+    * Improvement of general documentation
+    * Buildfix with waf on Windows-Systems
+
+    Addons:
+    * Fixing of memory leaks
+    * Little rewordings
+
+    Devhelp:
+    * Fix API-calls for older GTK-versions
+    * Fix a signal to avoid crash on closing of Geany
+
+    GeanyGenDoc:
+    * Improvement of waf-build
+
+    GeanyLaTeX:
+    * Fix installation path for documentation.
+
+    GeanyLua:
+    * Update of Scintilla bindings to 3.2.0
+    * Improve pointer->int casts
+    * Revisiting mechanism to find Lua-package on configuration-time
+
+    GeanyMacro:
+    * Fix some typos
+
+    GeanyPG:
+    * Fix adding of \0 when encryption a selection (#3557458)
+
+    GeanyPrj:
+    * Buildfix for function not marked as external
+
+    GeniusPaste:
+    * Fixing of memory leaks
+    * Fixing of a invalid memory free
+
+    Spellcheck:
+    * Perform a recheck/clear when toggling 'check while typing' (#3495051)
+
+    Tableconvert:
+    * Rework to be more generic
+    * Improvement of LaTeX-tables being created
+
+    Treebrowser:
+    * Added backspace to browse up a directory
+    * Eexpand/collapse with spacebar
+
+    Webhelper:
+    * Show the currently hovered link in the statusbar
+    * Don't use deprecated GTK API
+
+    Internationalisation:
+    * Update translations: ca, de, es, fr, nl, tr
+
+
+Geany Plugins 1.22 (2012-07-10)
+
+    General:
+    * Autotools build system improvements
+    * Add new plugin GeanyMiniScript
+    * Add new plugin GeniusPaste
+    * Add new plugin MultiTerm
+    * Disable GeanyGDB by default on build with autotools
+
+    Addons:
+    * Add word wrapping addon
+
+    Debugger:
+    * Fix build with --as-needed
+    * Fix crash on 64 bit platform (#3449480)
+    * Use asynchronous methods when possible not to freeze the UI
+    * Display thread information in the stack window
+    * Properly handle spaces in filenames
+    * Various other bugfixes and improvements
+
+    Devhelp:
+    * Bundle libdevhelp 2.32
+    * Remove support for Google Code Search
+
+    GeanyLaTeX:
+    * Fix crash with recent Geany versions
+    * Ignore files autogenerated by biblatex in suggestions for cite
+
+    GeanyLua:
+    * Fix build with recent GLib
+
+    GeanyMacro:
+    * Add support for editing macros events
+    * Support search next/search prev
+
+    GeanyNumberedBookmarks:
+    * Only save file status if non-empty
+    * Add support for saving file status next to the file itself
+    * Save non-numbered bookmarks too
+
+    GeanyPG:
+    * Fix build with --as-needed
+    * Fix encryption to an untrusted key
+
+    GeanyPrj:
+    * Add "find in project" keybinding
+    * Add a setting to hide the sidebar
+
+    GeanyVC:
+    * Go to the selected line upon blame
+    * Add support for displaying the VC menu in the menubar
+
+    GProject:
+    * Fix a crash when a project file is missing
+    * Support Geany 1.22
+
+    Tableconvert:
+    * Fix SQL tables generation
+
+    TreeBrowser:
+    * Fix permissions on new files (#3415045)
+    * Add "create new file" and "create new directory" keybindings
+
+    WebHelper:
+    * Fix crash with recent versions of WebKitGTK
+    * Save and restore inspector docking state
+
+    Internationalisation:
+    * Update translations: de, ja, nl, tr
+
+
+Geany Plugins 0.21.1 (2011-10-30)
+
+    General:
+    * Add geanylatex/doc/ to autotools build system
+
+
+Geany-Plugins 0.21 (2011-10-23)
+
+    General:
+    * Renew autotools build system
+    * Add new plugin Debugger
+    * Add new plugin Devhelp
+    * Add new plugin GeanyPG
+    * Add new plugin GeanyMacro
+    * Add new plugin GeanyNumberedBookmarks
+    * Add new plugin Tableconvert
+    * Add new plugin XMLSnippets
+
+    Addons:
+    * DocList addon: Add preference to define the order of the documents
+      in the list (#3204573)
+    * Tasks addon: Activate and update the task list when the Tasks
+      addon is enabled
+
+    GeanyLaTeX:
+    * Moved LaTeX-menu to a separate menu inside Geany main menu
+    * Added a feature to autocapetlise letters on typing on begin of a
+      sentence
+    * Added a way to put a icon for \LaTeX{}-wizard into Geany's main
+      toolbar
+    * Added a dialog for inserting BibTeX references based on available
+      *.bib-files
+    * Upgrade plugin API to version 199
+    * Ensure not to insert {} after \^ and \_
+    * Added a keystroke to toggle inserting {} after ^ and _
+    * Fixed an issue with wrong inserted formatting using a keybinding
+    * Small update to enable i18n also on Geany >= 0.21
+    * Various bugfixes and memory leak fixes.
+
+    GeanyLipsum:
+    * Small update to enable i18n also on Geany >= 0.21
+
+    GeanySendMail:
+    * Some minore cleaning up of code
+    * Fix for an issue with replacing of command string in case of %r
+      has not being used
+    * Don't double free a variable which might ended up inside a segmentation
+      fault when using plugin function more than once.
+    * Small update to enable i18n also on Geany >= 0.21
+
+    GeanyVC:
+    * Some smaller fixes for compiler warnings and memory leaks
+    * Small update to enable i18n also on Geany >= 0.21
+
+    Spell Check:
+    * Reduce artifacts on partially checked words
+    * Improve 'Check as you type' feature, make it more reliably
+
+    Tableconvert:
+    * Adding new plugin, helping on converting tabulator separated
+      list into table supporting LaTeX, HTML and SQL so far.
+    * Small update to enable i18n also on Geany >= 0.21
+
+    Updatechecker:
+    * Fix an issue with init threads for older GTK/glib versions by
+      updating to Geany API version 203.
+    * Small update to enable i18n also on Geany >= 0.21
+    * Fix a typo inside waf-build system
+
+    WebHelper:
+    * Fix creation of configuration directory in some cases.
+    * Fix missing update of navigation buttons on anchor links.
+    * Fix thread initialization problem.
+    * Fix some issues with keybingins on secondary windows.
+    * Add a keybinding to show/hide web view's window (bug #3156262).
+    * Allow for better configuration of secondary windows.
+
+    Internationalisation:
+    * Update translations: de, pt, ru, tr
+
+
+Geany-Plugins 0.20 (2011-01-10)
+
+    General:
+    * Update of Waf build system.
+    * Add new plugin UpdateChecker.
+    * Add new plugin WebHelper.
+
+    GeanyExtraSel:
+    * Respect 'Smart' home key (Geany does now).
+    * Fixed Scintilla Shift+movement key convertion of rectangle selection.
+    * Virtual spaces support.
+    * Per-file column mode.
+    * Added "Set Anchor", "Select to Anchor" and "Rectangle Select to Anchor".
+
+    GeanyGenDoc:
+    * Bump dependency on CTPL to 0.3.
+    * Add a popup menu for common actions in the documentation type selector.
+    * Fix indentation of inserted documentation blocs.
+    * Documentation type now defaults to Doxygen (rather than nothing).
+    * Add policy PASS to completely ignore a symbol.
+    * Add basic rules for PHP.
+    * Fix build against GTK+ 2.16.
+    * Don't copy the system configuration file to the user's one when hitting
+      "Edit Current Language Configuration", only write it when saving changes.
+
+    GeanyInsertNum:
+    * Thin selection support.
+
+    GeanyLaTeX:
+    * Move LaTeX-menu to a separate menu inside Geany main menu.
+    * Add a feature to auto-capitalize letters on typing on begin of a sentence.
+    * Add a way to put an icon for LaTeX-wizard into Geany’s main toolbar.
+    * Added a dialog for inserting BibTeX references based on available *.bib-files.
+
+    GeanySendMail:
+    * Minor code cleanup.
+
+    TreeBrowser:
+    * Added bookmarks support.
+    * Added keybindings support.
+    * Added mime type icons in the tree.
+    * Many bugfixes and code improvements.
+
+    Internationalisation:
+    * Update translations: de, es, ja, pt, tr
+
+
+Geany-Plugins 0.19 (June 13, 2010)
+
+    General:
+    * Add new plugin CodeNav.
+    * Add new plugin GeanyExtraSel.
+    * Add new plugin GeanyGenDoc.
+    * Add new plugin GeanyInsertNum.
+    * Add new plugin PrettyPrinter.
+    * Add new plugin TreeBrowser.
+
+    GeanySendMail:
+    * Allow hitting return to close email address dialog and proceed.
+
+    GeanyGDB:
+    * Bugfix: Should compile on BSD again.
+    * Bugfix: Now loads files which have a space in path.
+    * Bugfix: Fixed an issue, where some localizations may caused a crash.
+    * Bugfix: Run gdb with LANG=C to avoid locale-related clashes when
+      parsing the gdb output for the localized version break- and watchpoints.
+    * Bugfix: Improve the way a running process gets killed.
+    * Bugfix: Fix the general geany slowness that geanygdb causes once a
+      binary is loaded.
+    * Usability: Fixed confusing naming issues. This plugin is now
+      consistently called GeanyGDB, the Unix name is geanygdb (lowercase).
+    * Usability: add a menu entry to the Geany menubar.
+    * Usability: add the possibilty to set keyboard shortcuts.
+    * Added a page to the info area at the bottom of Geany, which will be
+      used to display the stack and local variables or watches in future.
+    * API: Update GeanyGDB to use current API interface of Geany, to be
+      compatible with current Geany versions.
+
+    GeanyLaTeX:
+    * Introduced custom templates for LaTeX-Wizard.
+    * Added a LaTeX-Wizard icon to the toolbar.
+    * Added shortcuts for inserting common list environments like
+      enumerate, itemize and description.
+    * Some general bugfixes and improvements. As always, see the
+      ChangeLog or svn log.
+    * Switched to waf for building the plugin (stand alone version only).
+    * Moved some LaTeX-specific stuff out of Geany’s core into the plugin.
+      This affects features like.
+    * Autocompletion of \end{} and \endgroup{}.
+    * Proceeded to Geany Plugin API v184.
+    * Made reference insertion configurable.
+    * Added an function to insert \usepackage{} into header of file.
+    * Automatic adding of {} after typing of and ˆ.
+    * Added automatic inserting of {} after typing a command and hitting
+      return in case of none pair is already present.
+
+    Addons:
+    * Add new addon 'Strip trailing blank lines' by Eugene Arshinov.
+    * Add new addon 'XML Taggging' by Frank Lanitz.
+    * Add new addon 'Mark Word'.
+    * Add new addon 'Bookmark List'.
+    * Rework the 'Tasks' addon to be more flexible and faster.
+
+    Spell Check:
+    * Add an option to make the editor menu items for Spelling Suggestions
+      optional.
+    * Minor bug fixes.
+
+    GeanyVC:
+    * Some minor code cleanups.
+    * Bugfix: Fix an error, when the language for spellchecking inside
+      commit dialog is not set properly.
+
+    Internationalisation:
+    * New translations: gl, zh_CN.
+    * Updated translations: de, ja, pt, pt_BR, tr.
+
+
+Geany-Plugins 0.18 (October 28, 2009)
+
+    General:
+    * Added new plugins GeanyDoc and GeanyPrj.
+    * Minor fixes.
+
+    Spell Check:
+    * Allow setting custom dictionary directories if
+      Enchant >= 1.5.0 is used.
+
+    GeanyVC:
+    * Update to most recent version including an entry to editor menu
+      and a check/uncheck all function on commit dialog.
+
+    Internationalisation:
+    * New translations: ca, ja, pt_BR.
+    * Updated translations: de, es, pt_BR, pt, tr.
+
+
+Geany-Plugins 0.17.1 (July 21, 2009)
+
+    General:
+    * Avoid using GHashTable functions from newer GLib versions to fix
+      compilation with GLib 2.8.
+    * Updated translations.
+    * Correct typo: COMMON_LIBS => COMMONLIBS.
+    * Move ttyhelper to $libexecdir/geany-plugins/geanygdb.
+
+    Plugins:
+    * GeanyLua: Fix showing system script menu items.
+    * Addons: Fix crashes when quitting Geany from the system tray icon.
+    * GeanyLaTeX: Fix toolbar issue.
+
+
+Geany-Plugins 0.17 (July 14, 2009)
+
+    * First release.

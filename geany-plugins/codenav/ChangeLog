@@ -1,0 +1,36 @@
+2014-04-24  Federico Reghenzani <federico(dot)dev(at)reghe(dot)net>
+ * src/*:
+    Implementation of plugin preferences and minor fixes
+   
+2014-03-26  Federico Reghenzani <federico(dot)dev(at)reghe(dot)net>
+ * src/goto_file.c:
+   Implementation directory (absolute/relative path) support.
+ * src/utils.c, src/utils.h:
+   Changes strpos() into strrpos() (reverse order)
+
+2014-03-23  Federico Reghenzani <federico(dot)dev(at)reghe(dot)net>
+ * src/codenavigation.h:
+   Resolve some compiler warnings.
+ * src/goto_file.c:
+   Implementation goto_file.
+ * src/utils.c, src/utils.h:
+   Added strpos().
+
+2011-04-23  Frank Lanitz  <frlan@frank.uvena.de>
+
+ * src/switch_head_impl.c:
+   Move debug some output after NULL-pointer check to prevent from
+   NULL-pointer dereferencing.
+
+
+2009-10-14  Nick Treleaven  <nick(dot)treleaven(at)btinternet(dot)com>
+
+ * src/codenavigation.c:
+   Fix building on GLib < 2.16.
+   Declare variable before code for ISO C90.
+
+
+2009-07-19  Lionel Fuentes  <funto66@gmail.com>
+
+ * src/codenav.c: Initial import
+      implementation / header switching works but is not configurable

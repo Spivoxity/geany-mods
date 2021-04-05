@@ -1,0 +1,48 @@
+From: Evgeni Golov <evgeni@debian.org>
+Date: Fri, 29 Mar 2013 23:14:44 +0100
+Subject: load help files from Debian's locations
+
+---
+ commander/src/commander-plugin.c | 2 +-
+ markdown/src/plugin.c            | 3 +++
+ scope/src/scope.c                | 2 +-
+ 3 files changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/commander/src/commander-plugin.c b/commander/src/commander-plugin.c
+index 9f8d071..f407a04 100644
+--- a/commander/src/commander-plugin.c
++++ b/commander/src/commander-plugin.c
+@@ -799,5 +799,5 @@ plugin_cleanup (void)
+ void
+ plugin_help (void)
+ {
+-  utils_open_browser (DOCDIR "/" PLUGIN "/README");
++  utils_open_browser ("/usr/share/doc/geany-plugin-commander/README");
+ }
+diff --git a/markdown/src/plugin.c b/markdown/src/plugin.c
+index 4dd001a..6588000 100644
+--- a/markdown/src/plugin.c
++++ b/markdown/src/plugin.c
+@@ -43,6 +43,9 @@ PLUGIN_SET_TRANSLATABLE_INFO(LOCALEDIR, GETTEXT_PACKAGE,
+ #  define MARKDOWN_HELP_FILE MARKDOWN_DOC_DIR "/html/help.html"
+ #endif
+ 
++#undef MARKDOWN_HELP_FILE
++#define MARKDOWN_HELP_FILE "/usr/share/doc/geany-plugin-markdown/html/help.html"
++
+ #define MARKDOWN_PREVIEW_LABEL _("Markdown Preview")
+ 
+ /* Global data */
+diff --git a/scope/src/scope.c b/scope/src/scope.c
+index 66b4742..7be3cf3 100644
+--- a/scope/src/scope.c
++++ b/scope/src/scope.c
+@@ -495,7 +495,7 @@ void configure_toolbar(void)
+ 
+ void plugin_help()
+ {
+-	char *helpfile = g_build_filename(PLUGINHTMLDOCDIR, "scope.html", NULL);
++	char *helpfile = g_build_filename("/usr/share/doc/geany-plugin-scope/html/", "scope.html", NULL);
+ 	utils_open_browser(helpfile);
+ 	g_free(helpfile);
+ }

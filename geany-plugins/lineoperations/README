@@ -1,0 +1,328 @@
+===============
+Line Operations
+===============
+
+.. contents::
+
+About
+=====
+
+Line Operations is an assortment of simple line functions that can be
+applied to an open file, or selection.
+
+Features
+========
+
+* Remove Duplicate Lines, sorted
+* Remove Duplicate Lines, ordered
+* Remove Unique Lines
+* Keep Unique Lines
+* Remove Empty Lines
+* Remove Whitespace Lines
+* Remove Every Nth Line
+* Sort Lines Ascending
+* Sort Lines Descending
+
+Usage
+=====
+
+After the plugins has been installed successfully, load the plugin via
+Geany's plugin manager and a new menu item in the Tools menu will
+appear ("Tools" > "Line Operations"). Click on each menu item to apply
+the operation on whole file, or selection. See descriptions below to
+see operations for each menu item.
+
+Preferences
+-----------
+
+To enable preferences ("Tools" > "Plugin Manager"), check the checkbox to
+enable Line Operations, and with the item highlighted click "Preferences"
+on bottom of the "Plugin Manager" frame.
+
+**Use collation based string compare** - When this option is enabled it will
+compare strings using linguistically correct rules for the current locale
+(g_utf8_collate).
+
+When it is disabled it will compare strings based on numerical value of the
+characters (strcmp).
+
+This option is disabled by default.
+
+  Example: Sort order using **Use collation based string compare** enabled
+
+  ::
+
+    D U+0044 : LATIN CAPITAL LETTER D
+    d U+0064 : LATIN SMALL LETTER D
+    E U+0045 : LATIN CAPITAL LETTER E
+    e U+0065 : LATIN SMALL LETTER E
+    Ê U+00CA : LATIN CAPITAL LETTER E WITH CIRCUMFLEX
+    é U+00E9 : LATIN SMALL LETTER E WITH ACUTE
+    F U+0046 : LATIN CAPITAL LETTER F
+    f U+0066 : LATIN SMALL LETTER F
+
+  Note: all 'e' characters appear after any 'd' character and before any 'f'
+  character.
+
+  Example: Sort order **Use collation based string compare** disabled
+
+  ::
+
+    D U+0044 : LATIN CAPITAL LETTER D
+    E U+0045 : LATIN CAPITAL LETTER E
+    F U+0046 : LATIN CAPITAL LETTER F
+    d U+0064 : LATIN SMALL LETTER D
+    e U+0065 : LATIN SMALL LETTER E
+    f U+0066 : LATIN SMALL LETTER F
+    Ê U+00CA : LATIN CAPITAL LETTER E WITH CIRCUMFLEX
+    é U+00E9 : LATIN SMALL LETTER E WITH ACUTE
+
+  Note: all the 'e' characters do not appear together.
+
+
+Selection
+---------
+
+If a selection is made in the file, the line operation will be applied to the
+lines within the selection. The beginning of the selection will expand to the
+beginning of its line, and the end of the selection will expand to the end of
+its line. If the end of the selection is on col 0, that line will be included.
+
+Notes
+-----
+
+ * Line Operations will **not** make changes to a file until you save
+   the file.
+
+
+Operation Details
+=================
+
+Remove Duplicate Lines
+----------------------
+
+The first occurrence of each duplicate line will remain in the file.
+The **Sorted** option will sort the file and remove duplicate lines
+[fast on large files]. The **Ordered** option will keep the same order
+of lines [slow on large files].
+
+  Example: Suppose a file has the following lines. (#comments added for
+  clarity)
+
+  ::
+
+    Line 2
+    Line 1
+    Line 2    #removed
+    Line 3
+    Line 1    #removed
+    Line 2    #removed
+
+  The **Remove Duplicate Lines, sorted** will change the file into this:
+
+  ::
+
+    Line 1
+    Line 2
+    Line 3
+
+  The **Remove Duplicate Lines, ordered** will change the file into
+  this:
+
+  ::
+
+    Line 2
+    Line 1
+    Line 3
+
+
+
+Remove Unique Lines
+-------------------
+
+Removes all lines that appear only once.
+
+  Example: Suppose a file has the following lines. (#comments added for
+  clarity)
+
+  ::
+
+    Line 2
+    Line 1
+    Line 2
+    Line 3    #removed
+    Line 1
+    Line 2
+
+  The **Remove Unique Lines** will change the file into this:
+
+  ::
+
+    Line 2
+    Line 1
+    Line 2
+    Line 1
+    Line 2
+
+
+Keep Unique Lines
+-------------------
+
+Keep all lines that appear only once.
+
+  Example: Suppose a file has the following lines. (#comments added for
+  clarity)
+
+  ::
+
+    Line 4
+    Line 1    #removed
+    Line 2    #removed
+    Line 3
+    Line 1    #removed
+    Line 2    #removed
+
+  The **Keep Unique Lines** will change the file into this:
+
+  ::
+
+    Line 4
+    Line 3
+
+
+Remove Empty Lines
+------------------
+
+Removes all lines that only contain a newline character, and no other
+characters.
+
+  Example: Suppose a file has the following lines. (#comments, and
+  \\n newline characters added for clarity)
+
+  ::
+
+    Line 2\n
+    Line 1\n
+    \n          #removed
+         \n     #NOT removed (contains spaces)
+        Line 1\n
+    Line 2\n
+
+  The **Remove Empty Lines** will change the file into this:
+
+  ::
+
+    Line 2\n
+    Line 1\n
+         \n
+        Line 1\n
+    Line 2\n
+
+
+Remove Whitespace Lines
+-----------------------
+
+Removes all lines that have only whitespace characters.
+
+
+  Example: Suppose a file has the following lines. (#comments, and \\n
+  newline characters added for clarity)
+
+  ::
+
+    Line 2\n
+    Line 1\n
+    \n           #removed
+         \n      #removed (contains only whitespace chars)
+     \t \n       #removed (contains only whitespace chars)
+        Line 1\n #NOT removed (contains non whitespace chars)
+    Line 2\n
+
+  The **Remove Whitespace Lines** will change the file into this:
+
+  ::
+
+    Line 2\n
+    Line 1\n
+        Line 1\n
+    Line 2\n
+
+Remove Every Nth Line
+---------------------
+
+The user can enter a number N. Every Nth line will be removed then.
+
+  Example: Suppose a file has the following lines and the user enters the
+  value 2 for N. (#comments added for clarity)
+
+  ::
+
+    Line 1
+    Line 2    #removed
+    Line 3
+    Line 4    #removed
+    Line 5
+
+  The **Remove Every Nth Line** (N=2) will change the file into this:
+
+  ::
+
+    Line 1
+    Line 3
+    Line 5
+
+Sort Lines
+----------
+
+Sorts lines ascending or descending based on ASCII values
+(lexicographic sort).
+
+
+  Example: Suppose a file has the following lines.
+
+  ::
+
+    line 1
+    line 2
+    line
+    line 3
+    line
+
+  The **Sort Lines Ascending** will change the file into this:
+
+  ::
+
+    line
+    line
+    line 1
+    line 2
+    line 3
+
+
+  The **Sort Lines Descending** will change the file into this:
+
+  ::
+
+    line 3
+    line 2
+    line 1
+    line
+    line
+
+
+License
+=======
+
+The Line Operations plugin is distributed under the terms of the GNU
+General Public License as published by the Free Software Foundation;
+either version 2 of the License, or (at your option) any later version.
+A copy of this license can be found in the file COPYING included with
+the source code of this program.
+
+Ideas, questions, patches and bug reports
+=========================================
+
+Please direct all questions, bug reports and patches to the plugin
+author using the email address listed below or to the Geany mailing
+list to get some help from other Geany users, or report them at
+https://github.com/geany/geany-plugins/issues.

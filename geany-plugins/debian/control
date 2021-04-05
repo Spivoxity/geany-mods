@@ -1,0 +1,826 @@
+Source: geany-plugins
+Section: devel
+Priority: optional
+Maintainer: Geany Packaging Team <pkg-geany-team@lists.alioth.debian.org>
+Uploaders: Chow Loong Jin <hyperair@debian.org>, Evgeni Golov <evgeni@debian.org>
+Build-Depends: debhelper (>= 9),
+               dpkg-dev (>= 1.16.1~),
+               dh-autoreconf (>= 4),
+               autotools-dev,
+               intltool (>= 0.35),
+               geany (>= 1.37),
+               libgtk-3-dev,
+               libglib2.0-dev (>= 2.18),
+               libenchant-2-dev (>= 2.2),
+               libgtkspell3-3-dev,
+               liblua5.1-dev,
+               libctpl-dev (>= 0.3),
+               python3-docutils,
+               libxml2-dev (>= 2.6.27),
+               libsoup2.4-dev (>= 2.4.0),
+               libgdk-pixbuf2.0-dev (>= 2.0),
+               libgpgme11-dev,
+               libvte-2.91-dev,
+               libwebkit2gtk-4.0-dev,
+               libwnck-dev (>= 2.10.0),
+               libmarkdown2-dev,
+               libgit2-dev,
+               valac (>= 0.7.0),
+               libvte-2.91-dev,
+Standards-Version: 4.1.2
+Homepage: http://plugins.geany.org
+Vcs-Browser: https://salsa.debian.org/geany-team/geany-plugins
+Vcs-Git: https://salsa.debian.org/geany-team/geany-plugins.git
+
+Package: geany-plugins
+Architecture: all
+Enhances: geany
+Depends: geany-plugin-addons (>= ${source:Version}),
+         geany-plugin-autoclose (>= ${source:Version}),
+         geany-plugin-automark (>= ${source:Version}),
+         geany-plugin-codenav (>= ${source:Version}),
+         geany-plugin-commander (>= ${source:Version}),
+         geany-plugin-ctags (>= ${source:Version}),
+         geany-plugin-debugger (>= ${source:Version}),
+         geany-plugin-defineformat (>= ${source:Version}),
+         geany-plugin-doc (>= ${source:Version}),
+         geany-plugin-extrasel (>= ${source:Version}),
+         geany-plugin-gendoc (>= ${source:Version}),
+         geany-plugin-geniuspaste (>= ${source:Version}),
+         geany-plugin-git-changebar (>= ${source:Version}),
+         geany-plugin-insertnum (>= ${source:Version}),
+         geany-plugin-keyrecord (>= ${source:Version}),
+         geany-plugin-latex (>= ${source:Version}),
+         geany-plugin-lipsum (>= ${source:Version}),
+         geany-plugin-lua (>= ${source:Version}),
+         geany-plugin-lineoperations (>= ${source:Version}),
+         geany-plugin-macro (>= ${source:Version}),
+         geany-plugin-markdown (>= ${source:Version}),
+         geany-plugin-miniscript (>= ${source:Version}),
+#        geany-plugin-multiterm (>= ${source:Version}),
+         geany-plugin-overview (>= ${source:Version}),
+         geany-plugin-numberedbookmarks (>= ${source:Version}),
+         geany-plugin-pairtaghighlighter (>= ${source:Version}),
+         geany-plugin-pg (>= ${source:Version}),
+         geany-plugin-pohelper (>= ${source:Version}),
+         geany-plugin-prj (>= ${source:Version}),
+         geany-plugin-projectorganizer (>= ${source:Version}),
+#        geany-plugin-py (>= ${source:Version}),
+         geany-plugin-scope (>= ${source:Version}),
+         geany-plugin-sendmail (>= ${source:Version}),
+         geany-plugin-tableconvert (>= ${source:Version}),
+         geany-plugin-vc (>= ${source:Version}),
+         geany-plugin-prettyprinter (>= ${source:Version}),
+         geany-plugin-shiftcolumn (>= ${source:Version}),
+         geany-plugin-spellcheck (>= ${source:Version}),
+         geany-plugin-treebrowser (>= ${source:Version}),
+         geany-plugin-updatechecker (>= ${source:Version}),
+#        geany-plugin-webhelper (>= ${source:Version}),
+         geany-plugin-workbench (>= ${source:Version}),
+         geany-plugin-vimode (>= ${source:Version}),
+         geany-plugin-xmlsnippets (>= ${source:Version}),
+         ${misc:Depends}
+Description: set of plugins for Geany
+ This is a metapackage which installs the whole set of plugins for Geany.
+ .
+ Geany is a fast and lightweight IDE.
+
+Package: geany-plugins-common
+Architecture: any
+Depends: geany,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Breaks: geany-plugin-addons (<< 0.19),
+        geany-plugin-doc (<< 0.19),
+        geany-plugin-gdb (<< 0.19),
+        geany-plugin-latex (<< 0.19),
+        geany-plugin-lipsum (<< 0.19),
+        geany-plugin-lua (<< 0.19),
+        geany-plugin-prj (<< 0.19),
+        geany-plugin-sendmail (<< 0.19),
+        geany-plugin-vc (<< 0.19),
+        geany-plugin-shiftcolumn (<< 0.19),
+        geany-plugin-spellcheck (<< 0.19),
+Description: set of plugins for Geany (translations)
+ This package contains translations for the Geany Plugins. You probably do not
+ want to install this package directly, but instead install one of the other
+ plugins packages.
+
+Package: geany-plugin-addons
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: miscellaneous plugins for Geany
+ This plugin adds various small addons to Geany which aren't worth an
+ individual plugin, but might still be useful for people.
+  * DocList: This addon places a new item in the toolbar and when clicked
+    offers a menu listing all open files plus the 'Close All' and 'Close Other
+    Documents' menu items. This can be useful to quickly access open files and
+    switch to them.
+  * OpenURI: Adds 'Open URI' and 'Copy URI' menu items to the editor menu when
+    the word under the cursor looks like a URI. 'Open URI' uses the browser
+    command configured in Geany to open it.
+  * Tasks: The tasks plugin goes through a file being edited and picks out
+    lines with "TODO" or "FIXME" in them. It collects the text after those words
+    and puts them in a new "Tasks" tab in the message window. Clicking on a task
+    in that tab takes you to the line in the file where the task was defined.
+  * Systray: Adds a status icon to the notification area (systray) and
+    provides a simple popup menu with some basic actions. It can also be used
+    to quickly show and hide the Geany main window.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-autoclose
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: auto-closing plugin for Geany
+ This plugin enables auto-closing features. Auto-closing works while you typing
+ and intellectually helps you to write code.
+ .
+ Features:
+  * auto-close for: { }, [ ], ( ), " ", ' ', < >, ` `
+  * customizeable auto-closing inside strings and comments
+  * delete pairing character if you pressed BackSpace
+  * suppress inserting one char twice (if you type "{}" you will get "{}", not
+    "{}}")
+  * enclose selected text into brackets instead of removing selection (select
+    text and type "(" or ")" to enclose selection into "()")
+  * keep selection when enclosing
+  * for C-like languages enclosing selection into "{}" makes auto-indentation
+    (select text and type "{" or "}" - text will be enclosed and indented)
+  * enclosing in {} moves cursor to beginning (before "{" character)
+  * for C-like languages to insert {}-block you do not need to select text
+    precisely: plugin detects boundaries automatically, just ensure that
+    selection covers lines you need to indent (works like TAB indentation)
+  * fix auto-indent inside {} (makes full indent for this block)
+  * auto-close curly bracket by pressing Enter
+  * auto-close functions (``"sin(|" -> "sin(|);"``) with doubling suppression
+    (for C/C++ languages only)
+  * remove paring brace when pressing Shift+BackSpace, unindent {}-blocks
+  * add semicolon after ``struct {|};`` and ``class {|};``
+  * move cursor to closed char by pressing Tab
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-automark
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: auto-mark plugin for Geany
+ This is a simple plugin that highlights all words that match current word
+ under cursor (see screenshot).
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-codenav
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: code navigation plugin for Geany
+ This plugin adds some facilities for navigating in code using Geany, making it
+ possible to:
+  * Switch between header and implementation
+  * Go to a file by typing its name
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-commander
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: command panel plugin for Geany
+ This plugin adds a command panel to Geany for rapid access to any action.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-ctags
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         universal-ctags,
+         ${shlibs:Depends}, ${misc:Depends}
+Description: ctags plugin for Geany
+ GeanyCtags adds a simple support for generating and querying ctags files
+ for a Geany project.
+ .
+ Even though Geany supports symbol definition searching by itself within the
+ open files (and with a plugin support within the whole project), tag
+ regeneration can become too slow for really big projects. This is why this
+ plugin was created. It makes it possible to generate the tag file only once
+ and just query it when searching for a particular symbol
+ definition/declaration. This approach is fine for big projects where most
+ of the codebase remains unchanged and the tag positions remain more or
+ less static.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-debugger
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}, gdb (>= 7.7)
+Description: debugger plugin for Geany
+ Features:
+  * Debugger panel
+  * Setting target, environment variables and command line arguments
+  * Breakpoints
+  * Watches, autos
+  * Debug terminal
+  * Debugger messages window
+  * Variables calltips while debugging
+  * Saving debug session data in a Geany project (can be switched through
+    settings)
+  * Double or single panel modes
+  * Hotkeys
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-defineformat
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: on-the-fly #define prettyprinter plugin for Geany
+ This plugin will help you to write multiline defines with aligned backslash.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+#Package: geany-plugin-devhelp
+#Enhances: geany
+#Architecture: any
+#Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+#         ${shlibs:Depends}, ${misc:Depends}
+#Description: DevHelp plugin for Geany
+# This plugin embeds an API documentation browser and search functionality
+# directly into Geany's user interface.
+# .
+# Devhelp is an API documentation browser mainly aimed at GNOME-related
+# libraries, although there are Devhelp books for a wide range of library
+# APIs. Check your package manager and/or Google and you should have no trouble
+# finding books that can be viewed with Devhelp.
+# .
+# Geany is a small and lightweight integrated development environment using the
+# GTK+ toolkit.
+
+Package: geany-plugin-doc
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: documentation plugin for Geany
+ Geanydoc is a plugin for the Geany IDE which is intended to be used to search
+ for documentation API from different sources. It allows execution of specified
+ commands on the current word at the cursor position or otherwise specified via
+ a dialog to obtain this documentation. This documentation is displayed in the
+ geany buffer as a tab called *DOC*, or may be displayed in an external program.
+ .
+ After installing this package, you'll need to enable the "Doc" plugin
+ and then setup a keyword binding for it in Geany's preferences dialogue.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ GTK+ toolkit.
+
+Package: geany-plugin-extrasel
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: extra selection plugin for Geany
+ The Extra Selection plugin adds the following functions to Geany:-
+  * Go to matching brace and select (select to matching brace)
+  * Go to line and select (select to line)
+  * Ctrl+Shift+Alt+Left/Right/Home/End key - same as Ctrl+Shift, but for
+    rectangular selection.
+  * Column mode - while active, all (Ctrl)-Shift-Arrow keys do rectangle
+    selection instead of stream.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-gendoc
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: documentation generation plugin for Geany
+ GeanyGenDoc is a plugin for Geany which provides support for automatically
+ generating documentation based on comments in the source code.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-geniuspaste
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: GeniusPaste plugin for Geany
+ This plugin allows the user to paste the code from Geany into five different
+ pastebins. At the moment it supports this services:
+  - codepad.org
+  - tinypaste.com
+  - pastebin.geany.org
+  - dpaste.de
+  - sprunge.us
+ .
+ GeniusPaste detects automatically the syntax of the code and paste it with
+ syntax highlighting enabled. It can also display the pasted code opening a new
+ browser tab.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-gproject
+Depends: geany-plugin-projectorganizer, ${misc:Depends}
+Architecture: all
+Section: oldlibs
+Description: transitional dummy package for geany-plugin-projectorganizer
+ This is a transitional dummy package. It can safely be removed.
+
+Package: geany-plugin-git-changebar
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: git change bar plugin for Geany
+ This plugin highlights uncommitted changes to files tracked with Git, and
+ allows one to navigate through the hunks.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-keyrecord
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: git change bar plugin for Geany
+ This plugin allows you to record a sequence of keystrokes and to replay it
+ several times.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-insertnum
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: number inserting plugin for Geany
+ This plugin for Geany replaces a (possibly zero-width) rectangular selection
+ with integer numbers, using start/step/base etc. specified by the user. For
+ practical reasons, the number of lines is limited to 500000.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-latex
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: improved LaTeX support plugin for Geany
+ GeanyLaTeX is a plugin for the Geany IDE to improve work with LaTeX. Features
+ include:
+  * Wizard for creating a new LaTeX-document
+  * Frontend for easy input of \ref{} and \label{}
+  * Easy adding of special characters and environments through plugin menu entry
+  * Support for adding new items to BibTeX database
+  * Toolbar with commonly used format options
+  * Bulk replacement and input replacement of special characters
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-lipsum
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Lorem Ipsum generator plugin for Geany
+ GeanyLipsum is a plugin for Geany which implements a Lorem Ipsum generator to
+ insert placeholder text into your document.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-lua
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Lua scripting plugin for Geany
+ GeanyLua is a plugin which provides a Lua scripting interface for the Geany
+ IDE.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-lineoperations
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Line Operations plugin for Geany
+ Line Operations is an assortment of simple line functions that can be applied
+ to an open file.
+ .
+ Features
+ .
+  * Remove Duplicate Lines, sorted
+  * Remove Duplicate Lines, ordered
+  * Remove Unique Lines
+  * Remove Empty Lines
+  * Remove Whitespace Lines
+  * Sort Lines Ascending
+  * Sort Lines Descending
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-macro
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: macro plugin for Geany
+ Geanymacro is a plugin to provide user defined macros for Geany.
+ This plugin allows you to record and use your own macros. Macros are
+ sequences of actions that can then be repeated with a single key
+ combination. So if you had dozens of lines where you wanted to delete
+ the last 2 characters, you could simple start recording, press End,
+ Backspace, Backspace, down line and then stop recording. Then simply
+ trigger the macro and it would automatically edit the line and move to
+ the next.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-markdown
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+        ${shlibs:Depends}, ${misc:Depends}
+Description: markdown plugin for Geany
+ This plugin provides a real-time preview of rendered Markdown in Geany.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-miniscript
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Geany Mini-Script filter plugin
+ This plugin is a tool to apply a script filter on:
+  - the text selection,
+  - the current document,
+  - all documents of the current session.
+ .
+ The filter type can be:
+  - Unix shell script,
+  - Perl script,
+  - Python script,
+  - sed commands,
+  - awk script.
+ .
+ The output can be:
+  - the selection of the current document,
+  - all the current document,
+  - or a new document.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+# Package: geany-plugin-multiterm
+# Enhances: geany
+# Architecture: any
+# Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+#          ${shlibs:Depends}, ${misc:Depends}
+# Description: multiterm plugin for Geany
+#  MultiTerm is similar to Geany's built-in VTE terminal except that it supports
+#  multiple terminals in tabs and supports different shells in each of the
+#  terminal tabs.
+#  .
+#  Geany is a small and lightweight integrated development environment using the
+#  Gtk+ toolkit.
+
+Package: geany-plugin-overview
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: overview plugin for Geany
+ This plugin provides an overview of the active document.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-numberedbookmarks
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: numbered bookmarks plugin for Geany
+ Geanynumberedbookmarks is a plugin to provide users with 10 numbered
+ bookmarks (in addition to the usual bookkmarks).
+ Normally if you had more than one bookmark, you would have to cycle
+ through them until you reached the one you wanted. With this plugin you
+ can go straight to the bookmark that you want with a single key
+ combination.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-pairtaghighlighter
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: tag pair highlighter plugin for Geany
+ Finds and highlights matching opening/closing HTML tag by clicking or
+ moving cursor inside a tag.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-pg
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: pg plugin for Geany
+ GeanyPG is a plugin for Geany that allows the user to encrypt, decrypt
+ and verify signatures with GnuPG.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-pohelper
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Geany plugin for improved support for GetText translation files
+ Pohelper is a plugin for Geany that improves the support for
+ GetText translation files
+ .
+ Features:
+  * Navigation between all, untranslated or fuzzy messages
+  * Reformatting of the translation (reflow)
+  * Toggling the fuzziness of a translation
+  * Pasting of the untranslated string to the translation
+  * Automatic updating of the translation metadata
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-prj
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: alternative project manager for Geany
+ GeanyPrj is a plugin for Geany that provides an alternative method for managing
+ projects in Geany, which moves away from Geany's default project management
+ style, which is session-based, instead implementing a system which
+ automatically opens a project when oen of its files are opened.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ GTK+ toolkit.
+
+Package: geany-plugin-projectorganizer
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Replaces: geany-plugin-gproject (<< 1.25~)
+Breaks: geany-plugin-grpoject (<< 1.25~)
+Description: projectorganizer plugin for Geany
+ Project Organizer is an extension of Geany's project management displaying
+ a tree of files belonging to the project in the sidebar. In addition, it
+ enables complete indexing of the project files (and having code completion,
+ syntax highlighting and tag  definition/declaration jumps for the whole
+ project) quick swapping between header and source files, improved opening
+ of includes, searching project files by name and more. External
+ directories can be attached to the project to extend the plugin's
+ functionality to related directories outside the project tree. The plugin
+ was created with big projects in mind so everything works fast enough
+ even with projects consisting of tens of thousands of files.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ GTK+ toolkit.
+
+# Package: geany-plugin-py
+# Enhances: geany
+# Architecture: any
+# Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+#          ${shlibs:Depends}, ${misc:Depends}, libpython2.7-dev
+# Description: Python bindings for the Geany plugin API
+#  GeanyPy allows people to write their Geany plugins in Python making
+#  authoring a plugin much more accessible to non C programmers.
+#  .
+#  Geany is a small and lightweight integrated development environment using the
+#  Gtk+ toolkit.
+
+Package: geany-plugin-scope
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: graphical GDB front-end for Geany
+ Scope is a graphical GDB front-end with the normal functions you would
+ expect (stepping, breakpoints, etc.), and a few notable features:
+  * The comminication between Scope and gdb is asynchronous.
+  * You can enter any gdb command, at any time.
+  * All gdb I/O (along with some other messages) is displayed in a
+    terminal-like "Debug Console". Whenever you find the GUI lacking,
+    simply switch to that console and work directly with gdb.
+  * 7-bit/Locale/UTF-8 support for values.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ GTK+ toolkit.
+
+Package: geany-plugin-sendmail
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: mailer plugin for Geany
+ GeanySendMail is a plugin to send a document as attachment using the
+ preferred mail client from inside Geany. It is similar to the envelope symbol
+ of most office tools and requires a mail client that is supporting remote
+ calls.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-tableconvert
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: table convert plugin for Geany
+ Tableconvert is a plugin which helps on converting a tabulator
+ separated selection into a table.
+ Currently the plugin supports:
+  * HTML
+  * LaTeX
+  * SQL
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-vc
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: VCS plugin for Geany
+ GeanyVC is a plugin for Geany that provides a uniform way of accessing the
+ different version-control systems inside the Geany IDE. Only a small subset of
+ vc operations are implemented, which are:
+  * diff
+  * log
+  * status
+  * revert
+  * commit
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-prettyprinter
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: XML pretty printer for Geany
+ This plugin gives Geany XML pretty-printing functionality, allowing it to
+ beautify and enhance the readability of XML files.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-shiftcolumn
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: text column shifting plugin for Geany
+ ShiftColumn is a plugin which allows text to be shifted horizontally in the
+ Geany IDE.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-spellcheck
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: spellcheck plugin for Geany
+ Spellcheck is a plugin which  checks the content of the current document in
+ Geany with the spell check library Enchant. This plugin allows the whole
+ document, or only a selection to be checked for spelling mistakes. Misspelt
+ words are highlighted with a red squiggly underline, and wrong words are
+ printed in Geany's messages window along with available suggestions.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-treebrowser
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: tree browser plugin for Geany
+ This plugin adds a tree browser to Geany, allowing the user to browse files
+ using a tree view of the directory being browsed.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-updatechecker
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: update checker plugin for Geany
+ This plugin adds an update checker plugin to Geany, allowing users to check
+ whether there is a more recent version of Geany available.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+# Package: geany-plugin-webhelper
+# Enhances: geany
+# Architecture: any
+# Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+#         ${shlibs:Depends}, ${misc:Depends}
+# Description: web helper plugin for Geany
+#  This plugin provides some web development facilities such as web page preview
+#  and some debugging tools (web inspector) for Geany.
+#  .
+#  Its prominent features include:-
+#   * A basic web view, which provides a display of any web page (using WebKit)
+#   * Automatic reloading of web view upon document saving
+#   * A web inspector/debugging tool for the web view's content (including a
+#     Javascript console, a viewer and editor of processed HTML and CSS, a network
+#     usage analysis tool and many more, thanks to WebKit)
+#  .
+#  Geany is a small and lightweight integrated development environment using the
+#  Gtk+ toolkit.
+
+Package: geany-plugin-vimode
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: Vim-mode plugin for Geany
+ The vimode plugin is a Vim-mode plugin for Geany.
+ .
+ Vim is another UNIX editor.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-workbench
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: workbench plugin for Geany
+ The Workbench plugin is an extension that makes it possible to manage multiple
+ projects in geany. You can add geany projects to a workbench. From there you
+ can add directories to the project to manage the files belonging to the
+ project.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.
+
+Package: geany-plugin-xmlsnippets
+Enhances: geany
+Architecture: any
+Depends: ${geany:ABI}, geany-plugins-common (= ${binary:Version}),
+         ${shlibs:Depends}, ${misc:Depends}
+Description: XMLSnippets plugin for Geany
+ This plugin extends XML/HTML tag autocompletion provided by Geany.
+ It automatically inserts a matching snippet after you type an opening tag.
+ .
+ Geany is a small and lightweight integrated development environment using the
+ Gtk+ toolkit.

@@ -1,0 +1,53 @@
+2013-10-06  Dimitar Zhekov  <dimitar.zhekov@gmail.com>
+
+ * src/insertnum.c:
+   Small improvements, increased the maximum number of lines
+   to 250000.
+
+2013-10-06  Dimitar Zhekov  <dimitar.zhekov@gmail.com>
+
+ * src/insertnum.c:
+   Undefined GTK_COMPAT_H and fixed compilation with
+   Geany >= 2013-03-11 && gtk+ <= 2.22. Let's hope it won't
+   break anything.
+
+2013-04-06  Dimitar Zhekov  <dimitar.zhekov@gmail.com>
+
+ * src/insertnum.c:
+   Fixed some space indentation.
+   Changes to use GtkGrid under GTK+ 3.
+   Defined GTK_COMPAT_H to avoid inclusion of gtkcompat.h and
+   defined the macros required for GTK+ 2/3 compatibility.
+
+2013-04-06  Quentin Glidic <sardemff7+git@sardemff7.net>
+
+ * src/insertnum.c:
+   Changes to compile with GTK+ 3: GtkComboBoxText and
+   gtk_widget_set_can_default().
+
+2011-02-23  Dimitar Zhekov  <dimitar.zhekov@gmail.com>
+
+ * src/insertnum.c:
+   Another small memory leak fix, by Colomban Wendling.
+
+2011-02-06  Frank Lanitz  <frank(at)frank(dot)uvena(dot)de>
+
+ * src/insertnum.c:
+   Fix a little memory leak.
+
+2010-12-07  Dimitar Zhekov  <dimitar.zhekov@gmail.com>
+
+ * src/insertnum.c:
+   Added thin selection support. Increased the required API version
+   to that of Geany 0.19 (the first that includes thin selection).
+
+2010-10-06  Dimitar Zhekov  <dimitar.zhekov@gmail.com>
+
+ * src/insertnum.c:
+   Replaced start and step entries with spins.
+   Decreased the number of lines to 100000.
+
+2010-03-12  Dimitar Zhekov  <hamster@mbox.contact.bg>
+
+ * src/insertnum.c:
+   Small changes to compile with GTK+ 2.8 / Win32.

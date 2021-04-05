@@ -1,0 +1,33 @@
+From: Chow Loong Jin <hyperair@debian.org>
+Date: Sun, 20 Mar 2016 17:30:36 +0800
+Subject: Fix empty DHPLUG_DATA_DIR
+
+plugindatadir is defined in vars.docs.mk not vars.build.mk.
+---
+ devhelp/data/Makefile.am | 3 ---
+ devhelp/src/Makefile.am  | 1 +
+ 2 files changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/devhelp/data/Makefile.am b/devhelp/data/Makefile.am
+index 56b1a16..3583d76 100644
+--- a/devhelp/data/Makefile.am
++++ b/devhelp/data/Makefile.am
+@@ -3,8 +3,5 @@ include $(top_srcdir)/build/vars.docs.mk
+ plugin = devhelp
+ 
+ dist_plugindata_DATA = \
+-	devhelp-plugin.svg \
+-	devhelp-plugin-48.png \
+-	geany-devhelp-plugin.png \
+ 	home.html \
+ 	devhelp.conf
+diff --git a/devhelp/src/Makefile.am b/devhelp/src/Makefile.am
+index 47726cf..26c125a 100644
+--- a/devhelp/src/Makefile.am
++++ b/devhelp/src/Makefile.am
+@@ -1,4 +1,5 @@
+ include $(top_srcdir)/build/vars.build.mk
++include $(top_srcdir)/build/vars.docs.mk
+ 
+ plugin = devhelp
+ 

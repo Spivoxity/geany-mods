@@ -1,0 +1,3 @@
+debian-doc-locations.patch
+Fix-empty-DHPLUG_DATA_DIR.patch
+Move-libgeanypluginutils-to-pkglibdir.patch
