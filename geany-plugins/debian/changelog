@@ -1,3 +1,10 @@
+geany-plugins (1.37+dfsg-spivoxity1) unstable; urgency=medium	
+	
+  * Backported to Buster
+  * Enlarged Build menu
+
+ -- Mike Spivey <spivoxity@gmail.com>  Tue, 23 Mar 2021 18:00:00 +0000
+	
 geany-plugins (1.37+dfsg-6) unstable; urgency=medium
 
   * Source-only reupload to allow migration to testing

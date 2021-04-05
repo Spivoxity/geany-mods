@@ -16,9 +16,7 @@ geany/config.status
 geany/ctags/Makefile
 geany/data/Makefile
 geany/data/filedefs/filetypes.python
-geany/debian/.debhelper/bucket/files/19c12bb2ca19e68724c2854ed0512469518df19b0710cc2011a5ca540810979c
-geany/debian/.debhelper/bucket/files/f7197ddfb309e86d5fbd7d3b440a5ababfbd4aac1e1f53b492e28e54db58b222
-geany/debian/.debhelper/bucket/index
+geany/debian/.debhelper
 geany/debian/autoreconf.after
 geany/debian/autoreconf.before
 geany/doc/Doxyfile
@@ -58,3 +56,13 @@ geany/stamp-h1
 geany/tests/Makefile
 geany/tests/ctags/Makefile
 geany/tests/test_utils
+geany/debian/tmp
+geany/debian/geany
+geany/debian/geany-common
+geany/plugins/.libs
+geany/debian/dumpabiver
+geany/debian/files
+geany/debian/geany-common.postinst.debhelper
+geany/debian/geany-common.postrm.debhelper
+geany/debian/geany-common.substvars
+geany/debian/geany.substvars
