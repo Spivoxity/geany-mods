@@ -7559,7 +7559,7 @@ esac
 fi
 
 : ${AR=ar}
-: ${AR_FLAGS=cr}
+: ${AR_FLAGS=cru}
 
 
 
@@ -9280,8 +9280,8 @@ int forced_loaded() { return 2;}
 _LT_EOF
       echo "$LTCC $LTCFLAGS -c -o conftest.o conftest.c" >&5
       $LTCC $LTCFLAGS -c -o conftest.o conftest.c 2>&5
-      echo "$AR cr libconftest.a conftest.o" >&5
-      $AR cr libconftest.a conftest.o 2>&5
+      echo "$AR cru libconftest.a conftest.o" >&5
+      $AR cru libconftest.a conftest.o 2>&5
       echo "$RANLIB libconftest.a" >&5
       $RANLIB libconftest.a 2>&5
       cat > conftest.c << _LT_EOF
@@ -10111,12 +10111,6 @@ lt_prog_compiler_static=
       ecc*)
 	lt_prog_compiler_wl='-Wl,'
 	lt_prog_compiler_pic='-KPIC'
-	lt_prog_compiler_static='-static'
-        ;;
-      # flang / f18. f95 an alias for gfortran or flang on Debian
-      flang* | f18* | f95*)
-	lt_prog_compiler_wl='-Wl,'
-	lt_prog_compiler_pic='-fPIC'
 	lt_prog_compiler_static='-static'
         ;;
       # icc used to be incompatible with GCC.
@@ -15161,8 +15155,8 @@ fi
 
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for geany >= 1.29" >&5
-$as_echo_n "checking for geany >= 1.29... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GEANY" >&5
+$as_echo_n "checking for GEANY... " >&6; }
 
 if test -n "$GEANY_CFLAGS"; then
     pkg_cv_GEANY_CFLAGS="$GEANY_CFLAGS"
@@ -15202,7 +15196,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -15229,7 +15223,7 @@ Alternatively, you may set the environment variables GEANY_CFLAGS
 and GEANY_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -15265,8 +15259,8 @@ fi
     gp_have_unittests=no
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for check >= 0.9.4" >&5
-$as_echo_n "checking for check >= 0.9.4... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for CHECK" >&5
+$as_echo_n "checking for CHECK... " >&6; }
 
 if test -n "$CHECK_CFLAGS"; then
     pkg_cv_CHECK_CFLAGS="$CHECK_CFLAGS"
@@ -15306,7 +15300,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -15331,7 +15325,7 @@ else
 fi
 
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	 if false; then
   UNITTESTS_TRUE=
@@ -15787,8 +15781,8 @@ fi
     if test "$enable_autoclose" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.8" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.8... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for AUTOCLOSE" >&5
+$as_echo_n "checking for AUTOCLOSE... " >&6; }
 
 if test -n "$AUTOCLOSE_CFLAGS"; then
     pkg_cv_AUTOCLOSE_CFLAGS="$AUTOCLOSE_CFLAGS"
@@ -15828,7 +15822,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -15855,7 +15849,7 @@ Alternatively, you may set the environment variables AUTOCLOSE_CFLAGS
 and AUTOCLOSE_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -15879,8 +15873,8 @@ fi
     elif test "$enable_autoclose" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.8" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.8... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for AUTOCLOSE" >&5
+$as_echo_n "checking for AUTOCLOSE... " >&6; }
 
 if test -n "$AUTOCLOSE_CFLAGS"; then
     pkg_cv_AUTOCLOSE_CFLAGS="$AUTOCLOSE_CFLAGS"
@@ -15920,7 +15914,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -15938,7 +15932,7 @@ fi
 
 	enable_autoclose=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_autoclose=no
 else
@@ -16021,8 +16015,8 @@ fi
     if test "$enable_automark" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.8" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.8... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for AUTOMARK" >&5
+$as_echo_n "checking for AUTOMARK... " >&6; }
 
 if test -n "$AUTOMARK_CFLAGS"; then
     pkg_cv_AUTOMARK_CFLAGS="$AUTOMARK_CFLAGS"
@@ -16062,7 +16056,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16089,7 +16083,7 @@ Alternatively, you may set the environment variables AUTOMARK_CFLAGS
 and AUTOMARK_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -16113,8 +16107,8 @@ fi
     elif test "$enable_automark" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.8" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.8... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for AUTOMARK" >&5
+$as_echo_n "checking for AUTOMARK... " >&6; }
 
 if test -n "$AUTOMARK_CFLAGS"; then
     pkg_cv_AUTOMARK_CFLAGS="$AUTOMARK_CFLAGS"
@@ -16154,7 +16148,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16172,7 +16166,7 @@ fi
 
 	enable_automark=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_automark=no
 else
@@ -16295,10 +16289,8 @@ fi
     if test "$enable_commander" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.16
-                          glib-2.0 >= 2.4" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.16
-                          glib-2.0 >= 2.4... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for COMMANDER" >&5
+$as_echo_n "checking for COMMANDER... " >&6; }
 
 if test -n "$COMMANDER_CFLAGS"; then
     pkg_cv_COMMANDER_CFLAGS="$COMMANDER_CFLAGS"
@@ -16344,7 +16336,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16374,7 +16366,7 @@ Alternatively, you may set the environment variables COMMANDER_CFLAGS
 and COMMANDER_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -16398,10 +16390,8 @@ fi
     elif test "$enable_commander" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.16
-                          glib-2.0 >= 2.4" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.16
-                          glib-2.0 >= 2.4... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for COMMANDER" >&5
+$as_echo_n "checking for COMMANDER... " >&6; }
 
 if test -n "$COMMANDER_CFLAGS"; then
     pkg_cv_COMMANDER_CFLAGS="$COMMANDER_CFLAGS"
@@ -16447,7 +16437,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16467,7 +16457,7 @@ fi
 
 	enable_commander=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_commander=no
 else
@@ -16557,8 +16547,8 @@ fi
 
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $utilslib_vte_package" >&5
-$as_echo_n "checking for $utilslib_vte_package... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for UTILSLIB" >&5
+$as_echo_n "checking for UTILSLIB... " >&6; }
 
 if test -n "$UTILSLIB_CFLAGS"; then
     pkg_cv_UTILSLIB_CFLAGS="$UTILSLIB_CFLAGS"
@@ -16598,7 +16588,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16616,7 +16606,7 @@ fi
 
 	utilslib_have_vte=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	utilslib_have_vte=no
 else
@@ -16677,8 +16667,8 @@ fi
     if test "$enable_debugger" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${vte_package} >= ${vte_version}" >&5
-$as_echo_n "checking for ${vte_package} >= ${vte_version}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for VTE" >&5
+$as_echo_n "checking for VTE... " >&6; }
 
 if test -n "$VTE_CFLAGS"; then
     pkg_cv_VTE_CFLAGS="$VTE_CFLAGS"
@@ -16718,7 +16708,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16745,7 +16735,7 @@ Alternatively, you may set the environment variables VTE_CFLAGS
 and VTE_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -16769,8 +16759,8 @@ fi
     elif test "$enable_debugger" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${vte_package} >= ${vte_version}" >&5
-$as_echo_n "checking for ${vte_package} >= ${vte_version}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for VTE" >&5
+$as_echo_n "checking for VTE... " >&6; }
 
 if test -n "$VTE_CFLAGS"; then
     pkg_cv_VTE_CFLAGS="$VTE_CFLAGS"
@@ -16810,7 +16800,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16828,7 +16818,7 @@ fi
 
 	enable_debugger=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_debugger=no
 else
@@ -16925,8 +16915,8 @@ fi
     if test "$enable_defineformat" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.8" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.8... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for DEFINEFORMAT" >&5
+$as_echo_n "checking for DEFINEFORMAT... " >&6; }
 
 if test -n "$DEFINEFORMAT_CFLAGS"; then
     pkg_cv_DEFINEFORMAT_CFLAGS="$DEFINEFORMAT_CFLAGS"
@@ -16966,7 +16956,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -16993,7 +16983,7 @@ Alternatively, you may set the environment variables DEFINEFORMAT_CFLAGS
 and DEFINEFORMAT_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -17017,8 +17007,8 @@ fi
     elif test "$enable_defineformat" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.8" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.8... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for DEFINEFORMAT" >&5
+$as_echo_n "checking for DEFINEFORMAT... " >&6; }
 
 if test -n "$DEFINEFORMAT_CFLAGS"; then
     pkg_cv_DEFINEFORMAT_CFLAGS="$DEFINEFORMAT_CFLAGS"
@@ -17058,7 +17048,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -17076,7 +17066,7 @@ fi
 
 	enable_defineformat=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_defineformat=no
 else
@@ -17246,18 +17236,8 @@ fi
     if test "$enable_devhelp" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk+-2.0 >= ${GTK_VERSION}
-                          webkit-1.0 >= ${WEBKIT_VERSION}
-                          libwnck-1.0 >= ${LIBWNCK_VERSION}
-                          gconf-2.0 >= ${GCONF_VERSION}
-                          gthread-2.0
-                          zlib" >&5
-$as_echo_n "checking for gtk+-2.0 >= ${GTK_VERSION}
-                          webkit-1.0 >= ${WEBKIT_VERSION}
-                          libwnck-1.0 >= ${LIBWNCK_VERSION}
-                          gconf-2.0 >= ${GCONF_VERSION}
-                          gthread-2.0
-                          zlib... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for DEVHELP" >&5
+$as_echo_n "checking for DEVHELP... " >&6; }
 
 if test -n "$DEVHELP_CFLAGS"; then
     pkg_cv_DEVHELP_CFLAGS="$DEVHELP_CFLAGS"
@@ -17327,7 +17307,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -17369,7 +17349,7 @@ Alternatively, you may set the environment variables DEVHELP_CFLAGS
 and DEVHELP_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -17393,18 +17373,8 @@ fi
     elif test "$enable_devhelp" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk+-2.0 >= ${GTK_VERSION}
-                          webkit-1.0 >= ${WEBKIT_VERSION}
-                          libwnck-1.0 >= ${LIBWNCK_VERSION}
-                          gconf-2.0 >= ${GCONF_VERSION}
-                          gthread-2.0
-                          zlib" >&5
-$as_echo_n "checking for gtk+-2.0 >= ${GTK_VERSION}
-                          webkit-1.0 >= ${WEBKIT_VERSION}
-                          libwnck-1.0 >= ${LIBWNCK_VERSION}
-                          gconf-2.0 >= ${GCONF_VERSION}
-                          gthread-2.0
-                          zlib... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for DEVHELP" >&5
+$as_echo_n "checking for DEVHELP... " >&6; }
 
 if test -n "$DEVHELP_CFLAGS"; then
     pkg_cv_DEVHELP_CFLAGS="$DEVHELP_CFLAGS"
@@ -17474,7 +17444,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -17502,7 +17472,7 @@ fi
 
 	enable_devhelp=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_devhelp=no
 else
@@ -17710,14 +17680,8 @@ fi
     if test "$enable_geanygendoc" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          ctpl >= ${CTPL_VERSION}" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          ctpl >= ${CTPL_VERSION}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GEANYGENDOC" >&5
+$as_echo_n "checking for GEANYGENDOC... " >&6; }
 
 if test -n "$GEANYGENDOC_CFLAGS"; then
     pkg_cv_GEANYGENDOC_CFLAGS="$GEANYGENDOC_CFLAGS"
@@ -17775,7 +17739,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -17811,7 +17775,7 @@ Alternatively, you may set the environment variables GEANYGENDOC_CFLAGS
 and GEANYGENDOC_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -17835,14 +17799,8 @@ fi
     elif test "$enable_geanygendoc" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          ctpl >= ${CTPL_VERSION}" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          ctpl >= ${CTPL_VERSION}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GEANYGENDOC" >&5
+$as_echo_n "checking for GEANYGENDOC... " >&6; }
 
 if test -n "$GEANYGENDOC_CFLAGS"; then
     pkg_cv_GEANYGENDOC_CFLAGS="$GEANYGENDOC_CFLAGS"
@@ -17900,7 +17858,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -17924,7 +17882,7 @@ fi
 
 	enable_geanygendoc=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_geanygendoc=no
 else
@@ -18161,10 +18119,8 @@ fi
     if test "$enable_geanylua" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${LUA_PKG_NAME} >= ${LUA_VERSION}
-                          ${LUA_PKG_NAME} < ${LUA_VERSION_BOUNDARY}" >&5
-$as_echo_n "checking for ${LUA_PKG_NAME} >= ${LUA_VERSION}
-                          ${LUA_PKG_NAME} < ${LUA_VERSION_BOUNDARY}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LUA" >&5
+$as_echo_n "checking for LUA... " >&6; }
 
 if test -n "$LUA_CFLAGS"; then
     pkg_cv_LUA_CFLAGS="$LUA_CFLAGS"
@@ -18210,7 +18166,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -18240,7 +18196,7 @@ Alternatively, you may set the environment variables LUA_CFLAGS
 and LUA_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -18264,10 +18220,8 @@ fi
     elif test "$enable_geanylua" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${LUA_PKG_NAME} >= ${LUA_VERSION}
-                          ${LUA_PKG_NAME} < ${LUA_VERSION_BOUNDARY}" >&5
-$as_echo_n "checking for ${LUA_PKG_NAME} >= ${LUA_VERSION}
-                          ${LUA_PKG_NAME} < ${LUA_VERSION_BOUNDARY}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LUA" >&5
+$as_echo_n "checking for LUA... " >&6; }
 
 if test -n "$LUA_CFLAGS"; then
     pkg_cv_LUA_CFLAGS="$LUA_CFLAGS"
@@ -18313,7 +18267,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -18333,7 +18287,7 @@ fi
 
 	enable_geanylua=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_geanylua=no
 else
@@ -18377,8 +18331,8 @@ fi
     if test "$enable_geanylua" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gmodule-2.0" >&5
-$as_echo_n "checking for gmodule-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GMODULE" >&5
+$as_echo_n "checking for GMODULE... " >&6; }
 
 if test -n "$GMODULE_CFLAGS"; then
     pkg_cv_GMODULE_CFLAGS="$GMODULE_CFLAGS"
@@ -18418,7 +18372,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -18445,7 +18399,7 @@ Alternatively, you may set the environment variables GMODULE_CFLAGS
 and GMODULE_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -18469,8 +18423,8 @@ fi
     elif test "$enable_geanylua" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gmodule-2.0" >&5
-$as_echo_n "checking for gmodule-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GMODULE" >&5
+$as_echo_n "checking for GMODULE... " >&6; }
 
 if test -n "$GMODULE_CFLAGS"; then
     pkg_cv_GMODULE_CFLAGS="$GMODULE_CFLAGS"
@@ -18510,7 +18464,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -18528,7 +18482,7 @@ fi
 
 	enable_geanylua=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_geanylua=no
 else
@@ -18808,8 +18762,8 @@ fi
     if test "$enable_geanypy" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pygtk-2.0" >&5
-$as_echo_n "checking for pygtk-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for PYGTK" >&5
+$as_echo_n "checking for PYGTK... " >&6; }
 
 if test -n "$PYGTK_CFLAGS"; then
     pkg_cv_PYGTK_CFLAGS="$PYGTK_CFLAGS"
@@ -18849,7 +18803,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -18876,7 +18830,7 @@ Alternatively, you may set the environment variables PYGTK_CFLAGS
 and PYGTK_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -18900,8 +18854,8 @@ fi
     elif test "$enable_geanypy" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pygtk-2.0" >&5
-$as_echo_n "checking for pygtk-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for PYGTK" >&5
+$as_echo_n "checking for PYGTK... " >&6; }
 
 if test -n "$PYGTK_CFLAGS"; then
     pkg_cv_PYGTK_CFLAGS="$PYGTK_CFLAGS"
@@ -18941,7 +18895,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -18959,7 +18913,7 @@ fi
 
 	enable_geanypy=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_geanypy=no
 else
@@ -19003,8 +18957,8 @@ fi
     if test "$enable_geanypy" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gmodule-2.0" >&5
-$as_echo_n "checking for gmodule-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GMODULE" >&5
+$as_echo_n "checking for GMODULE... " >&6; }
 
 if test -n "$GMODULE_CFLAGS"; then
     pkg_cv_GMODULE_CFLAGS="$GMODULE_CFLAGS"
@@ -19044,7 +18998,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -19071,7 +19025,7 @@ Alternatively, you may set the environment variables GMODULE_CFLAGS
 and GMODULE_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -19095,8 +19049,8 @@ fi
     elif test "$enable_geanypy" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gmodule-2.0" >&5
-$as_echo_n "checking for gmodule-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GMODULE" >&5
+$as_echo_n "checking for GMODULE... " >&6; }
 
 if test -n "$GMODULE_CFLAGS"; then
     pkg_cv_GMODULE_CFLAGS="$GMODULE_CFLAGS"
@@ -19136,7 +19090,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -19154,7 +19108,7 @@ fi
 
 	enable_geanypy=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_geanypy=no
 else
@@ -19671,8 +19625,8 @@ fi
     if [ x"$enable_gtkspell" = "xauto" ]; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $gtkspell_package" >&5
-$as_echo_n "checking for $gtkspell_package... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GTKSPELL" >&5
+$as_echo_n "checking for GTKSPELL... " >&6; }
 
 if test -n "$GTKSPELL_CFLAGS"; then
     pkg_cv_GTKSPELL_CFLAGS="$GTKSPELL_CFLAGS"
@@ -19712,7 +19666,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -19730,7 +19684,7 @@ fi
 
 	enable_gtkspell=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_gtkspell=no
 else
@@ -19743,8 +19697,8 @@ fi
     elif [ x"$enable_gtkspell" = "xyes" ]; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $gtkspell_package" >&5
-$as_echo_n "checking for $gtkspell_package... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GTKSPELL" >&5
+$as_echo_n "checking for GTKSPELL... " >&6; }
 
 if test -n "$GTKSPELL_CFLAGS"; then
     pkg_cv_GTKSPELL_CFLAGS="$GTKSPELL_CFLAGS"
@@ -19784,7 +19738,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -19811,7 +19765,7 @@ Alternatively, you may set the environment variables GTKSPELL_CFLAGS
 and GTKSPELL_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -20364,8 +20318,8 @@ fi
     if test "$enable_geniuspaste" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libsoup-2.4 >= 2.4.0" >&5
-$as_echo_n "checking for libsoup-2.4 >= 2.4.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GENIUSPASTE" >&5
+$as_echo_n "checking for GENIUSPASTE... " >&6; }
 
 if test -n "$GENIUSPASTE_CFLAGS"; then
     pkg_cv_GENIUSPASTE_CFLAGS="$GENIUSPASTE_CFLAGS"
@@ -20405,7 +20359,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -20432,7 +20386,7 @@ Alternatively, you may set the environment variables GENIUSPASTE_CFLAGS
 and GENIUSPASTE_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -20456,8 +20410,8 @@ fi
     elif test "$enable_geniuspaste" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libsoup-2.4 >= 2.4.0" >&5
-$as_echo_n "checking for libsoup-2.4 >= 2.4.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GENIUSPASTE" >&5
+$as_echo_n "checking for GENIUSPASTE... " >&6; }
 
 if test -n "$GENIUSPASTE_CFLAGS"; then
     pkg_cv_GENIUSPASTE_CFLAGS="$GENIUSPASTE_CFLAGS"
@@ -20497,7 +20451,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -20515,7 +20469,7 @@ fi
 
 	enable_geniuspaste=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_geniuspaste=no
 else
@@ -20601,12 +20555,8 @@ fi
     if test "$enable_gitchangebar" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.18
-                          glib-2.0
-                          libgit2 >= 0.21" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.18
-                          glib-2.0
-                          libgit2 >= 0.21... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GITCHANGEBAR" >&5
+$as_echo_n "checking for GITCHANGEBAR... " >&6; }
 
 if test -n "$GITCHANGEBAR_CFLAGS"; then
     pkg_cv_GITCHANGEBAR_CFLAGS="$GITCHANGEBAR_CFLAGS"
@@ -20658,7 +20608,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -20691,7 +20641,7 @@ Alternatively, you may set the environment variables GITCHANGEBAR_CFLAGS
 and GITCHANGEBAR_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -20715,12 +20665,8 @@ fi
     elif test "$enable_gitchangebar" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= 2.18
-                          glib-2.0
-                          libgit2 >= 0.21" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= 2.18
-                          glib-2.0
-                          libgit2 >= 0.21... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GITCHANGEBAR" >&5
+$as_echo_n "checking for GITCHANGEBAR... " >&6; }
 
 if test -n "$GITCHANGEBAR_CFLAGS"; then
     pkg_cv_GITCHANGEBAR_CFLAGS="$GITCHANGEBAR_CFLAGS"
@@ -20772,7 +20718,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -20794,7 +20740,7 @@ fi
 
 	enable_gitchangebar=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_gitchangebar=no
 else
@@ -21134,12 +21080,8 @@ fi
     if test "$enable_markdown" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for MARKDOWN" >&5
+$as_echo_n "checking for MARKDOWN... " >&6; }
 
 if test -n "$MARKDOWN_CFLAGS"; then
     pkg_cv_MARKDOWN_CFLAGS="$MARKDOWN_CFLAGS"
@@ -21191,7 +21133,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -21224,7 +21166,7 @@ Alternatively, you may set the environment variables MARKDOWN_CFLAGS
 and MARKDOWN_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -21248,12 +21190,8 @@ fi
     elif test "$enable_markdown" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for MARKDOWN" >&5
+$as_echo_n "checking for MARKDOWN... " >&6; }
 
 if test -n "$MARKDOWN_CFLAGS"; then
     pkg_cv_MARKDOWN_CFLAGS="$MARKDOWN_CFLAGS"
@@ -21305,7 +21243,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -21327,7 +21265,7 @@ fi
 
 	enable_markdown=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_markdown=no
 else
@@ -21517,8 +21455,8 @@ fi
     if test "$enable_multiterm" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk+-2.0 vte" >&5
-$as_echo_n "checking for gtk+-2.0 vte... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for MULTITERM" >&5
+$as_echo_n "checking for MULTITERM... " >&6; }
 
 if test -n "$MULTITERM_CFLAGS"; then
     pkg_cv_MULTITERM_CFLAGS="$MULTITERM_CFLAGS"
@@ -21558,7 +21496,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -21585,7 +21523,7 @@ Alternatively, you may set the environment variables MULTITERM_CFLAGS
 and MULTITERM_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -21609,8 +21547,8 @@ fi
     elif test "$enable_multiterm" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for gtk+-2.0 vte" >&5
-$as_echo_n "checking for gtk+-2.0 vte... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for MULTITERM" >&5
+$as_echo_n "checking for MULTITERM... " >&6; }
 
 if test -n "$MULTITERM_CFLAGS"; then
     pkg_cv_MULTITERM_CFLAGS="$MULTITERM_CFLAGS"
@@ -21650,7 +21588,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -21668,7 +21606,7 @@ fi
 
 	enable_multiterm=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_multiterm=no
 else
@@ -21833,8 +21771,8 @@ fi
     if test "$enable_pohelper" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for glib-2.0 >= 2.22" >&5
-$as_echo_n "checking for glib-2.0 >= 2.22... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GLIB" >&5
+$as_echo_n "checking for GLIB... " >&6; }
 
 if test -n "$GLIB_CFLAGS"; then
     pkg_cv_GLIB_CFLAGS="$GLIB_CFLAGS"
@@ -21874,7 +21812,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -21901,7 +21839,7 @@ Alternatively, you may set the environment variables GLIB_CFLAGS
 and GLIB_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -21925,8 +21863,8 @@ fi
     elif test "$enable_pohelper" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for glib-2.0 >= 2.22" >&5
-$as_echo_n "checking for glib-2.0 >= 2.22... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for GLIB" >&5
+$as_echo_n "checking for GLIB... " >&6; }
 
 if test -n "$GLIB_CFLAGS"; then
     pkg_cv_GLIB_CFLAGS="$GLIB_CFLAGS"
@@ -21966,7 +21904,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -21984,7 +21922,7 @@ fi
 
 	enable_pohelper=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_pohelper=no
 else
@@ -22071,8 +22009,8 @@ fi
     if test "$enable_pretty_printer" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxml-2.0 >= ${LIBXML_VERSION}" >&5
-$as_echo_n "checking for libxml-2.0 >= ${LIBXML_VERSION}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBXML" >&5
+$as_echo_n "checking for LIBXML... " >&6; }
 
 if test -n "$LIBXML_CFLAGS"; then
     pkg_cv_LIBXML_CFLAGS="$LIBXML_CFLAGS"
@@ -22112,7 +22050,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22139,7 +22077,7 @@ Alternatively, you may set the environment variables LIBXML_CFLAGS
 and LIBXML_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -22163,8 +22101,8 @@ fi
     elif test "$enable_pretty_printer" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libxml-2.0 >= ${LIBXML_VERSION}" >&5
-$as_echo_n "checking for libxml-2.0 >= ${LIBXML_VERSION}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for LIBXML" >&5
+$as_echo_n "checking for LIBXML... " >&6; }
 
 if test -n "$LIBXML_CFLAGS"; then
     pkg_cv_LIBXML_CFLAGS="$LIBXML_CFLAGS"
@@ -22204,7 +22142,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22222,7 +22160,7 @@ fi
 
 	enable_pretty_printer=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_pretty_printer=no
 else
@@ -22358,8 +22296,8 @@ fi
     if test "$enable_scope" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $vte_package" >&5
-$as_echo_n "checking for $vte_package... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for VTE" >&5
+$as_echo_n "checking for VTE... " >&6; }
 
 if test -n "$VTE_CFLAGS"; then
     pkg_cv_VTE_CFLAGS="$VTE_CFLAGS"
@@ -22399,7 +22337,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22426,7 +22364,7 @@ Alternatively, you may set the environment variables VTE_CFLAGS
 and VTE_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -22450,8 +22388,8 @@ fi
     elif test "$enable_scope" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $vte_package" >&5
-$as_echo_n "checking for $vte_package... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for VTE" >&5
+$as_echo_n "checking for VTE... " >&6; }
 
 if test -n "$VTE_CFLAGS"; then
     pkg_cv_VTE_CFLAGS="$VTE_CFLAGS"
@@ -22491,7 +22429,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22509,7 +22447,7 @@ fi
 
 	enable_scope=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_scope=no
 else
@@ -22533,8 +22471,8 @@ fi
 
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $utilslib_vte_package" >&5
-$as_echo_n "checking for $utilslib_vte_package... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for UTILSLIB" >&5
+$as_echo_n "checking for UTILSLIB... " >&6; }
 
 if test -n "$UTILSLIB_CFLAGS"; then
     pkg_cv_UTILSLIB_CFLAGS="$UTILSLIB_CFLAGS"
@@ -22574,7 +22512,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22592,7 +22530,7 @@ fi
 
 	utilslib_have_vte=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	utilslib_have_vte=no
 else
@@ -22760,8 +22698,8 @@ fi
     # check for enchant package
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${ENCHANT_PACKAGE_NAME} >= ${ENCHANT_VERSION_2_2}" >&5
-$as_echo_n "checking for ${ENCHANT_PACKAGE_NAME} >= ${ENCHANT_VERSION_2_2}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ENCHANT_2_2" >&5
+$as_echo_n "checking for ENCHANT_2_2... " >&6; }
 
 if test -n "$ENCHANT_2_2_CFLAGS"; then
     pkg_cv_ENCHANT_2_2_CFLAGS="$ENCHANT_2_2_CFLAGS"
@@ -22801,7 +22739,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22819,7 +22757,7 @@ fi
 
 	have_enchant_2_2=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	have_enchant_2_2=no
 else
@@ -22837,8 +22775,8 @@ fi
         # check for old enchant package
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for enchant >= ${ENCHANT_VERSION_1_5}" >&5
-$as_echo_n "checking for enchant >= ${ENCHANT_VERSION_1_5}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ENCHANT_1_5" >&5
+$as_echo_n "checking for ENCHANT_1_5... " >&6; }
 
 if test -n "$ENCHANT_1_5_CFLAGS"; then
     pkg_cv_ENCHANT_1_5_CFLAGS="$ENCHANT_1_5_CFLAGS"
@@ -22878,7 +22816,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22896,7 +22834,7 @@ fi
 
 	have_enchant_1_5=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	have_enchant_1_5=no
 else
@@ -22908,8 +22846,8 @@ $as_echo "yes" >&6; }
 fi
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for enchant >= ${ENCHANT_VERSION_2_0}" >&5
-$as_echo_n "checking for enchant >= ${ENCHANT_VERSION_2_0}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ENCHANT_2_0" >&5
+$as_echo_n "checking for ENCHANT_2_0... " >&6; }
 
 if test -n "$ENCHANT_2_0_CFLAGS"; then
     pkg_cv_ENCHANT_2_0_CFLAGS="$ENCHANT_2_0_CFLAGS"
@@ -22949,7 +22887,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -22967,7 +22905,7 @@ fi
 
 	have_enchant_2_0=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	have_enchant_2_0=no
 else
@@ -23013,8 +22951,8 @@ fi
     if test "$enable_spellcheck" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${ENCHANT_PACKAGE_NAME} >= ${ENCHANT_VERSION}" >&5
-$as_echo_n "checking for ${ENCHANT_PACKAGE_NAME} >= ${ENCHANT_VERSION}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ENCHANT" >&5
+$as_echo_n "checking for ENCHANT... " >&6; }
 
 if test -n "$ENCHANT_CFLAGS"; then
     pkg_cv_ENCHANT_CFLAGS="$ENCHANT_CFLAGS"
@@ -23054,7 +22992,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -23081,7 +23019,7 @@ Alternatively, you may set the environment variables ENCHANT_CFLAGS
 and ENCHANT_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -23105,8 +23043,8 @@ fi
     elif test "$enable_spellcheck" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${ENCHANT_PACKAGE_NAME} >= ${ENCHANT_VERSION}" >&5
-$as_echo_n "checking for ${ENCHANT_PACKAGE_NAME} >= ${ENCHANT_VERSION}... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ENCHANT" >&5
+$as_echo_n "checking for ENCHANT... " >&6; }
 
 if test -n "$ENCHANT_CFLAGS"; then
     pkg_cv_ENCHANT_CFLAGS="$ENCHANT_CFLAGS"
@@ -23146,7 +23084,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -23164,7 +23102,7 @@ fi
 
 	enable_spellcheck=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_spellcheck=no
 else
@@ -23387,8 +23325,8 @@ fi
     if test "$enable_updatechecker" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libsoup-2.4 >= 2.42" >&5
-$as_echo_n "checking for libsoup-2.4 >= 2.42... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for UPDATECHECKER" >&5
+$as_echo_n "checking for UPDATECHECKER... " >&6; }
 
 if test -n "$UPDATECHECKER_CFLAGS"; then
     pkg_cv_UPDATECHECKER_CFLAGS="$UPDATECHECKER_CFLAGS"
@@ -23428,7 +23366,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -23455,7 +23393,7 @@ Alternatively, you may set the environment variables UPDATECHECKER_CFLAGS
 and UPDATECHECKER_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -23479,8 +23417,8 @@ fi
     elif test "$enable_updatechecker" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libsoup-2.4 >= 2.42" >&5
-$as_echo_n "checking for libsoup-2.4 >= 2.42... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for UPDATECHECKER" >&5
+$as_echo_n "checking for UPDATECHECKER... " >&6; }
 
 if test -n "$UPDATECHECKER_CFLAGS"; then
     pkg_cv_UPDATECHECKER_CFLAGS="$UPDATECHECKER_CFLAGS"
@@ -23520,7 +23458,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -23538,7 +23476,7 @@ fi
 
 	enable_updatechecker=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_updatechecker=no
 else
@@ -23727,18 +23665,8 @@ fi
     if test "$enable_webhelper" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          gdk-pixbuf-2.0 >= ${GDK_PIXBUF_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          gdk-pixbuf-2.0 >= ${GDK_PIXBUF_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for WEBHELPER" >&5
+$as_echo_n "checking for WEBHELPER... " >&6; }
 
 if test -n "$WEBHELPER_CFLAGS"; then
     pkg_cv_WEBHELPER_CFLAGS="$WEBHELPER_CFLAGS"
@@ -23808,7 +23736,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -23850,7 +23778,7 @@ Alternatively, you may set the environment variables WEBHELPER_CFLAGS
 and WEBHELPER_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -23874,18 +23802,8 @@ fi
     elif test "$enable_webhelper" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          gdk-pixbuf-2.0 >= ${GDK_PIXBUF_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0" >&5
-$as_echo_n "checking for $GP_GTK_PACKAGE >= ${GTK_VERSION}
-                          glib-2.0 >= ${GLIB_VERSION}
-                          gio-2.0 >= ${GIO_VERSION}
-                          gdk-pixbuf-2.0 >= ${GDK_PIXBUF_VERSION}
-                          $webkit_package >= ${WEBKIT_VERSION}
-                          gthread-2.0... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for WEBHELPER" >&5
+$as_echo_n "checking for WEBHELPER... " >&6; }
 
 if test -n "$WEBHELPER_CFLAGS"; then
     pkg_cv_WEBHELPER_CFLAGS="$WEBHELPER_CFLAGS"
@@ -23955,7 +23873,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -23983,7 +23901,7 @@ fi
 
 	enable_webhelper=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_webhelper=no
 else
@@ -24085,8 +24003,8 @@ fi
     if test "$enable_workbench" = "yes"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libgit2 >= 0.21" >&5
-$as_echo_n "checking for libgit2 >= 0.21... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for WORKBENCH" >&5
+$as_echo_n "checking for WORKBENCH... " >&6; }
 
 if test -n "$WORKBENCH_CFLAGS"; then
     pkg_cv_WORKBENCH_CFLAGS="$WORKBENCH_CFLAGS"
@@ -24126,7 +24044,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -24153,7 +24071,7 @@ Alternatively, you may set the environment variables WORKBENCH_CFLAGS
 and WORKBENCH_LIBS to avoid the need to call pkg-config.
 See the pkg-config man page for more details." "$LINENO" 5
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
@@ -24177,8 +24095,8 @@ fi
     elif test "$enable_workbench" = "auto"; then
 
 pkg_failed=no
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libgit2 >= 0.21" >&5
-$as_echo_n "checking for libgit2 >= 0.21... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for WORKBENCH" >&5
+$as_echo_n "checking for WORKBENCH... " >&6; }
 
 if test -n "$WORKBENCH_CFLAGS"; then
     pkg_cv_WORKBENCH_CFLAGS="$WORKBENCH_CFLAGS"
@@ -24218,7 +24136,7 @@ fi
 
 
 if test $pkg_failed = yes; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 
 if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
@@ -24236,7 +24154,7 @@ fi
 
 	enable_workbench=no
 elif test $pkg_failed = untried; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
 	enable_workbench=no
 else
@@ -26402,9 +26320,7 @@ $as_echo X/"$am_mf" |
     { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
 $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
 as_fn_error $? "Something went wrong bootstrapping makefile fragments
-    for automatic dependency tracking.  If GNU make was not used, consider
-    re-running the configure script with MAKE=\"gmake\" (or whatever is
-    necessary).  You can also try re-running configure with the
+    for automatic dependency tracking.  Try re-running configure with the
     '--disable-dependency-tracking' option to at least be able to build
     the package (albeit without support for automatic dependency tracking).
 See \`config.log' for more details" "$LINENO" 5; }
